@@ -1191,3 +1191,47 @@ function closeQuickMenus(event) {
     if (jsMenu) jsMenu.classList.remove("show");
   }
 }
+
+// buttons for scrolling on mouse for coding extention menu thing
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("⏳ Waiting for header to load...");
+
+  const checkExist = setInterval(() => {
+      const scrollContainer = document.querySelector(".coding-extension-9321pookie"); // Parent container
+      const scrollLeftBtn = document.getElementById("scroll-left");
+      const scrollRightBtn = document.getElementById("scroll-right");
+
+      if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+          clearInterval(checkExist);
+          console.log("✅ Header loaded! Activating scroll buttons.");
+
+          const scrollSpeed = 1; // Adjust how fast it scrolls
+          let scrollInterval; // Variable to store the interval
+
+          // 🔵 Function to start scrolling in a direction
+          function startScrolling(direction) {
+              stopScrolling(); // Clear any existing interval
+              scrollInterval = setInterval(() => {
+                  scrollContainer.scrollLeft += direction * scrollSpeed; // Move left (-1) or right (+1)
+              }, 0.001); // Adjust speed (lower value = smoother)
+          }
+
+          // 🛑 Function to stop scrolling when the button is released
+          function stopScrolling() {
+              clearInterval(scrollInterval);
+          }
+
+          // 🔼 Scroll left while holding the button
+          scrollLeftBtn.addEventListener("mousedown", () => startScrolling(-1));
+          scrollLeftBtn.addEventListener("mouseup", stopScrolling);
+          scrollLeftBtn.addEventListener("mouseleave", stopScrolling); // Stop if the user moves away
+
+          // 🔽 Scroll right while holding the button
+          scrollRightBtn.addEventListener("mousedown", () => startScrolling(1));
+          scrollRightBtn.addEventListener("mouseup", stopScrolling);
+          scrollRightBtn.addEventListener("mouseleave", stopScrolling);
+
+      }
+  }, 300);
+});
+
