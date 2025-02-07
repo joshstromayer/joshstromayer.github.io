@@ -311,6 +311,7 @@ body {
     z-index: 1000;
     overflow-x: auto; /* Add horizontal scrolling */
     overflow-y: hidden; /* Prevent vertical scrolling */
+    scrollbar-width: none;
   }
   
   .coding-languages-list-9321pookie {
