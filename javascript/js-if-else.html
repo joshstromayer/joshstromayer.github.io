@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript If Else - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-if-else-tutorial">
+                <h2>If, Else, and Else If</h2>
+                <p>
+                    In JavaScript, conditional statements allow you to control the flow of your program based on different conditions. 
+                    The <b>if</b>, <b>else</b>, and <b>else if</b> statements help execute different blocks of code depending on whether a condition is <b>true</b> or <b>false</b>.
+                </p>
+        
+                <h3>The if Statement</h3>
+                <p>
+                    The <b>if</b> statement runs a block of code only if a specified condition evaluates to <b>true</b>.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        if (10 > 5) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("10 is greater than 5"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>The else Statement</h3>
+                <p>
+                    The <b>else</b> statement provides an alternative block of code that runs if the <b>if</b> condition evaluates to <b>false</b>.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let age = 16; <br>
+                        if (age >= 18) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You are an adult."); <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You are a minor."); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>The else if Statement</h3>
+                <p>
+                    When you have multiple conditions to check, you can use the <b>else if</b> statement to test additional cases before falling back to <b>else</b>.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let score = 75; <br>
+                        if (score >= 90) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You got an A!"); <br>
+                        } else if (score >= 80) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You got a B!"); <br>
+                        } else if (score >= 70) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You got a C!"); <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You need to study more!"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>When to Use If, Else, and Else If?</h3>
+                <p>
+                    - Use <b>if</b> when you need to check a single condition.<br>
+                    - Use <b>else</b> to handle cases when the condition is false.<br>
+                    - Use <b>else if</b> when you have multiple conditions to test.
+                </p>
+        
+                <p>
+                    In the next lesson, we will explore <b>Switch Statements</b> and learn how they provide an alternative way to handle multiple conditions.
+                </p>
+        
+                <p>
+                    <a href="./js-if-else.html#js-if-else-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+        
+            <div class="detailed-plan-klm123" id="js-if-else-exercises">
+                <h2>If, Else, and Else If: Exercises</h2>
+        
+                <h3>1. Basic If Statement</h3>
+                <p>
+                    Write an if statement that checks if a number is greater than zero and logs "Positive number" if true.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let num = 5; <br>
+                        if (num > 0) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Positive number"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>2. If-Else Condition</h3>
+                <p>
+                    Write an if-else statement that checks if a user is old enough to vote (18 or older). 
+                    If true, log "You can vote", otherwise log "You cannot vote".
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let age = 17; <br>
+                        if (age >= 18) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You can vote"); <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("You cannot vote"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>3. Else If Statement</h3>
+                <p>
+                    Write an else if statement that checks if a number is positive, negative, or zero.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        let number = -3; <br>
+                        if (number > 0) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Positive number"); <br>
+                        } else if (number < 0) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Negative number"); <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Zero"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>4. Grading System</h3>
+                <p>
+                    Create a program that takes a student's score and assigns a grade using if, else if, and else statements.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let score = 85; <br>
+                        if (score >= 90) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Grade: A"); <br>
+                        } else if (score >= 80) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Grade: B"); <br>
+                        } else if (score >= 70) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Grade: C"); <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Grade: F"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <p>
+                    In the next lesson, we will explore <b>Switch Statements</b> as an alternative to multiple if-else conditions.
+                </p>
+        
+                <div class="navigation-buttons">
+                    <a href="./js-comments.html" class="navigation-button prev-button neutral">&lt; JS Comments</a>
+                    <a href="./js-switch.html" class="navigation-button next-button neutral">JS Switch Statements &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

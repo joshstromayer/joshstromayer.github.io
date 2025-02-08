@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Do While Loops - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-do-while-loops-tutorial">
+                <h2>Do While Loops</h2>
+                <p>
+                    A <b>do while</b> loop in JavaScript is similar to a <b>while</b> loop, but it guarantees that the code inside the loop will execute at least once, even if the condition is <b>false</b>.
+                </p>
+        
+                <h3>Basic Syntax</h3>
+                <p>
+                    The <b>do while</b> loop first executes the code block and then checks the condition.
+                    If the condition is <b>true</b>, the loop runs again; otherwise, it stops.
+                </p>
+                <p><b>Example:</b> Printing numbers from 1 to 5</p>
+                <div class="code-example-html">
+                    <code>
+                        let i = 1; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Number:", i); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i++; <br>
+                        } while (i <= 5);
+                    </code>
+                </div>
+                <p>
+                    The loop starts with <code>i = 1</code>, prints the number, then checks if <code>i &lt;= 5</code>. If true, it repeats the process.
+                </p>
+        
+                <h3>Ensuring Execution at Least Once</h3>
+                <p>
+                    The key difference between a <b>while</b> loop and a <b>do while</b> loop is that a <b>do while</b> loop always executes at least once, even if the condition is initially <b>false</b>.
+                </p>
+                <p><b>Example:</b> A loop that runs once even if the condition is false</p>
+                <div class="code-example-html">
+                    <code>
+                        let count = 10; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("This runs at least once!"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;count++; <br>
+                        } while (count < 5);
+                    </code>
+                </div>
+                <p>
+                    Since <code>count</code> starts at 10 (greater than 5), the condition is already false, but the message still prints once before stopping.
+                </p>
+        
+                <h3>Using break in a Do While Loop</h3>
+                <p>
+                    The <b>break</b> statement can be used inside a <b>do while</b> loop to exit early.
+                </p>
+                <p><b>Example:</b> Stopping a loop when a number reaches 3</p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 1; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (num === 3) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num++; <br>
+                        } while (num <= 5);
+                    </code>
+                </div>
+        
+                <h3>Using continue in a Do While Loop</h3>
+                <p>
+                    The <b>continue</b> statement skips the rest of the loop iteration and moves to the next cycle.
+                </p>
+                <p><b>Example:</b> Skipping even numbers</p>
+                <div class="code-example-html">
+                    <code>
+                        let x = 0; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;x++; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (x % 2 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(x); <br>
+                        } while (x < 5);
+                    </code>
+                </div>
+        
+                <h3>When to Use Do While Loops?</h3>
+                <p>
+                    - Use <b>do while</b> loops when you need to ensure the loop runs at least once.<br>
+                    - Useful when gathering user input or working with conditions that might initially be false.<br>
+                </p>
+        
+                <p>
+                    In the next lesson, we will explore <b>Break and Continue</b> statements in more depth and how they control loop execution.
+                </p>
+        
+                <p>
+                    <a href="./js-do-while-loops.html#js-do-while-loops-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+        
+            <div class="detailed-plan-klm123" id="js-do-while-loops-exercises">
+                <h2>Do While Loops: Exercises</h2>
+        
+                <h3>1. Basic Do While Loop</h3>
+                <p>
+                    Write a <b>do while</b> loop that prints numbers from 1 to 10.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let i = 1; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i++; <br>
+                        } while (i <= 10);
+                    </code>
+                </div>
+        
+                <h3>2. Ensuring Execution</h3>
+                <p>
+                    Write a <b>do while</b> loop that prints "Hello" at least once, even if the condition is false.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let run = false; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello"); <br>
+                        } while (run);
+                    </code>
+                </div>
+        
+                <h3>3. Using break</h3>
+                <p>
+                    Modify the loop below so that it stops when <code>i</code> reaches 5.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let i = 1; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i++; <br>
+                        } while (i <= 10);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        let i = 1; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i === 5) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i++; <br>
+                        } while (i <= 10);
+                    </code>
+                </div>
+        
+                <h3>4. Skipping Even Numbers</h3>
+                <p>
+                    Modify the loop below so that it skips even numbers.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 0; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num++; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br>
+                        } while (num < 10);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let num = 0; <br>
+                        do { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num++; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (num % 2 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br>
+                        } while (num < 10);
+                    </code>
+                </div>
+        
+                <p>
+                    In the next lesson, we will explore <b>Break and Continue</b> and how they control loop execution in JavaScript.
+                </p>
+        
+                <div class="navigation-buttons">
+                    <a href="./js-while-loops.html" class="navigation-button prev-button neutral">&lt; JS While Loops</a>
+                    <a href="./js-break-continue.html" class="navigation-button next-button neutral">JS Break and Continue &gt;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

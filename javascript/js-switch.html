@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Switch Statements - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-switch-tutorial">
+                <h2>Switch Statements</h2>
+                <p>
+                    In JavaScript, the <b>switch</b> statement is an alternative to using multiple <b>if else</b> conditions. It allows you to compare a value against multiple cases and execute the matching block of code.
+                </p>
+        
+                <h3>Basic Syntax</h3>
+                <p>
+                    A <b>switch</b> statement evaluates an expression and compares it to multiple <b>case</b> values. When a match is found, the corresponding block of code runs.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let day = "Monday"; <br>
+                        switch (day) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Monday": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Start of the work week."); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Friday": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Weekend is near!"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;default: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("It's a regular day."); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>The break Keyword</h3>
+                <p>
+                    The <b>break</b> statement is used to stop execution once a matching case is found. Without <b>break</b>, JavaScript will continue executing all subsequent cases.
+                </p>
+                <p><b>Example Without break:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let color = "red"; <br>
+                        switch (color) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "red": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Color is red"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "blue": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Color is blue"); <br>
+                        }
+                    </code>
+                </div>
+                <p>Output:</p>
+                <div class="code-example-html">
+                    <code>
+                        Color is red <br>
+                        Color is blue
+                    </code>
+                </div>
+                <p>Since there is no <b>break</b>, both cases execute.</p>
+        
+                <h3>The default Case</h3>
+                <p>
+                    The <b>default</b> case runs when none of the cases match the given value.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let fruit = "Mango"; <br>
+                        switch (fruit) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Apple": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("It's an apple."); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;default: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Unknown fruit."); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>When to Use a Switch Statement?</h3>
+                <p>
+                    - Use <b>switch</b> when comparing a single variable against multiple values.<br>
+                    - Use <b>if-else</b> when conditions involve logical operators or complex conditions.<br>
+                </p>
+        
+                <p>
+                    In the next lesson, we will explore the <b>Ternary Operator</b>, which provides a shorthand for writing simple conditional statements.
+                </p>
+        
+                <p>
+                    <a href="./js-switch.html#js-switch-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+        
+            <div class="detailed-plan-klm123" id="js-switch-exercises">
+                <h2>Switch Statements: Exercises</h2>
+        
+                <h3>1. Basic Switch Case</h3>
+                <p>
+                    Write a switch statement that logs "Good morning!" if the time is "morning", "Good afternoon!" if it's "afternoon", and "Good night!" for anything else.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let time = "morning"; <br>
+                        switch (time) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "morning": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Good morning!"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "afternoon": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Good afternoon!"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;default: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Good night!"); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>2. Using break Correctly</h3>
+                <p>
+                    Modify the following switch statement so only one message is logged:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let drink = "Tea"; <br>
+                        switch (drink) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Tea": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("You chose Tea."); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Coffee": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("You chose Coffee."); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let drink = "Tea"; <br>
+                        switch (drink) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Tea": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("You chose Tea."); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;case "Coffee": <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("You chose Coffee."); <br>
+                        }
+                    </code>
+                </div>
+        
+                <p>
+                    In the next lesson, we will explore the <b>Ternary Operator</b>, a short way of writing conditional statements.
+                </p>
+        
+                <div class="navigation-buttons">
+                    <a href="./js-if-else.html" class="navigation-button prev-button neutral">&lt; JS If, Else, and Else If</a>
+                    <a href="./js-ternary-operator.html" class="navigation-button next-button neutral">JS Ternary Operator &gt;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

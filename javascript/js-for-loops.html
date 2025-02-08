@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript For Loops - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-for-loops-tutorial">
+                <h2>For Loops</h2>
+                <p>
+                    In JavaScript, a <b>for</b> loop is used to execute a block of code multiple times. 
+                    It is useful when you want to repeat an action a specific number of times.
+                </p>
+        
+                <h3>Basic Syntax</h3>
+                <p>
+                    A <b>for</b> loop consists of three parts: 
+                </p>
+                <ul>
+                    <li><b>Initialization</b> - Declares a variable to start the loop.</li>
+                    <li><b>Condition</b> - Defines when the loop should stop.</li>
+                    <li><b>Iteration</b> - Updates the loop variable after each cycle.</li>
+                </ul>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 5; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Iteration number:", i); <br>
+                        }
+                    </code>
+                </div>
+                <p>
+                    This loop starts with <code>i = 1</code>, runs while <code>i &lt;= 5</code>, and increases <code>i</code> by 1 each time.
+                </p>
+        
+                <h3>Looping Through an Array</h3>
+                <p>
+                    You can use a <b>for</b> loop to go through an array and access its elements.
+                </p>
+                <p><b>Example:</b> Looping through an array of colors</p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Green", "Blue"]; <br>
+                        for (let i = 0; i < colors.length; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(colors[i]); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>Skipping Iterations with continue</h3>
+                <p>
+                    The <b>continue</b> statement allows you to skip an iteration without stopping the entire loop.
+                </p>
+                <p><b>Example:</b> Skipping even numbers</p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 5; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i % 2 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>Exiting a Loop Early with break</h3>
+                <p>
+                    The <b>break</b> statement stops a loop before it completes all its iterations.
+                </p>
+                <p><b>Example:</b> Stopping at 3</p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 5; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i === 3) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>When to Use For Loops?</h3>
+                <p>
+                    - Use <b>for</b> loops when you know how many times an action should repeat.<br>
+                    - Use them for iterating over arrays, sequences, or performing repeated calculations.<br>
+                </p>
+        
+                <p>
+                    In the next lesson, we will explore <b>While Loops</b> and how they allow for repeated execution with a different structure.
+                </p>
+        
+                <p>
+                    <a href="./js-for-loops.html#js-for-loops-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+        
+            <div class="detailed-plan-klm123" id="js-for-loops-exercises">
+                <h2>For Loops: Exercises</h2>
+        
+                <h3>1. Basic For Loop</h3>
+                <p>
+                    Write a <b>for</b> loop that prints numbers from 1 to 10.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>2. Looping Through an Array</h3>
+                <p>
+                    Write a <b>for</b> loop to print each name in the following array:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let names = ["Alice", "Bob", "Charlie"];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        for (let i = 0; i < names.length; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(names[i]); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>3. Using continue</h3>
+                <p>
+                    Modify the loop below so that it skips numbers that are divisible by 3:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i % 3 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>4. Using break</h3>
+                <p>
+                    Modify the loop below so that it stops executing when it reaches the number 4.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i === 4) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <p>
+                    In the next lesson, we will explore <b>While Loops</b> and how they provide an alternative looping method in JavaScript.
+                </p>
+        
+                <div class="navigation-buttons">
+                    <a href="./js-ternary.html" class="navigation-button prev-button neutral">&lt; JS Ternary Operator</a>
+                    <a href="./js-while-loops.html" class="navigation-button next-button neutral">JS While Loops &gt;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

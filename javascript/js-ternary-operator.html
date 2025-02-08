@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Ternary Operators - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-ternary-tutorial">
+                <h2>Ternary Operator</h2>
+                <p>
+                    The <b>ternary operator</b> is a shorthand for writing simple <b>if-else</b> conditions in JavaScript. 
+                    It allows you to evaluate a condition and return one of two values based on whether the condition is <b>true</b> or <b>false</b>.
+                </p>
+        
+                <h3>Basic Syntax</h3>
+                <p>
+                    The ternary operator uses the following syntax:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        condition ? expression_if_true : expression_if_false;
+                    </code>
+                </div>
+                <p>
+                    If the <b>condition</b> evaluates to <b>true</b>, the first expression executes. Otherwise, the second expression runs.
+                </p>
+        
+                <h3>Example: Checking Age</h3>
+                <p>
+                    The example below uses a ternary operator to determine if a person is old enough to vote.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let age = 20; <br>
+                        let canVote = (age >= 18) ? "You can vote" : "You cannot vote"; <br>
+                        console.log(canVote);
+                    </code>
+                </div>
+        
+                <h3>Replacing If-Else Statements</h3>
+                <p>
+                    The ternary operator is useful for replacing simple <b>if-else</b> statements, making code more concise.
+                </p>
+                <p><b>Example:</b> Using if-else</p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 5; <br>
+                        let result; <br>
+                        if (num > 0) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;result = "Positive"; <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;result = "Negative"; <br>
+                        } <br>
+                        console.log(result);
+                    </code>
+                </div>
+        
+                <p><b>Example:</b> Using the Ternary Operator</p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 5; <br>
+                        let result = (num > 0) ? "Positive" : "Negative"; <br>
+                        console.log(result);
+                    </code>
+                </div>
+        
+                <h3>Nesting Ternary Operators</h3>
+                <p>
+                    You can nest ternary operators, but it can reduce readability if overused.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let score = 85; <br>
+                        let grade = (score >= 90) ? "A" : <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;(score >= 80) ? "B" : <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;(score >= 70) ? "C" : "F"; <br>
+                        console.log("Grade:", grade);
+                    </code>
+                </div>
+        
+                <h3>When to Use the Ternary Operator?</h3>
+                <p>
+                    - Use the <b>ternary operator</b> for short, simple conditions.<br>
+                    - Avoid using it for complex conditions, as it may reduce code readability.<br>
+                </p>
+        
+                <p>
+                    In the next lesson, we will explore <b>Loops</b> and how they help automate repetitive tasks in JavaScript.
+                </p>
+        
+                <p>
+                    <a href="./js-ternary.html#js-ternary-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+        
+            <div class="detailed-plan-klm123" id="js-ternary-exercises">
+                <h2>Ternary Operator: Exercises</h2>
+        
+                <h3>1. Basic Ternary Condition</h3>
+                <p>
+                    Write a ternary statement that checks if a number is even or odd.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let num = 7; <br>
+                        let result = (num % 2 === 0) ? "Even" : "Odd"; <br>
+                        console.log(result);
+                    </code>
+                </div>
+        
+                <h3>2. Voting Eligibility</h3>
+                <p>
+                    Write a ternary statement that assigns "Eligible" if the age is 18 or older and "Not eligible" otherwise.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let age = 16; <br>
+                        let eligibility = (age >= 18) ? "Eligible" : "Not eligible"; <br>
+                        console.log(eligibility);
+                    </code>
+                </div>
+        
+                <h3>3. Using a Nested Ternary</h3>
+                <p>
+                    Use a nested ternary operator to categorize a number as "Positive", "Negative", or "Zero".
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        let number = 0; <br>
+                        let result = (number > 0) ? "Positive" : <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;(number < 0) ? "Negative" : "Zero"; <br>
+                        console.log(result);
+                    </code>
+                </div>
+        
+                <h3>4. Assigning a Grade</h3>
+                <p>
+                    Convert the following if-else grading system into a ternary statement:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let score = 92; <br>
+                        let grade; <br>
+                        if (score >= 90) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;grade = "A"; <br>
+                        } else if (score >= 80) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;grade = "B"; <br>
+                        } else if (score >= 70) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;grade = "C"; <br>
+                        } else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;grade = "F"; <br>
+                        } <br>
+                        console.log("Grade:", grade);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let score = 92; <br>
+                        let grade = (score >= 90) ? "A" : <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;(score >= 80) ? "B" : <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;(score >= 70) ? "C" : "F"; <br>
+                        console.log("Grade:", grade);
+                    </code>
+                </div>
+        
+                <p>
+                    In the next lesson, we will introduce <b>Loops</b> and how they are used to repeat actions in JavaScript.
+                </p>
+        
+                <div class="navigation-buttons">
+                    <a href="./js-switch.html" class="navigation-button prev-button neutral">&lt; JS Switch Statements</a>
+                    <a href="./js-for-loops.html" class="navigation-button next-button neutral">Introduction to Loops &gt;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

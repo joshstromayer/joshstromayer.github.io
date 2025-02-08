@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Break and Continue - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-break-continue-tutorial">
+                <h2>Break and Continue</h2>
+                <p>
+                    In JavaScript, the <b>break</b> and <b>continue</b> statements are used to control loop execution.
+                    The <b>break</b> statement is used to exit a loop entirely, while the <b>continue</b> statement skips the current iteration and moves to the next one.
+                </p>
+        
+                <h3>The break Statement</h3>
+                <p>
+                    The <b>break</b> statement immediately stops the loop execution and exits.
+                    This is useful when you want to end a loop early based on a condition.
+                </p>
+                <p><b>Example:</b> Stopping a loop when the number reaches 3</p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 5; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i === 3) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+                <p>
+                    The loop starts at 1 and stops completely when <code>i</code> equals 3.
+                </p>
+        
+                <h3>The continue Statement</h3>
+                <p>
+                    The <b>continue</b> statement skips the current iteration and moves to the next loop cycle.
+                </p>
+                <p><b>Example:</b> Skipping even numbers</p>
+                <div class="code-example-html">
+                    <code>
+                        for (let i = 1; i <= 5; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i % 2 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+                <p>
+                    In this example, when <code>i</code> is even, <b>continue</b> skips that iteration, so only odd numbers are printed.
+                </p>
+        
+                <h3>Using break in a While Loop</h3>
+                <p>
+                    The <b>break</b> statement can also be used in a <b>while</b> loop to exit early.
+                </p>
+                <p><b>Example:</b> Stopping a while loop when a number reaches 4</p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 1; <br>
+                        while (num <= 5) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (num === 4) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num++; <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>Using continue in a While Loop</h3>
+                <p>
+                    The <b>continue</b> statement skips a specific iteration in a <b>while</b> loop.
+                </p>
+                <p><b>Example:</b> Skipping multiples of 3</p>
+                <div class="code-example-html">
+                    <code>
+                        let x = 0; <br>
+                        while (x < 10) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;x++; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (x % 3 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(x); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>When to Use Break and Continue?</h3>
+                <p>
+                    - Use <b>break</b> when you need to exit a loop early.<br>
+                    - Use <b>continue</b> when you want to skip specific iterations.<br>
+                </p>
+        
+                <p>
+                    This concludes our section on loops! In the next lesson, we will explore <b>Functions</b>, an essential concept in JavaScript for organizing and reusing code.
+                </p>
+        
+                <p>
+                    <a href="./js-break-continue.html#js-break-continue-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+        
+            <div class="detailed-plan-klm123" id="js-break-continue-exercises">
+                <h2>Break and Continue: Exercises</h2>
+        
+                <h3>1. Using break</h3>
+                <p>
+                    Write a <b>for</b> loop that prints numbers from 1 to 10, but stops when it reaches 6.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i === 6) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>2. Using continue</h3>
+                <p>
+                    Write a loop that prints numbers from 1 to 10, but skips numbers divisible by 4.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        for (let i = 1; i <= 10; i++) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i % 4 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>3. Using break in a While Loop</h3>
+                <p>
+                    Modify the loop below so that it stops when <code>i</code> reaches 7.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let i = 1; <br>
+                        while (i <= 10) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i++; <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        let i = 1; <br>
+                        while (i <= 10) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (i === 7) break; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i++; <br>
+                        }
+                    </code>
+                </div>
+        
+                <h3>4. Using continue in a While Loop</h3>
+                <p>
+                    Modify the loop below so that it skips printing numbers that are even.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 0; <br>
+                        while (num < 10) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num++; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let num = 0; <br>
+                        while (num < 10) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;num++; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (num % 2 === 0) continue; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br>
+                        }
+                    </code>
+                </div>
+        
+                <p>
+                    In the next lesson, we will begin learning about <b>Functions</b> which help in organizing and reusing code efficiently.
+                </p>
+        
+                <div class="navigation-buttons">
+                    <a href="./js-do-while-loops.html" class="navigation-button prev-button neutral">&lt; JS Do While Loops</a>
+                    <a href="./js-functions.html" class="navigation-button next-button neutral">JS Functions &gt;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>
