@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Logical Operators - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-logical-operators-tutorial">
+                <h2>JS Logical Operators</h2>
+                <p>
+                    Logical operators in JavaScript are used to combine or modify boolean values (<b>true</b> or <b>false</b>). They are commonly used in conditions and decision-making statements.
+                </p>
+            
+                <h3>Types of Logical Operators</h3>
+                <p>
+                    JavaScript provides three main logical operators:
+                </p>
+                <ul>
+                    <li><b>&&</b> (AND) – Returns <b>true</b> if both conditions are true.</li>
+                    <li><b>||</b> (OR) – Returns <b>true</b> if at least one condition is true.</li>
+                    <li><b>!</b> (NOT) – Reverses the value of a boolean.</li>
+                </ul>
+            
+                <h3>Using the <b>&&</b> (AND) Operator</h3>
+                <p>
+                    The <b>&&</b> operator checks if both conditions are <b>true</b>. If any condition is <b>false</b>, the result is <b>false</b>.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 &gt; 3 && 10 &gt; 8); // Output: true <br>
+                        console.log(5 &gt; 3 && 10 &lt; 8); // Output: false
+                    </code>
+                </div>
+            
+                <h3>Using the <b>||</b> (OR) Operator</h3>
+                <p>
+                    The <b>||</b> operator checks if at least one condition is <b>true</b>. If all conditions are <b>false</b>, the result is <b>false</b>.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 &gt; 3 || 10 &lt; 8); // Output: true <br>
+                        console.log(5 &lt; 3 || 10 &lt; 8); // Output: false
+                    </code>
+                </div>
+            
+                <h3>Using the <b>!</b> (NOT) Operator</h3>
+                <p>
+                    The <b>!</b> operator reverses a boolean value. If a value is <b>true</b>, <b>!</b> makes it <b>false</b>, and vice versa.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(!true);  // Output: false <br>
+                        console.log(!false); // Output: true
+                    </code>
+                </div>
+            
+                <h3>Combining Logical Operators</h3>
+                <p>
+                    Logical operators can be combined to create complex conditions.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let age = 20; <br>
+                        console.log(age &gt; 18 && age &lt; 30); // Output: true <br>
+                        console.log(!(age &gt; 18)); // Output: false
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Bitwise Operators</b>, which work with binary numbers.
+                </p>
+                <p>
+                    <a href="./js-logical-operators.html#js-logical-operators-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-logical-operators-exercises">
+                <h2>JS Logical Operators: Exercises</h2>
+            
+                <h3>1. Using the AND Operator</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(10 &gt; 5 && 8 &gt; 3); <br>
+                        console.log(10 &gt; 5 && 8 &lt; 3);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(10 &gt; 5 && 8 &gt; 3); // Output: true <br>
+                        console.log(10 &gt; 5 && 8 &lt; 3); // Output: false
+                    </code>
+                </div>
+            
+                <h3>2. Using the OR Operator</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 &lt; 2 || 10 &gt; 5); <br>
+                        console.log(5 &lt; 2 || 10 &lt; 5);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(5 &lt; 2 || 10 &gt; 5); // Output: true <br>
+                        console.log(5 &lt; 2 || 10 &lt; 5); // Output: false
+                    </code>
+                </div>
+            
+                <h3>3. Using the NOT Operator</h3>
+                <p>
+                    What will be the output of the following?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let isRaining = false; <br>
+                        console.log(!isRaining);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(!isRaining); // Output: true
+                    </code>
+                </div>
+            
+                <h3>4. Complex Logical Operations</h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let x = 8; <br>
+                        console.log((x &gt; 5 && x &lt; 10) || x === 15);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log((x &gt; 5 && x &lt; 10) || x === 15); // Output: true
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Bitwise Operators</b>, which work at the binary level.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-comparison-operators.html" class="navigation-button prev-button neutral">&lt; JS Comparison Operators</a>
+                    <a href="./js-bitwise-operators.html" class="navigation-button next-button neutral">JS Bitwise Operators &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

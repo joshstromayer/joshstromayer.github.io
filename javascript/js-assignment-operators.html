@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment Operators - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-assignment-operators-tutorial">
+                <h2>JS Assignment Operators</h2>
+                <p>
+                    Assignment operators in JavaScript are used to assign values to variables. The most commonly used assignment operator is <b>=</b>, but JavaScript provides many other assignment operators that perform calculations while assigning values.
+                </p>
+            
+                <h3>Basic Assignment Operator</h3>
+                <p>
+                    The basic assignment operator <b>=</b> assigns a value to a variable.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let x = 10; <br>
+                        console.log(x); // Output: 10
+                    </code>
+                </div>
+            
+                <h3>Compound Assignment Operators</h3>
+                <p>
+                    JavaScript also provides compound assignment operators that perform a mathematical operation and then assign the result to the variable.
+                </p>
+                <ul>
+                    <li><b>+=</b> (Addition assignment) – Adds a value to a variable.</li>
+                    <li><b>-=</b> (Subtraction assignment) – Subtracts a value from a variable.</li>
+                    <li><b>*=</b> (Multiplication assignment) – Multiplies a variable by a value.</li>
+                    <li><b>/=</b> (Division assignment) – Divides a variable by a value.</li>
+                    <li><b>%=</b> (Modulus assignment) – Assigns the remainder after division.</li>
+                    <li><b>**=</b> (Exponentiation assignment) – Raises a variable to the power of a value.</li>
+                </ul>
+            
+                <p><b>Example: Compound Assignment Operators</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let a = 5; <br>
+                        a += 3; // Same as: a = a + 3 <br>
+                        console.log(a); // Output: 8 <br><br>
+            
+                        let b = 10; <br>
+                        b -= 4; // Same as: b = b - 4 <br>
+                        console.log(b); // Output: 6 <br><br>
+            
+                        let c = 2; <br>
+                        c **= 3; // Same as: c = c ** 3 <br>
+                        console.log(c); // Output: 8
+                    </code>
+                </div>
+            
+                <h3>Other Assignment Operators</h3>
+                <p>
+                    There are also bitwise assignment operators, but we will cover them later in the <b>Bitwise Operators</b> lesson.
+                </p>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Comparison Operators</b>, which allow us to compare values.
+                </p>
+                <p>
+                    <a href="./js-assignment-operators.html#js-assignment-operators-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-assignment-operators-exercises">
+                <h2>JS Assignment Operators: Exercises</h2>
+            
+                <h3>1. Basic Assignment</h3>
+                <p>
+                    Declare a variable <code>num</code> and assign it the value <code>20</code>. Print its value using <code>console.log()</code>.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let num = 20; <br>
+                        console.log(num); // Output: 20
+                    </code>
+                </div>
+            
+                <h3>2. Using <b>+=</b> and <b>-=</b></h3>
+                <p>
+                    Modify the following variable using assignment operators and predict the output.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let value = 50; <br>
+                        value += 10; <br>
+                        value -= 5; <br>
+                        console.log(value);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(value); // Output: 55
+                    </code>
+                </div>
+            
+                <h3>3. Exponentiation Assignment</h3>
+                <p>
+                    What will be the output of the following?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 2; <br>
+                        num **= 4; <br>
+                        console.log(num);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(num); // Output: 16 (2 to the power of 4)
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Comparison Operators</b>, which allow us to compare values.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-arithmetic-operators.html" class="navigation-button prev-button neutral">&lt; JS Arithmetic Operators</a>
+                    <a href="./js-comparison-operators.html" class="navigation-button next-button neutral">JS Comparison Operators &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

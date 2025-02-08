@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-data-types-tutorial">
+                <h2>JS Data Types</h2>
+                <p>
+                    In JavaScript, a <b>data type</b> defines the kind of value that a variable can hold. JavaScript is a <b>dynamically typed</b> language, meaning you don't need to explicitly specify a type when declaring a variable.
+                </p>
+            
+                <h3>Primitive Data Types</h3>
+                <p>
+                    JavaScript has six <b>primitive</b> data types. These types represent single values and are immutable (cannot be changed).
+                </p>
+                <ul>
+                    <li><b>String</b> – Represents text (e.g., "Hello", 'JavaScript').</li>
+                    <li><b>Number</b> – Represents both integers and decimals (e.g., 42, 3.14).</li>
+                    <li><b>Boolean</b> – Represents either <code>true</code> or <code>false</code>.</li>
+                    <li><b>Undefined</b> – A variable that has been declared but not assigned a value.</li>
+                    <li><b>Null</b> – Represents an intentional absence of a value.</li>
+                    <li><b>BigInt</b> – Used for very large integers beyond the <b>Number</b> limit.</li>
+                </ul>
+            
+                <p><b>Example: Primitive Data Types</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let name = "Emma"; // String <br>
+                        let age = 25; // Number <br>
+                        let isStudent = true; // Boolean <br>
+                        let score; // Undefined <br>
+                        let emptyValue = null; // Null <br>
+                        let largeNumber = 123456789012345678901234567890n; // BigInt <br><br>
+            
+                        console.log(name, age, isStudent, score, emptyValue, largeNumber);
+                    </code>
+                </div>
+            
+                <h3>Special Type: Symbol</h3>
+                <p>
+                    JavaScript also has a unique primitive type called <b>Symbol</b>, which is used to create unique values.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let id = Symbol("uniqueID"); <br>
+                        console.log(id); // Output: Symbol(uniqueID)
+                    </code>
+                </div>
+            
+                <h3>Dynamic Typing</h3>
+                <p>
+                    Since JavaScript is dynamically typed, you can assign different types of values to the same variable.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let variable = "Hello"; // String <br>
+                        console.log(variable); <br><br>
+            
+                        variable = 100; // Now it's a Number <br>
+                        console.log(variable);
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Type Conversion</b>, where we learn how JavaScript converts data types.
+                </p>
+                <p>
+                    <a href="./js-data-types.html#js-data-types-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-data-types-exercises">
+                <h2>JS Data Types: Exercises</h2>
+            
+                <h3>1. Identifying Data Types</h3>
+                <p>
+                    Look at the following variables. What type of data does each one store?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let x = "JavaScript"; <br>
+                        let y = 42; <br>
+                        let z = false; <br>
+                        let w; <br>
+                        let v = null;
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        x = "JavaScript"; // String <br>
+                        y = 42; // Number <br>
+                        z = false; // Boolean <br>
+                        w = undefined; // Undefined <br>
+                        v = null; // Null
+                    </code>
+                </div>
+            
+                <h3>2. Changing Data Types</h3>
+                <p>
+                    Declare a variable <code>score</code> with a number value. Then, change it to a string and print both values.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let score = 85; <br>
+                        console.log(score); // Output: 85 (Number) <br><br>
+            
+                        score = "Eighty-Five"; <br>
+                        console.log(score); // Output: Eighty-Five (String)
+                    </code>
+                </div>
+            
+                <h3>3. Working with <b>null</b> and <b>undefined</b></h3>
+                <p>
+                    What is the difference between <b>null</b> and <b>undefined</b>? Write a small example showing both.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        let notDefined; <br>
+                        console.log(notDefined); // Output: undefined <br><br>
+            
+                        let empty = null; <br>
+                        console.log(empty); // Output: null
+                    </code>
+                </div>
+            
+                <h3>4. Using <b>BigInt</b></h3>
+                <p>
+                    Create a BigInt variable and print its value.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let bigNumber = 9007199254740991n; <br>
+                        console.log(bigNumber); // Output: 9007199254740991n
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will explore <b>JS Type Conversion</b> and learn how JavaScript converts data types.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-const.html" class="navigation-button prev-button neutral">&lt; JS Const</a>
+                    <a href="./js-type-conversion.html" class="navigation-button next-button neutral">JS Type Conversion &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

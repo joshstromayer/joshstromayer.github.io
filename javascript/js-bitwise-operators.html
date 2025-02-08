@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Bitwise Operators - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-bitwise-operators-tutorial">
+                <h2>JS Bitwise Operators</h2>
+                <p>
+                    Bitwise operators in JavaScript work on the individual bits of numbers. These operators are primarily used for low-level programming tasks, such as working with binary data, encryption, and optimizing calculations.
+                </p>
+            
+                <h3>Understanding Binary Representation</h3>
+                <p>
+                    Before diving into bitwise operations, it's essential to understand that numbers in JavaScript are stored in **binary format** (base-2).  
+                    For example:
+                </p>
+                <ul>
+                    <li><b>5</b> in binary: <code>00000000000000000000000000000101</code></li>
+                    <li><b>3</b> in binary: <code>00000000000000000000000000000011</code></li>
+                </ul>
+            
+                <h3>Types of Bitwise Operators</h3>
+                <p>
+                    JavaScript provides six bitwise operators:
+                </p>
+                <ul>
+                    <li><b>&</b> (AND) – Sets bits to 1 only if both bits are 1.</li>
+                    <li><b>|</b> (OR) – Sets bits to 1 if either bit is 1.</li>
+                    <li><b>^</b> (XOR) – Sets bits to 1 if only one bit is 1.</li>
+                    <li><b>~</b> (NOT) – Inverts all bits.</li>
+                    <li><b>&lt;&lt;</b> (Left Shift) – Shifts bits to the left.</li>
+                    <li><b>&gt;&gt;</b> (Right Shift) – Shifts bits to the right.</li>
+                </ul>
+            
+                <h3>Bitwise AND <b>(&)</b></h3>
+                <p>
+                    The AND operator compares corresponding bits of two numbers. The result is **1** if both bits are **1**, otherwise, it is **0**.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 & 3); <br>
+                        // 5  = 00000000000000000000000000000101 <br>
+                        // 3  = 00000000000000000000000000000011 <br>
+                        // ----------------------------- <br>
+                        // Result = 00000000000000000000000000000001 (1)
+                    </code>
+                </div>
+            
+                <h3>Bitwise OR <b>(|)</b></h3>
+                <p>
+                    The OR operator compares corresponding bits of two numbers. The result is **1** if either bit is **1**.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 | 3); <br>
+                        // 5  = 00000000000000000000000000000101 <br>
+                        // 3  = 00000000000000000000000000000011 <br>
+                        // ----------------------------- <br>
+                        // Result = 00000000000000000000000000000111 (7)
+                    </code>
+                </div>
+            
+                <h3>Bitwise XOR <b>(^)</b></h3>
+                <p>
+                    The XOR operator returns **1** if only one of the bits is **1**, otherwise, it returns **0**.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 ^ 3); <br>
+                        // 5  = 00000000000000000000000000000101 <br>
+                        // 3  = 00000000000000000000000000000011 <br>
+                        // ----------------------------- <br>
+                        // Result = 00000000000000000000000000000110 (6)
+                    </code>
+                </div>
+            
+                <h3>Bitwise NOT <b>(~)</b></h3>
+                <p>
+                    The NOT operator inverts the bits of a number.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(~5); <br>
+                        // 5  = 00000000000000000000000000000101 <br>
+                        // NOT  = 11111111111111111111111111111010 (-6)
+                    </code>
+                </div>
+            
+                <h3>Bitwise Shift Operators</h3>
+                <p>
+                    JavaScript supports two shift operators:
+                </p>
+                <ul>
+                    <li><b>&lt;&lt;</b> (Left Shift) – Shifts bits to the left, filling with zeros.</li>
+                    <li><b>&gt;&gt;</b> (Right Shift) – Shifts bits to the right, maintaining the sign.</li>
+                </ul>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 &lt;&lt; 1); // Output: 10 (Shifts left by 1 bit) <br>
+                        console.log(5 &gt;&gt; 1); // Output: 2  (Shifts right by 1 bit)
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will start learning about <b>JS Conditional Statements</b>, beginning with <b>if-else</b>.
+                </p>
+                <p>
+                    <a href="./js-bitwise-operators.html#js-bitwise-operators-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-bitwise-operators-exercises">
+                <h2>JS Bitwise Operators: Exercises</h2>
+            
+                <h3>1. Bitwise AND</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(6 & 2);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(6 & 2); // Output: 2
+                    </code>
+                </div>
+            
+                <h3>2. Bitwise OR</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(6 | 2);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(6 | 2); // Output: 6
+                    </code>
+                </div>
+            
+                <h3>3. Bitwise XOR</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(6 ^ 2);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(6 ^ 2); // Output: 4
+                    </code>
+                </div>
+            
+                <h3>4. Bitwise Shift</h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(4 &lt;&lt; 2); <br>
+                        console.log(4 &gt;&gt; 1);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(4 &lt;&lt; 2); // Output: 16 <br>
+                        console.log(4 &gt;&gt; 1); // Output: 2
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will start learning about <b>JS Conditional Statements</b>, beginning with <b>if-else</b>.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-logical-operators.html" class="navigation-button prev-button neutral">&lt; JS Logical Operators</a>
+                    <a href="./js-if-else.html" class="navigation-button next-button neutral">JS If-Else &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

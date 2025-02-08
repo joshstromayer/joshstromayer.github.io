@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Comparison Operators - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-comparison-operators-tutorial">
+                <h2>JS Comparison Operators</h2>
+                <p>
+                    Comparison operators in JavaScript are used to compare values. They return a boolean value: <b>true</b> or <b>false</b>. These operators are commonly used in decision-making structures, such as <b>if</b> statements.
+                </p>
+            
+                <h3>Types of Comparison Operators</h3>
+                <p>
+                    JavaScript provides several comparison operators:
+                </p>
+                <ul>
+                    <li><b>==</b> (Equal to) – Checks if two values are equal, but does not compare data types.</li>
+                    <li><b>===</b> (Strict equal to) – Checks if two values are equal and also of the same data type.</li>
+                    <li><b>!=</b> (Not equal to) – Checks if two values are not equal.</li>
+                    <li><b>!==</b> (Strict not equal to) – Checks if two values are not equal or not of the same data type.</li>
+                    <li><b>&gt;</b> (Greater than) – Checks if the left value is greater than the right value.</li>
+                    <li><b>&lt;</b> (Less than) – Checks if the left value is smaller than the right value.</li>
+                    <li><b>&gt;=</b> (Greater than or equal to) – Checks if the left value is greater than or equal to the right value.</li>
+                    <li><b>&lt;=</b> (Less than or equal to) – Checks if the left value is smaller than or equal to the right value.</li>
+                </ul>
+            
+                <h3>Using the <b>==</b> vs. <b>===</b> Operators</h3>
+                <p>
+                    The <b>==</b> operator checks only the value, while the <b>===</b> operator checks both the value and the data type.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(5 == "5"); // Output: true (Values are the same, but different types) <br>
+                        console.log(5 === "5"); // Output: false (Values are the same, but types are different)
+                    </code>
+                </div>
+            
+                <h3>Using <b>!=</b> vs. <b>!==</b></h3>
+                <p>
+                    The <b>!=</b> operator checks if two values are different, while <b>!==</b> also checks if their data types are different.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(10 != "10"); // Output: false (Values are the same) <br>
+                        console.log(10 !== "10"); // Output: true (Different data types)
+                    </code>
+                </div>
+            
+                <h3>Greater and Less Than Operators</h3>
+                <p>
+                    The <b>&gt;</b> and <b>&lt;</b> operators check if one value is greater or smaller than another.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(8 &gt; 5); // Output: true <br>
+                        console.log(3 &lt; 7); // Output: true
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Logical Operators</b>, which allow us to combine multiple conditions.
+                </p>
+                <p>
+                    <a href="./js-comparison-operators.html#js-comparison-operators-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-comparison-operators-exercises">
+                <h2>JS Comparison Operators: Exercises</h2>
+            
+                <h3>1. Checking Equality</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(15 == "15"); <br>
+                        console.log(15 === "15");
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(15 == "15"); // Output: true <br>
+                        console.log(15 === "15"); // Output: false
+                    </code>
+                </div>
+            
+                <h3>2. Comparing Numbers</h3>
+                <p>
+                    Predict the output of the following comparison:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(20 &gt; 10); <br>
+                        console.log(5 &lt;= 5);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(20 &gt; 10); // Output: true <br>
+                        console.log(5 &lt;= 5); // Output: true
+                    </code>
+                </div>
+            
+                <h3>3. Using <b>!=</b> and <b>!==</b></h3>
+                <p>
+                    What will be the output of the following?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log("10" != 10); <br>
+                        console.log("10" !== 10);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log("10" != 10); // Output: false <br>
+                        console.log("10" !== 10); // Output: true
+                    </code>
+                </div>
+            
+                <h3>4. Complex Comparison</h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let x = 5; <br>
+                        console.log(x &gt; 3 && x &lt; 10); <br>
+                        console.log(x &lt; 3 || x &gt; 10);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(x &gt; 3 && x &lt; 10); // Output: true <br>
+                        console.log(x &lt; 3 || x &gt; 10); // Output: false
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Logical Operators</b>, which allow us to combine multiple conditions.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-assignment-operators.html" class="navigation-button prev-button neutral">&lt; JS Assignment Operators</a>
+                    <a href="./js-logical-operators.html" class="navigation-button next-button neutral">JS Logical Operators &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

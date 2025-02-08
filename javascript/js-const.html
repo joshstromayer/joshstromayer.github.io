@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Const - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-const-tutorial">
+                <h2>JS Const</h2>
+                <p>
+                    In JavaScript, the <b>const</b> keyword is used to declare variables that cannot be reassigned after they are initialized.
+                    This makes <b>const</b> ideal for storing values that should remain unchanged throughout the program.
+                </p>
+            
+                <h3>Declaring Constants</h3>
+                <p>
+                    When using <b>const</b>, you must assign a value at the time of declaration. You cannot declare a <b>const</b> variable and then assign a value later.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        const pi = 3.14; <br>
+                        console.log(pi); // Output: 3.14 <br><br>
+            
+                        pi = 3.14159; // Error: Assignment to constant variable
+                    </code>
+                </div>
+                <p>
+                    Since <code>pi</code> was declared with <b>const</b>, trying to change its value results in an error.
+                </p>
+
+                <h3>Constants Must Be Assigned a Value</h3>
+<p>
+    Unlike <b>let</b> and <b>var</b>, a <b>const</b> variable must be assigned a value when it is declared. If you try to declare it without an initial value, you will get an error.
+</p>
+<p><b>Example:</b></p>
+<div class="code-example-html">
+    <code>
+        const country; // Error: Missing initializer in const declaration
+    </code>
+</div>
+<p>
+    Every <b>const</b> declaration must include an assignment at the time of creation.
+</p>
+            
+                <h3>Block Scope</h3>
+                <p>
+                    Like <b>let</b>, <b>const</b> is <b>block-scoped</b>. This means it is only accessible within the block where it was defined.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        if (true) { <br>
+                        &nbsp;&nbsp;const message = "Hello, World!"; <br>
+                        } <br><br>
+            
+                        console.log(message); // Error: message is not defined
+                    </code>
+                </div>
+                <p>
+                    The variable <code>message</code> only exists inside the <code>if</code> block. Trying to access it outside the block causes an error.
+                </p>
+            
+                <h3>When to Use <b>const</b>?</h3>
+                <p>
+                    It is recommended to use <b>const</b> whenever you know the value of a variable should not change. Use <b>let</b> if the value needs to be updated later.
+                </p>
+            
+                <p>
+                    In the next lesson, we will explore <b>JS Data Types</b>, where we will discuss the different types of values that JavaScript can handle.
+                </p>
+                <p>
+                    <a href="./js-const.html#js-const-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-const-exercises">
+                <h2>JS Const: Exercises</h2>
+            
+                <h3>1. Declaring a Constant</h3>
+                <p>
+                    Declare a constant named <code>gravity</code> and assign it the value <code>9.81</code>. Then, try changing its value and observe what happens.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        const gravity = 9.81; <br>
+                        console.log(gravity); // Output: 9.81 <br><br>
+            
+                        gravity = 10; // Error: Assignment to constant variable
+                    </code>
+                </div>
+            
+                <h3>2. Block Scope of <b>const</b></h3>
+                <p>
+                    Look at the following code snippet and predict what will happen:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        if (true) { <br>
+                        &nbsp;&nbsp;const city = "London"; <br>
+                        } <br><br>
+            
+                        console.log(city); // What happens here?
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(city); // Error: city is not defined (block-scoped)
+                    </code>
+                </div>
+            
+                <h3>3. Reassigning a <b>const</b> Variable</h3>
+                <p>
+                    Consider the following code. What happens when you try to change the value of a <b>const</b> variable?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        const temperature = 30; <br>
+                        console.log(temperature); <br><br>
+            
+                        temperature = 35; <br>
+                        console.log(temperature);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        const temperature = 30; <br>
+                        console.log(temperature); // Output: 30 <br><br>
+            
+                        temperature = 35; // Error: Assignment to constant variable
+                    </code>
+                </div>
+            
+                <h3>4. Using <b>const</b> Correctly</h3>
+                <p>
+                    You need to declare a constant for the speed of light, which is <code>299792458</code> meters per second. 
+                    Use <b>const</b> to ensure it does not change.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        const speedOfLight = 299792458; <br>
+                        console.log(speedOfLight); // Output: 299792458
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will explore <b>JS Data Types</b> and understand the different kinds of values in JavaScript.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-let-var.html" class="navigation-button prev-button neutral">&lt; JS Let and Var</a>
+                    <a href="./js-data-types.html" class="navigation-button next-button neutral">JS Data Types &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

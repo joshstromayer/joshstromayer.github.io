@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Let Var - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-let-var-tutorial">
+                <h2>JS Let and Var</h2>
+                <p>
+                    In JavaScript, variables can be declared using <b>var</b> or <b>let</b>. Both allow you to store data, but they behave differently in certain situations.
+                </p>
+            
+                <h3>Using <b>var</b></h3>
+                <p>
+                    The <b>var</b> keyword has been in JavaScript since the beginning. It allows you to declare a variable, which can be reassigned later. 
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        var name = "Daniel"; <br>
+                        console.log(name); // Output: Daniel <br><br>
+            
+                        name = "Sophia"; <br>
+                        console.log(name); // Output: Sophia
+                    </code>
+                </div>
+                <p>
+                    Since <b>var</b> allows reassignment, the value of <code>name</code> was changed from "Daniel" to "Sophia".
+                </p>
+            
+                <h3>Using <b>let</b></h3>
+                <p>
+                    The <b>let</b> keyword was introduced in <b>ES6</b> and is the preferred way to declare variables in modern JavaScript. Like <b>var</b>, it allows reassignment, but it is more predictable.
+                </p>
+                <p><b>Example:</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let age = 25; <br>
+                        console.log(age); // Output: 25 <br><br>
+            
+                        age = 30; <br>
+                        console.log(age); // Output: 30
+                    </code>
+                </div>
+                <p>
+                    Here, we declared a variable <code>age</code> using <b>let</b>, and we successfully changed its value later.
+                </p>
+            
+                <h3>Key Differences Between <b>var</b> and <b>let</b></h3>
+                <p>
+                    While both <b>var</b> and <b>let</b> allow you to declare variables, there are some important differences.
+                </p>
+                <ul>
+                    <li>
+                        <b>Block Scope:</b> <b>let</b> is block-scoped, meaning it only exists within the block (`{}`) it was declared in. <b>var</b> is function-scoped, meaning it exists throughout the entire function.
+                    </li>
+                    <li>
+                        <b>Redeclaration:</b> A variable declared with <b>var</b> can be redeclared in the same scope. With <b>let</b>, redeclaring a variable in the same scope causes an error.
+                    </li>
+                </ul>
+            
+                <p><b>Example: Block Scope</b></p>
+                <div class="code-example-html">
+                    <code>
+                        function testVar() { <br>
+                        &nbsp;&nbsp;if (true) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var x = 10; <br>
+                        &nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;console.log(x); // Output: 10 (x exists outside the block) <br>
+                        } <br><br>
+            
+                        function testLet() { <br>
+                        &nbsp;&nbsp;if (true) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;let y = 20; <br>
+                        &nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;console.log(y); // Error: y is not defined outside the block <br>
+                        }
+                    </code>
+                </div>
+                <p>
+                    When using <b>var</b>, the variable <b>leaks out of the block</b> and is still accessible. With <b>let</b>, the variable is <b>only available inside the block</b>.
+                </p>
+            
+                <p><b>Example: Redeclaration</b></p>
+                <div class="code-example-html">
+                    <code>
+                        var a = 5; <br>
+                        var a = 10; <br>
+                        console.log(a); // Output: 10 (Redeclaration is allowed) <br><br>
+            
+                        let b = 5; <br>
+                        let b = 10; // Error: Cannot redeclare a let variable
+                    </code>
+                </div>
+                <p>
+                    As you can see, <b>var</b> allows the same variable to be redeclared, while <b>let</b> does not.
+                </p>
+            
+                <h3>Which One Should You Use?</h3>
+                <p>
+                    In modern JavaScript, <b>let</b> is the preferred choice because:
+                </p>
+                <ul>
+                    <li>It helps prevent unintended variable redeclarations.</li>
+                    <li>It has <b>block scope</b>, making code more predictable.</li>
+                    <li>It avoids many issues that arise when using <b>var</b> in large applications.</li>
+                </ul>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Const</b>, which is used for declaring variables that cannot be changed.
+                </p>
+                    <a href="./js-let-var.html#js-let-var-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-let-var-exercises">
+                <h2>JS Let and Var: Exercises</h2>
+            
+                <h3>1. Declaring Variables with <b>var</b></h3>
+                <p>
+                    Declare a variable using <b>var</b> and assign it the value <code>"Hello, JavaScript!"</code>. Then, reassign the variable to <code>"Updated Value"</code> and print both values using <code>console.log()</code>.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        var message = "Hello, JavaScript!"; <br>
+                        console.log(message); // Output: Hello, JavaScript! <br><br>
+            
+                        message = "Updated Value"; <br>
+                        console.log(message); // Output: Updated Value
+                    </code>
+                </div>
+            
+                <h3>2. Declaring Variables with <b>let</b></h3>
+                <p>
+                    Declare a variable using <b>let</b> and assign it the value <code>10</code>. Then, change the value to <code>25</code> and print both values using <code>console.log()</code>.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let number = 10; <br>
+                        console.log(number); // Output: 10 <br><br>
+            
+                        number = 25; <br>
+                        console.log(number); // Output: 25
+                    </code>
+                </div>
+            
+                <h3>3. Block Scope of <b>var</b> vs <b>let</b></h3>
+                <p>
+                    Look at the following code snippet and predict what will happen:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        function testScope() { <br>
+                        &nbsp;&nbsp;if (true) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var x = 5; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;let y = 10; <br>
+                        &nbsp;&nbsp;} <br><br>
+            
+                        &nbsp;&nbsp;console.log(x); // What happens here? <br>
+                        &nbsp;&nbsp;console.log(y); // What happens here? <br>
+                        } <br><br>
+            
+                        testScope();
+                    </code>
+                </div>
+                <p>
+                    Will both <b>x</b> and <b>y</b> be accessible outside the <code>if</code> block? Try running the code and explain the result.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        &nbsp;&nbsp;console.log(x); // Output: 5 (var is function-scoped) <br>
+                        &nbsp;&nbsp;console.log(y); // Error: y is not defined (let is block-scoped)
+                    </code>
+                </div>
+            
+                <h3>4. Redeclaring Variables</h3>
+                <p>
+                    Try declaring a variable twice using <b>var</b> and <b>let</b>. What happens?
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        var a = 10; <br>
+                        var a = 20; <br>
+                        console.log(a); // Output: 20 (Redeclaration is allowed) <br><br>
+            
+                        let b = 5; <br>
+                        let b = 15; // Error: Cannot redeclare a variable with let
+                    </code>
+                </div>
+
+                <p>
+                    In the next lesson, we will cover <b>JS Const</b> which is used for declaring variables that cannot be reassigned.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-let-var.html" class="navigation-button prev-button neutral">&lt; JS Let and Var</a>
+                    <a href="./js-const.html" class="navigation-button next-button neutral">JS Const &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

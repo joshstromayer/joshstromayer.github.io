@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Type Conversion - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-type-conversion-tutorial">
+                <h2>JS Type Conversion</h2>
+                <p>
+                    JavaScript allows us to convert data from one type to another. This is called <b>type conversion</b> and can happen either <b>automatically</b> (implicit conversion) or <b>manually</b> (explicit conversion).
+                </p>
+            
+                <h3>Implicit Type Conversion (Type Coercion)</h3>
+                <p>
+                    JavaScript automatically converts one data type into another when needed. This is called <b>type coercion</b>.
+                </p>
+                <p><b>Example: Number + String</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 10; <br>
+                        let str = "5"; <br>
+                        let result = num + str; <br>
+                        console.log(result); // Output: "105" (Number is converted to a String)
+                    </code>
+                </div>
+                <p>
+                    In this example, JavaScript converts the number <code>10</code> into a string and concatenates it with <code>"5"</code>.
+                </p>
+            
+                <p><b>Example: Boolean to Number</b></p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(true + 5); // Output: 6 (true is converted to 1) <br>
+                        console.log(false + 10); // Output: 10 (false is converted to 0)
+                    </code>
+                </div>
+            
+                <h3>Explicit Type Conversion</h3>
+                <p>
+                    We can manually convert a data type using JavaScript built-in methods like:
+                </p>
+                <ul>
+                    <li><b>Number()</b> – Converts a value to a number.</li>
+                    <li><b>String()</b> – Converts a value to a string.</li>
+                    <li><b>Boolean()</b> – Converts a value to a boolean.</li>
+                    <li><b>parseInt()</b> – Converts a string to an integer.</li>
+                    <li><b>parseFloat()</b> – Converts a string to a floating-point number.</li>
+                </ul>
+            
+                <p><b>Example: Converting Strings to Numbers</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let str = "20"; <br>
+                        let num = Number(str); <br>
+                        console.log(num); // Output: 20 (Converted to Number)
+                    </code>
+                </div>
+            
+                <p><b>Example: Converting Numbers to Strings</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 15; <br>
+                        let str = String(num); <br>
+                        console.log(str); // Output: "15" (Converted to String)
+                    </code>
+                </div>
+            
+                <p><b>Example: Converting Values to Boolean</b></p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(Boolean(1)); // Output: true <br>
+                        console.log(Boolean(0)); // Output: false <br>
+                        console.log(Boolean("Hello")); // Output: true <br>
+                        console.log(Boolean("")); // Output: false
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Arithmetic Operators</b>, which are used for performing mathematical calculations.
+                </p>
+                <p>
+                    <a href="./js-type-conversion.html#js-type-conversion-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-type-conversion-exercises">
+                <h2>JS Type Conversion: Exercises</h2>
+            
+                <h3>1. Implicit Type Conversion</h3>
+                <p>
+                    Predict the output of the following code:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log("5" + 10); <br>
+                        console.log(10 + "5"); <br>
+                        console.log("5" * 2); <br>
+                        console.log("10" - 3);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log("5" + 10); // Output: "510" (Number converted to string) <br>
+                        console.log(10 + "5"); // Output: "105" (Number converted to string) <br>
+                        console.log("5" * 2); // Output: 10 (String converted to number) <br>
+                        console.log("10" - 3); // Output: 7 (String converted to number)
+                    </code>
+                </div>
+            
+                <h3>2. Convert a String to a Number</h3>
+                <p>
+                    Convert the string <code>"42"</code> into a number using JavaScript, then print the result.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        let str = "42"; <br>
+                        let num = Number(str); <br>
+                        console.log(num); // Output: 42
+                    </code>
+                </div>
+            
+                <h3>3. Convert a Boolean to a Number</h3>
+                <p>
+                    Use JavaScript to convert <code>true</code> and <code>false</code> to numbers and print the results.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(Number(true)); // Output: 1 <br>
+                        console.log(Number(false)); // Output: 0
+                    </code>
+                </div>
+            
+                <h3>4. Convert a Number to a String</h3>
+                <p>
+                    Convert the number <code>99</code> into a string and print the result.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let num = 99; <br>
+                        let str = String(num); <br>
+                        console.log(str); // Output: "99"
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will explore <b>JS Arithmetic Operators</b>, which allow us to perform mathematical calculations.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-data-types.html" class="navigation-button prev-button neutral">&lt; JS Data Types</a>
+                    <a href="./js-arithmetic-operators.html" class="navigation-button next-button neutral">JS Arithmetic Operators &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

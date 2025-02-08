@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arithmetic Operators - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-arithmetic-operators-tutorial">
+                <h2>JS Arithmetic Operators</h2>
+                <p>
+                    JavaScript provides several <b>arithmetic operators</b> that allow you to perform mathematical calculations. These operators work with numbers and return numeric results.
+                </p>
+            
+                <h3>Basic Arithmetic Operators</h3>
+                <p>
+                    The most commonly used arithmetic operators in JavaScript include:
+                </p>
+                <ul>
+                    <li><b>+</b> (Addition) – Adds two numbers.</li>
+                    <li><b>-</b> (Subtraction) – Subtracts one number from another.</li>
+                    <li><b>*</b> (Multiplication) – Multiplies two numbers.</li>
+                    <li><b>/</b> (Division) – Divides one number by another.</li>
+                    <li><b>%</b> (Modulus) – Returns the remainder of a division.</li>
+                    <li><b>**</b> (Exponentiation) – Raises a number to a power.</li>
+                </ul>
+            
+                <p><b>Example: Using Arithmetic Operators</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let a = 10; <br>
+                        let b = 3; <br><br>
+            
+                        console.log(a + b);  // Output: 13 (Addition) <br>
+                        console.log(a - b);  // Output: 7 (Subtraction) <br>
+                        console.log(a * b);  // Output: 30 (Multiplication) <br>
+                        console.log(a / b);  // Output: 3.333... (Division) <br>
+                        console.log(a % b);  // Output: 1 (Modulus) <br>
+                        console.log(a ** b); // Output: 1000 (Exponentiation)
+                    </code>
+                </div>
+            
+                <h3>Increment and Decrement Operators</h3>
+                <p>
+                    JavaScript also provides operators for increasing or decreasing a value by 1.
+                </p>
+                <ul>
+                    <li><b>++</b> (Increment) – Increases a value by 1.</li>
+                    <li><b>--</b> (Decrement) – Decreases a value by 1.</li>
+                </ul>
+            
+                <p><b>Example: Increment and Decrement</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let count = 5; <br>
+                        count++;  // Increases count by 1 <br>
+                        console.log(count); // Output: 6 <br><br>
+            
+                        count--;  // Decreases count by 1 <br>
+                        console.log(count); // Output: 5
+                    </code>
+                </div>
+            
+                <h3>Order of Operations (Operator Precedence)</h3>
+                <p>
+                    JavaScript follows the standard mathematical rules for order of operations:
+                </p>
+                <ul>
+                    <li>Parentheses <b>()</b> have the highest precedence.</li>
+                    <li>Exponentiation <b>**</b> comes next.</li>
+                    <li>Multiplication <b>*</b>, Division <b>/</b>, and Modulus <b>%</b> follow.</li>
+                    <li>Addition <b>+</b> and Subtraction <b>-</b> have the lowest precedence.</li>
+                </ul>
+            
+                <p><b>Example: Operator Precedence</b></p>
+                <div class="code-example-html">
+                    <code>
+                        let result = 10 + 5 * 2; <br>
+                        console.log(result); // Output: 20 (Multiplication happens first) <br><br>
+            
+                        let correctResult = (10 + 5) * 2; <br>
+                        console.log(correctResult); // Output: 30 (Parentheses change precedence)
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Assignment Operators</b>, which allow us to store values efficiently.
+                </p>
+                <p>
+                    <a href="./js-arithmetic-operators.html#js-arithmetic-operators-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-arithmetic-operators-exercises">
+                <h2>JS Arithmetic Operators: Exercises</h2>
+            
+                <h3>1. Basic Arithmetic Operations</h3>
+                <p>
+                    Compute the results for the following expressions:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(15 + 5); <br>
+                        console.log(20 - 7); <br>
+                        console.log(6 * 3); <br>
+                        console.log(25 / 5);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(15 + 5); // Output: 20 <br>
+                        console.log(20 - 7); // Output: 13 <br>
+                        console.log(6 * 3); // Output: 18 <br>
+                        console.log(25 / 5); // Output: 5
+                    </code>
+                </div>
+            
+                <h3>2. Modulus and Exponentiation</h3>
+                <p>
+                    What will be the output of the following operations?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        console.log(10 % 3); <br>
+                        console.log(2 ** 4);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(10 % 3); // Output: 1 (Remainder of 10 ÷ 3) <br>
+                        console.log(2 ** 4); // Output: 16 (2 raised to the power of 4)
+                    </code>
+                </div>
+            
+                <h3>3. Increment and Decrement</h3>
+                <p>
+                    Predict the output of the following code:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let num = 8; <br>
+                        console.log(num++); <br>
+                        console.log(num);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(num++); // Output: 8 (Post-increment returns the value before incrementing) <br>
+                        console.log(num); // Output: 9
+                    </code>
+                </div>
+            
+                <h3>4. Operator Precedence</h3>
+                <p>
+                    Predict the result of the following expression:
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let result = 10 + 2 * 5 - 3; <br>
+                        console.log(result);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        let result = 10 + 2 * 5 - 3; <br>
+                        console.log(result); // Output: 17 <br>
+                        // Multiplication (2 * 5 = 10), then Addition (10 + 10 = 20), then Subtraction (20 - 3 = 17)
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will explore <b>JS Assignment Operators</b>, which allow us to store values efficiently.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-type-conversion.html" class="navigation-button prev-button neutral">&lt; JS Type Conversion</a>
+                    <a href="./js-assignment-operators.html" class="navigation-button next-button neutral">JS Assignment Operators &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>
