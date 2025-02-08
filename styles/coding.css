@@ -346,7 +346,7 @@ body.html-page-klm123 {
 /* Quick Start Plan */
 .quick-start-klm123 {
     position: fixed; /* Sticky position to stay fixed at the top */
-    top: 117px; /* Stick to the top of the viewport */
+    top: 112px; /* Stick to the top of the viewport */
     height: calc(90vh); /* Sidebar height limited to the viewport */
     overflow-y: auto; /* Allow the sidebar content to scroll independently */
     width: 250px; /* Fixed width for the sidebar */
