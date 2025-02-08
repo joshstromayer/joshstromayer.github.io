@@ -448,7 +448,6 @@ display: flex; /* Show the sub-menu on hover */
 
 #unavailable-course-nav-link {
 background-color: rgba(128, 128, 128, 0.24);
-color: grey;
 }
 
 .tooltip {
