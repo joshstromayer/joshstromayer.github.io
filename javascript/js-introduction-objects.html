@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Introduction Objects - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-objects-intro-tutorial">
+                    <h2>Introduction to Objects</h2>
+                    <p>
+                        In JavaScript, objects are a fundamental way to store and manage <b>structured data</b>.
+                        Unlike primitive data types (numbers, strings, booleans, etc.), <b>objects</b> allow you to store multiple pieces of related data together.
+                    </p>
+                
+                    <h3>What is an Object?</h3>
+                    <p>
+                        An <b>object</b> is a collection of <b>key-value pairs</b>. Each key is a <b>property name</b>, and its corresponding value can be any data type, including numbers, strings, arrays, or even other objects.
+                    </p>
+                    <p><b>Example:</b> Creating a simple JavaScript object</p>
+                    <div class="code-example-html">
+                        <code>
+                            let person = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;name: "Jordan", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;age: 25, <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;isStudent: false <br>
+                            }; <br>
+                            console.log(person);
+                        </code>
+                    </div>
+                    <p>
+                        In this example, the object `person` has <b>three properties</b>: `name`, `age`, and `isStudent`.
+                    </p>
+                
+                    <h3>Why Use Objects?</h3>
+                    <p>
+                        Objects are useful when you need to <b>group related data</b> together. Instead of having separate variables, objects let you organize data in a structured way.
+                    </p>
+                    <p><b>Example:</b> Without objects vs with objects</p>
+                    <div class="code-example-html">
+                        <code>
+                            // Without an object <br>
+                            let name = "Jordan"; <br>
+                            let age = 25; <br>
+                            let isStudent = false; <br><br>
+                
+                            // With an object <br>
+                            let person = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;name: "Jordan", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;age: 25, <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;isStudent: false <br>
+                            };
+                        </code>
+                    </div>
+                
+                    <h3>Objects Can Store Functions</h3>
+                    <p>
+                        Objects can also store <b>functions</b> as properties. These functions are called <b>methods</b>.
+                    </p>
+                    <p><b>Example:</b> Adding a method to an object</p>
+                    <div class="code-example-html">
+                        <code>
+                            let car = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;brand: "Toyota", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;model: "Corolla", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year: 2022, <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;start: function() { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("The car is starting..."); <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                            }; <br>
+                            car.start(); // Calls the method
+                        </code>
+                    </div>
+                
+                    <h3>Conclusion</h3>
+                    <p>
+                        Objects are one of the most important parts of JavaScript programming.
+                        They allow you to store <b>complex data</b>, define <b>methods</b>, and structure your programs in a more readable and maintainable way.
+                    </p>
+                
+                    <p>
+                        In the next lesson, we will explore how to <b>create objects</b> using `{}` and `new Object()`.
+                    </p>
+                
+                    <p>
+                        <a href="./js-objects-intro.html#js-objects-intro-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-objects-intro-exercises">
+                    <h2>Introduction to Objects: Exercises</h2>
+                
+                    <h3>1. Creating a Simple Object</h3>
+                    <p>
+                        Create an object called `book` with the properties `title`, `author`, and `year`. Then, log the object to the console.
+                    </p>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            let book = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;title: "The Great Gatsby", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;author: "F. Scott Fitzgerald", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;year: 1925 <br>
+                            }; <br>
+                            console.log(book);
+                        </code>
+                    </div>
+                
+                    <h3>2. Accessing Object Properties</h3>
+                    <p>
+                        Given the object below, how would you access the person's age?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let person = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;name: "Sophia", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;age: 30, <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;job: "Engineer" <br>
+                            };
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(person.age); // Output: 30
+                        </code>
+                    </div>
+                
+                    <h3>3. Object with a Method</h3>
+                    <p>
+                        Create an object called `phone` with properties `brand` and `model`. Add a method `ring()` that logs `"Ringing..."` when called.
+                    </p>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            let phone = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;brand: "Samsung", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;model: "Galaxy S21", <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;ring: function() { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Ringing..."); <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                            }; <br>
+                            phone.ring();
+                        </code>
+                    </div>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-break-continue.html" class="navigation-button prev-button neutral">&lt; JS Break and Continue</a>
+                        <a href="./js-create-objects.html" class="navigation-button next-button neutral">Creating Objects &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>
