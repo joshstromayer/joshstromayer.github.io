@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Creating and Modifying Arrays - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-create-arrays-tutorial">
+                <h2>JS Creating and Modifying Arrays</h2>
+                <p>
+                    In JavaScript, arrays can be created in different ways. The most common way is using <b>array literals</b>, but arrays can also be created using the <b>new Array()</b> constructor.
+                </p>
+            
+                <h3>Creating an Array Using `[ ]`</h3>
+                <p>
+                    The simplest and most commonly used way to create an array is with <b>square brackets `[ ]`</b>.
+                </p>
+            
+                <p><b>Example:</b> Creating an array using `[ ]`</p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 20, 30, 40]; <br>
+                        console.log(numbers); // Output: [10, 20, 30, 40]
+                    </code>
+                </div>
+                <p>
+                    This method is preferred because it is shorter and more readable.
+                </p>
+            
+                <h3>Creating an Array Using `new Array()`</h3>
+                <p>
+                    Another way to create an array is by using the `new Array()` constructor.
+                    However, this method is <b>not recommended</b> unless you need to create an array of a specific length.
+                </p>
+            
+                <p><b>Example:</b> Creating an array using `new Array()`</p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = new Array("Red", "Green", "Blue"); <br>
+                        console.log(colors); // Output: ["Red", "Green", "Blue"]
+                    </code>
+                </div>
+                <p>
+                    This method works similarly to `[ ]`, but using `new Array(5)` creates an <b>empty array with five slots</b>.
+                </p>
+            
+                <h3>Modifying Array Elements</h3>
+                <p>
+                    You can modify an array by changing its values using their <b>index number</b>.
+                </p>
+            
+                <p><b>Example:</b> Changing an array element</p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana", "Cherry"]; <br>
+                        fruits[1] = "Mango"; // Change "Banana" to "Mango" <br>
+                        console.log(fruits); // Output: ["Apple", "Mango", "Cherry"]
+                    </code>
+                </div>
+            
+                <h3>Adding Elements to an Array</h3>
+                <p>
+                    You can add new elements to an array by assigning a value to a new index.
+                </p>
+            
+                <p><b>Example:</b> Adding a new element at index 3</p>
+                <div class="code-example-html">
+                    <code>
+                        let animals = ["Dog", "Cat", "Elephant"]; <br>
+                        animals[3] = "Tiger"; <br>
+                        console.log(animals); // Output: ["Dog", "Cat", "Elephant", "Tiger"]
+                    </code>
+                </div>
+                <p>
+                    However, this method is not the best approach for adding elements. There are **better ways** to add and remove elements, which will be covered in the next lessons.
+                </p>
+            
+                <h3>Conclusion</h3>
+                <p>
+                    JavaScript arrays can be created using `[ ]` or `new Array()`, but using `[ ]` is the recommended approach. 
+                    You can also modify elements by accessing them using their index.
+                </p>
+            
+                <p>
+                    In the next lesson, we will explore <b>basic array methods</b> that allow us to add and remove elements easily.
+                </p>
+            
+                <p>
+                    <a href="./js-create-arrays.html#js-create-arrays-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-create-arrays-exercises">
+                <h2>JS Creating and Modifying Arrays: Exercises</h2>
+            
+                <h3>1. Creating an Array</h3>
+                <p>
+                    Create an array called `cars` that contains `"Toyota"`, `"Honda"`, and `"Ford"`. Then, log the array to the console.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let cars = ["Toyota", "Honda", "Ford"]; <br>
+                        console.log(cars); // Output: ["Toyota", "Honda", "Ford"]
+                    </code>
+                </div>
+            
+                <h3>2. Modifying an Array</h3>
+                <p>
+                    Given the following array, change `"Orange"` to `"Pineapple"`.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Orange", "Grapes"];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        fruits[1] = "Pineapple"; <br>
+                        console.log(fruits); // Output: ["Apple", "Pineapple", "Grapes"]
+                    </code>
+                </div>
+            
+                <h3>3. Adding an Element to an Array</h3>
+                <p>
+                    Add `"Banana"` as the fourth element in the array below.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let foods = ["Pizza", "Burger", "Pasta"];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        foods[3] = "Banana"; <br>
+                        console.log(foods); // Output: ["Pizza", "Burger", "Pasta", "Banana"]
+                    </code>
+                </div>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-introduction-arrays.html" class="navigation-button prev-button neutral">&lt;JS Introduction to Arrays</a>
+                    <a href="./js-array-methods-basic.htmll" class="navigation-button next-button neutral">JS Basic Array Methods &gt;</a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

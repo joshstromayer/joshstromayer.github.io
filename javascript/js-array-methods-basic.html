@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basic Arrays Methods - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-array-methods-basic-tutorial">
+                <h2>JS Basic Array Methods</h2>
+                <p>
+                    JavaScript provides built-in methods to <b>add</b> and <b>remove</b> elements from an array. 
+                    In this lesson, we will explore the most commonly used methods for modifying arrays.
+                </p>
+            
+                <h3>Adding Elements to an Array</h3>
+            
+                <h4>Using `push()`</h4>
+                <p>
+                    The <b>push()</b> method adds one or more elements to the <b>end</b> of an array.
+                </p>
+                <p><b>Example:</b> Adding elements using `push()`</p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana"]; <br>
+                        fruits.push("Cherry"); <br>
+                        console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+                    </code>
+                </div>
+            
+                <h4>Using `unshift()`</h4>
+                <p>
+                    The <b>unshift()</b> method adds one or more elements to the <b>beginning</b> of an array.
+                </p>
+                <p><b>Example:</b> Adding elements using `unshift()`</p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Blue", "Green"]; <br>
+                        colors.unshift("Red"); <br>
+                        console.log(colors); // Output: ["Red", "Blue", "Green"]
+                    </code>
+                </div>
+            
+                <h3>2. Removing Elements from an Array</h3>
+            
+                <h4>Using `pop()`</h4>
+                <p>
+                    The <b>pop()</b> method removes the <b>last</b> element from an array.
+                </p>
+                <p><b>Example:</b> Removing elements using `pop()`</p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [1, 2, 3, 4]; <br>
+                        numbers.pop(); <br>
+                        console.log(numbers); // Output: [1, 2, 3]
+                    </code>
+                </div>
+            
+                <h4>Using `shift()`</h4>
+                <p>
+                    The <b>shift()</b> method removes the <b>first</b> element from an array.
+                </p>
+                <p><b>Example:</b> Removing elements using `shift()`</p>
+                <div class="code-example-html">
+                    <code>
+                        let animals = ["Dog", "Cat", "Elephant"]; <br>
+                        animals.shift(); <br>
+                        console.log(animals); // Output: ["Cat", "Elephant"]
+                    </code>
+                </div>
+            
+                <h3>Conclusion</h3>
+                <p>
+                    The <b>push()</b> and <b>unshift()</b> methods allow us to add elements, while <b>pop()</b> and <b>shift()</b> let us remove them.
+                    These methods are essential for working with arrays dynamically.
+                </p>
+            
+                <p>
+                    In the next lesson, we will explore <b>iterating over arrays</b>, which allows us to work with each element efficiently.
+                </p>
+            
+                <p>
+                    <a href="./js-array-methods-basic.html#js-array-methods-basic-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-array-methods-basic-exercises">
+                <h2>JS Basic Array Methods: Exercises</h2>
+            
+                <h3>1. Using `push()`</h3>
+                <p>
+                    Add `"Grapes"` to the end of the `fruits` array and log the result.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let fruits = ["Apple", "Banana"]; <br>
+                        fruits.push("Grapes"); <br>
+                        console.log(fruits); // Output: ["Apple", "Banana", "Grapes"]
+                    </code>
+                </div>
+            
+                <h3>2. Using `pop()`</h3>
+                <p>
+                    Remove the last element from the `numbers` array below.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 20, 30, 40];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        numbers.pop(); <br>
+                        console.log(numbers); // Output: [10, 20, 30]
+                    </code>
+                </div>
+            
+                <h3>3. Using `shift()`</h3>
+                <p>
+                    Remove the first element from the `colors` array below.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Blue", "Green"];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        colors.shift(); <br>
+                        console.log(colors); // Output: ["Blue", "Green"]
+                    </code>
+                </div>
+            
+                <h3>4. Using `unshift()`</h3>
+                <p>
+                    Add `"Pink"` to the beginning of the `shades` array.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let shades = ["Blue", "Black"];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        shades.unshift("Pink"); <br>
+                        console.log(shades); // Output: ["Pink", "Blue", "Black"]
+                    </code>
+                </div>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-creating-modifying-arrays.html" class="navigation-button prev-button neutral">&lt;JS Creating and Modifying Arrays</a>
+                    <a href="./js-iterating-arrays.html" class="navigation-button next-button neutral">JS Iterating Arrays &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays Introduction - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-arrays-intro-tutorial">
+                <h2>JS Introduction to Arrays</h2>
+                <p>
+                    In JavaScript, an <b>array</b> is a special type of object that allows you to store multiple values in a single variable.
+                    Arrays are useful when working with lists of data, such as a collection of numbers, names, or even objects.
+                </p>
+            
+                <h3>What is an Array?</h3>
+                <p>
+                    An array is an <b>ordered collection</b> of values, where each value is stored at a specific index.
+                    Unlike regular variables that hold only a single value, an array can hold multiple values.
+                </p>
+            
+                <p><b>Example:</b> Declaring an array with different data types</p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana", "Cherry"]; <br>
+                        console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+                    </code>
+                </div>
+                <p>
+                    In this example, `fruits` is an array that contains three string values: `"Apple"`, `"Banana"`, and `"Cherry"`.
+                </p>
+            
+                <h3>Array Indexing</h3>
+                <p>
+                    Each element in an array is assigned a <b>numeric index</b>, starting from <b>0</b>.
+                    This means that the first item is at index `0`, the second at index `1`, and so on.
+                </p>
+            
+                <p><b>Example:</b> Accessing elements by index</p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Green", "Blue"]; <br>
+                        console.log(colors[0]); // Output: "Red" <br>
+                        console.log(colors[1]); // Output: "Green" <br>
+                        console.log(colors[2]); // Output: "Blue"
+                    </code>
+                </div>
+            
+                <h3>Why Use Arrays?</h3>
+                <p>
+                    Arrays allow us to store multiple values in a structured way, making it easier to work with related data.
+                    Without arrays, we would have to store each value in separate variables.
+                </p>
+            
+                <p><b>Example:</b> Without an array vs with an array</p>
+                <div class="code-example-html">
+                    <code>
+                        // Without an array <br>
+                        let name1 = "Alice"; <br>
+                        let name2 = "Bob"; <br>
+                        let name3 = "Charlie"; <br><br>
+            
+                        // Using an array <br>
+                        let names = ["Alice", "Bob", "Charlie"];
+                    </code>
+                </div>
+            
+                <p>
+                    Using an array makes it easier to manage and manipulate the data, especially when dealing with large collections.
+                </p>
+            
+                <h3>Arrays Can Store Different Data Types</h3>
+                <p>
+                    Arrays in JavaScript can store <b>different types of values</b>, including numbers, strings, and even other arrays or objects.
+                </p>
+            
+                <p><b>Example:</b> Mixed data types in an array</p>
+                <div class="code-example-html">
+                    <code>
+                        let mixedArray = ["Hello", 42, true]; <br>
+                        console.log(mixedArray); // Output: ["Hello", 42, true]
+                    </code>
+                </div>
+            
+                <h3>Conclusion</h3>
+                <p>
+                    Arrays are a powerful way to store and manage multiple values in JavaScript.
+                    In the next lesson, we will learn how to <b>create and modify arrays</b>.
+                </p>
+            
+                <p>
+                    <a href="./js-arrays-intro.html#js-arrays-intro-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-arrays-intro-exercises">
+                <h2>JS Introduction to Arrays: Exercises</h2>
+            
+                <h3>1. Creating an Array</h3>
+                <p>
+                    Declare an array called `animals` containing `"Dog"`, `"Cat"`, and `"Elephant"`. Then, log the array to the console.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        let animals = ["Dog", "Cat", "Elephant"]; <br>
+                        console.log(animals); // Output: ["Dog", "Cat", "Elephant"]
+                    </code>
+                </div>
+            
+                <h3>2. Accessing an Array Element</h3>
+                <p>
+                    Given the array below, how would you access the second item?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let cities = ["New York", "Paris", "Tokyo"];
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(cities[1]); // Output: "Paris"
+                    </code>
+                </div>
+            
+                <h3>3. Arrays with Different Data Types</h3>
+                <p>
+                    Create an array named `randomValues` that contains a string `"JavaScript"`, a number `100`, and a boolean `true`.
+                    Then, log the array to the console.
+                </p>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        let randomValues = ["JavaScript", 100, true]; <br>
+                        console.log(randomValues); // Output: ["JavaScript", 100, true]
+                    </code>
+                </div>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-break-continue.html" class="navigation-button prev-button neutral">&lt;JS Break and Continue</a>
+                    <a href="./js-create-modifying-arrays.html" class="navigation-button next-button neutral">JS Creating and Modifying Arrays &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>
