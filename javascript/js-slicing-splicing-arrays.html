@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Slicing Splicing Arrays - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-slicing-splicing-arrays-tutorial">
+                <h2>JS Slicing and Splicing Arrays</h2>
+                <p>
+                    JavaScript provides methods to extract and modify parts of an array. The <b>slice()</b> and <b>splice()</b> methods are useful for working with subsets of an array.
+                </p>
+            
+                <h3>Difference Between <b>slice()</b> and <b>splice()</b></h3>
+                <p>
+                    The <b>slice()</b> method extracts a section of an array without modifying the original array, while <b>splice()</b> modifies the original array by adding or removing elements.
+                </p>
+            
+                <h3>Using <b>slice()</b></h3>
+                <p>
+                    The <b>slice()</b> method returns a portion of an array without altering the original array. It takes two arguments: the start index (inclusive) and the end index (exclusive).
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]; <br>
+                        let slicedFruits = fruits.slice(1, 4); <br>
+                        console.log(slicedFruits); // Output: ["Banana", "Cherry", "Date"] <br>
+                        console.log(fruits); // Original array remains unchanged
+                    </code>
+                </div>
+            
+                <h3>Using <b>splice()</b></h3>
+                <p>
+                    The <b>splice()</b> method removes or adds elements to an array. It takes at least two arguments: the start index and the number of elements to remove. Optional additional arguments specify elements to insert.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Green", "Blue", "Yellow"]; <br>
+                        colors.splice(2, 1); // Removes one element at index 2 <br>
+                        console.log(colors); // Output: ["Red", "Green", "Yellow"]
+                    </code>
+                </div>
+            
+                <h3>Inserting Elements with <b>splice()</b></h3>
+                <p>
+                    The <b>splice()</b> method can also insert elements into an array.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 20, 40]; <br>
+                        numbers.splice(2, 0, 30); // Inserts 30 at index 2 <br>
+                        console.log(numbers); // Output: [10, 20, 30, 40]
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Sorting Arrays</b>, which allows us to order array elements alphabetically and numerically.
+                </p>
+                <p>
+                    <a href="./js-slicing-splicing-arrays.html#js-slicing-splicing-arrays-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-slicing-splicing-arrays-exercises">
+                <h2>JS Slicing and Splicing Arrays: Exercises</h2>
+            
+                <h3>1. Using <b>slice()</b></h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let animals = ["Lion", "Tiger", "Elephant", "Giraffe"]; <br>
+                        let selected = animals.slice(1, 3); <br>
+                        console.log(selected);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(selected); // Output: ["Tiger", "Elephant"]
+                    </code>
+                </div>
+            
+                <h3>2. Using <b>splice()</b> to Remove Elements</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana", "Mango", "Cherry"]; <br>
+                        fruits.splice(1, 2); <br>
+                        console.log(fruits);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(fruits); // Output: ["Apple", "Cherry"]
+                    </code>
+                </div>
+            
+                <h3>3. Using <b>splice()</b> to Insert Elements</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [5, 15, 25]; <br>
+                        numbers.splice(1, 0, 10, 20); <br>
+                        console.log(numbers);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(numbers); // Output: [5, 10, 20, 15, 25]
+                    </code>
+                </div>
+            
+                <h3>4. Mixing <b>slice()</b> and <b>splice()</b></h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let letters = ["A", "B", "C", "D", "E"]; <br>
+                        let part = letters.slice(1, 4); <br>
+                        part.splice(1, 1, "X"); <br>
+                        console.log(part);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(part); // Output: ["B", "X", "D"]
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Sorting Arrays</b>, where we learn how to arrange array elements in different ways.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-array-methods-advanced.html" class="navigation-button prev-button neutral">&lt; JS Advanced Array Methods</a>
+                    <a href="./js-sorting-arrays.html" class="navigation-button next-button neutral">JS Sorting Arrays &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

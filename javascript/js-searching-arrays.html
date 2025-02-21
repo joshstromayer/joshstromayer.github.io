@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Searching Arrays - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-searching-arrays-tutorial">
+                <h2>JS Searching Arrays</h2>
+                <p>
+                    JavaScript provides several methods to search for elements within an array. These methods help in finding specific values and checking if an array includes a particular element.
+                </p>
+            
+                <h3>Common Searching Methods</h3>
+                <p>
+                    Here are some commonly used methods for searching arrays:
+                </p>
+                <ul>
+                    <li><b>indexOf()</b> – Returns the index of the first occurrence of a specified element, or <b>-1</b> if not found.</li>
+                    <li><b>lastIndexOf()</b> – Returns the index of the last occurrence of a specified element.</li>
+                    <li><b>includes()</b> – Checks if an array contains a specific element and returns <b>true</b> or <b>false</b>.</li>
+                    <li><b>find()</b> – Returns the first element that satisfies a condition.</li>
+                    <li><b>findIndex()</b> – Returns the index of the first element that satisfies a condition.</li>
+                </ul>
+            
+                <h3>Using <b>indexOf()</b></h3>
+                <p>
+                    The <b>indexOf()</b> method returns the index of the first occurrence of a value. If the value is not found, it returns <b>-1</b>.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 20, 30, 40, 20]; <br>
+                        console.log(numbers.indexOf(20)); // Output: 1 <br>
+                        console.log(numbers.indexOf(50)); // Output: -1
+                    </code>
+                </div>
+            
+                <h3>Using <b>lastIndexOf()</b></h3>
+                <p>
+                    The <b>lastIndexOf()</b> method works like <b>indexOf()</b> but starts searching from the end of the array.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 20, 30, 40, 20]; <br>
+                        console.log(numbers.lastIndexOf(20)); // Output: 4
+                    </code>
+                </div>
+            
+                <h3>Using <b>includes()</b></h3>
+                <p>
+                    The <b>includes()</b> method checks if an array contains a value and returns <b>true</b> or <b>false</b>.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Green", "Blue"]; <br>
+                        console.log(colors.includes("Green")); // Output: true <br>
+                        console.log(colors.includes("Yellow")); // Output: false
+                    </code>
+                </div>
+            
+                <h3>Using <b>find()</b></h3>
+                <p>
+                    The <b>find()</b> method returns the first element that meets a condition.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [5, 10, 15, 20]; <br>
+                        let result = numbers.find(num => num > 10); <br>
+                        console.log(result); // Output: 15
+                    </code>
+                </div>
+            
+                <h3>Using <b>findIndex()</b></h3>
+                <p>
+                    The <b>findIndex()</b> method returns the index of the first element that meets a condition.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [5, 10, 15, 20]; <br>
+                        let index = numbers.findIndex(num => num > 10); <br>
+                        console.log(index); // Output: 2
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Multidimensional Arrays</b>, which covers arrays containing other arrays.
+                </p>
+                <p>
+                    <a href="./js-searching-arrays.html#js-searching-arrays-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-searching-arrays-exercises">
+                <h2>JS Searching Arrays: Exercises</h2>
+            
+                <h3>1. Using <b>indexOf()</b></h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana", "Cherry", "Banana"]; <br>
+                        console.log(fruits.indexOf("Banana"));
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(fruits.indexOf("Banana")); // Output: 1
+                    </code>
+                </div>
+            
+                <h3>2. Using <b>includes()</b></h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Blue", "Green"]; <br>
+                        console.log(colors.includes("Yellow"));
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(colors.includes("Yellow")); // Output: false
+                    </code>
+                </div>
+            
+                <h3>3. Using <b>find()</b></h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [2, 4, 6, 8, 10]; <br>
+                        let result = numbers.find(num => num > 5); <br>
+                        console.log(result);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(result); // Output: 6
+                    </code>
+                </div>
+            
+                <h3>4. Using <b>findIndex()</b></h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 15, 20, 25]; <br>
+                        let index = numbers.findIndex(num => num > 18); <br>
+                        console.log(index);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(index); // Output: 2
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Multidimensional Arrays</b>, which introduces arrays that contain other arrays.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-sorting-arrays.html" class="navigation-button prev-button neutral">&lt; JS Sorting Arrays</a>
+                    <a href="./js-multidimensional-arrays.html" class="navigation-button next-button neutral">JS Multidimensional Arrays &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

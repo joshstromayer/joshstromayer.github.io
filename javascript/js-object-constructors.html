@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Constructors - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-object-constructors-tutorial">
+                    <h2>JS Object Constructors</h2>
+                    <p>
+                        JavaScript provides a way to create multiple objects with similar properties and methods using **constructor functions**. A constructor function acts as a blueprint for creating objects dynamically.
+                    </p>
+                
+                    <h3>Creating a Constructor Function</h3>
+                    <p>
+                        A constructor function is a regular JavaScript function, but by convention, its name starts with an uppercase letter. We use the <b>new</b> keyword to create new instances of an object.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Person(name, age, city) { <br>
+                                this.name = name; <br>
+                                this.age = age; <br>
+                                this.city = city; <br>
+                            } <br>
+                            let person1 = new Person("Jessica", 30, "New York"); <br>
+                            let person2 = new Person("James", 25, "Los Angeles"); <br>
+                            console.log(person1.name); // Output: "Jessica" <br>
+                            console.log(person2.city); // Output: "Los Angeles"
+                        </code>
+                    </div>
+                
+                    <h3>Adding Methods to a Constructor</h3>
+                    <p>
+                        We can also define methods inside a constructor function.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Car(brand, model, year) { <br>
+                                this.brand = brand; <br>
+                                this.model = model; <br>
+                                this.year = year; <br>
+                                this.getInfo = function() { <br>
+                                    return this.brand + " " + this.model + " (" + this.year + ")"; <br>
+                                }; <br>
+                            } <br>
+                            let myCar = new Car("Toyota", "Corolla", 2022); <br>
+                            console.log(myCar.getInfo()); // Output: "Toyota Corolla (2022)"
+                        </code>
+                    </div>
+                
+                    <h3>Using the <b>instanceof</b> Operator</h3>
+                    <p>
+                        We can check if an object was created using a constructor function with the <b>instanceof</b> operator.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let student = new Person("Emma", 22, "Chicago"); <br>
+                            console.log(student instanceof Person); // Output: true
+                        </code>
+                    </div>
+                
+                    <h3>Next Steps</h3>
+                    <p>
+                        In the next lesson, we will explore <b>JS Object Prototypes</b>, which allow us to add properties and methods to object constructors.
+                    </p>
+                    <p>
+                        <a href="./js-object-constructors.html#js-object-constructors-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-object-constructors-exercises">
+                    <h2>JS Object Constructors: Exercises</h2>
+                
+                    <h3>1. Creating an Object Using a Constructor</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Animal(type, sound) { <br>
+                                this.type = type; <br>
+                                this.sound = sound; <br>
+                            } <br>
+                            let dog = new Animal("Dog", "Bark"); <br>
+                            console.log(dog.sound);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(dog.sound); // Output: "Bark"
+                        </code>
+                    </div>
+                
+                    <h3>2. Checking <b>instanceof</b></h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Laptop(brand, ram) { <br>
+                                this.brand = brand; <br>
+                                this.ram = ram; <br>
+                            } <br>
+                            let myLaptop = new Laptop("Dell", "16GB"); <br>
+                            console.log(myLaptop instanceof Laptop);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(myLaptop instanceof Laptop); // Output: true
+                        </code>
+                    </div>
+                
+                    <h3>3. Adding a Method to a Constructor</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Phone(brand, model) { <br>
+                                this.brand = brand; <br>
+                                this.model = model; <br>
+                                this.getDetails = function() { <br>
+                                    return this.brand + " " + this.model; <br>
+                                }; <br>
+                            } <br>
+                            let myPhone = new Phone("Apple", "iPhone 14"); <br>
+                            console.log(myPhone.getDetails());
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(myPhone.getDetails()); // Output: "Apple iPhone 14"
+                        </code>
+                    </div>
+                
+                    <h3>4. Constructor vs. Object Literal</h3>
+                    <p>
+                        Which of the following is the correct way to create a new instance using a constructor function?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function User(username) { <br>
+                                this.username = username; <br>
+                            } <br>
+                            let user1 = new User("StevieDoe"); <br>
+                            let user2 = User("JaneDoe");
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <p>
+                            The correct way is <b>let user1 = new User("StevieDoe");</b>. The second statement (<b>let user2 = User("JaneDoe");</b>) is incorrect because the <b>new</b> keyword is missing.
+                        </p>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Object Prototypes</b>, which introduce ways to add properties and methods to constructors.
+                    </p>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-object-methods.html" class="navigation-button prev-button neutral">&lt; JS Object Methods</a>
+                        <a href="./js-object-prototypes.html" class="navigation-button next-button neutral">JS Object Prototypes &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>

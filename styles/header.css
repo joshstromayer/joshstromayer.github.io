@@ -353,6 +353,12 @@ text-transform: uppercase;
   height: 40px; /* Match parent height */
 }
 
+.coding-languages-list-9321pookie li a.active {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+}
+
 .coding-languages-list-9321pookie li a {
   text-decoration: none;
   color: white;
@@ -363,6 +369,9 @@ text-transform: uppercase;
   text-transform: uppercase;
   height: 40px;
   font-weight: 549;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .coding-languages-list-9321pookie a:hover {

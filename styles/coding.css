@@ -3,6 +3,10 @@
     --text-color: black;
 }
 
+b {
+    font-weight: bold !important;
+}
+
 /* Styling for the coding page header */
 html {
     scroll-padding-top: 122.59px;
@@ -483,7 +487,6 @@ body.html-page-klm123 {
     margin: 0;
 }
 
-
 .collapsible-content li a {
     text-decoration: none;
 }
@@ -564,9 +567,7 @@ body.html-page-klm123 {
     height: auto;
     overflow-wrap: break-word;
     min-height: 10px;
-    max-width: 1050px;
     background-color: rgb(237, 237, 237);
-
     padding: 10px;
     border-radius: 10px;
     margin: 20px 0;
@@ -710,11 +711,7 @@ textarea {
     transform: scale(1.01);
 }
 
-.coding-languages-list-9321pookie li a.active {
-    background-color: #4a90e2;
-    color: white;
-    font-weight: bold;
-  }
+
 
   .blurred-answer {
     filter: blur(4px);

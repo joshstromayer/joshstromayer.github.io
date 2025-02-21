@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Methods - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-object-methods-tutorial">
+                    <h2>JS Object Methods</h2>
+                    <p>
+                        In JavaScript, an object method is a function that is stored as a property inside an object. Methods allow objects to perform actions and work with their own properties.
+                    </p>
+                
+                    <h3>Defining a Method in an Object</h3>
+                    <p>
+                        A method is defined by assigning a function to an object property.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let person = { <br>
+                                name: "Sophia", <br>
+                                age: 27, <br>
+                                greet: function() { <br>
+                                    console.log("Hello, my name is " + this.name); <br>
+                                } <br>
+                            }; <br>
+                            person.greet(); // Output: "Hello, my name is Sophia"
+                        </code>
+                    </div>
+                
+                    <h3>Using the <b>this</b> Keyword</h3>
+                    <p>
+                        Inside an object method, the <b>this</b> keyword refers to the object itself. This allows the method to access other properties of the same object.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let car = { <br>
+                                brand: "Toyota", <br>
+                                model: "Corolla", <br>
+                                getInfo: function() { <br>
+                                    return this.brand + " " + this.model; <br>
+                                } <br>
+                            }; <br>
+                            console.log(car.getInfo()); // Output: "Toyota Corolla"
+                        </code>
+                    </div>
+                
+                    <h3>Adding Methods to an Existing Object</h3>
+                    <p>
+                        We can also add methods to an existing object dynamically.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let animal = { <br>
+                                type: "Dog", <br>
+                                breed: "Labrador" <br>
+                            }; <br>
+                            animal.speak = function() { <br>
+                                return "Woof!"; <br>
+                            }; <br>
+                            console.log(animal.speak()); // Output: "Woof!"
+                        </code>
+                    </div>
+                
+                    <h3>Next Steps</h3>
+                    <p>
+                        In the next lesson, we will explore <b>JS Object Constructors</b>, which introduce reusable object templates.
+                    </p>
+                    <p>
+                        <a href="./js-object-methods.html#js-object-methods-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-object-methods-exercises">
+                    <h2>JS Object Methods: Exercises</h2>
+                
+                    <h3>1. Calling a Method</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let user = { <br>
+                                name: "Liam", <br>
+                                sayHello: function() { <br>
+                                    return "Hello " + this.name; <br>
+                                } <br>
+                            }; <br>
+                            console.log(user.sayHello());
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(user.sayHello()); // Output: "Hello Liam"
+                        </code>
+                    </div>
+                
+                    <h3>2. Using <b>this</b> in an Object</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let laptop = { <br>
+                                brand: "HP", <br>
+                                getBrand: function() { <br>
+                                    return this.brand; <br>
+                                } <br>
+                            }; <br>
+                            console.log(laptop.getBrand());
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(laptop.getBrand()); // Output: "HP"
+                        </code>
+                    </div>
+                
+                    <h3>3. Adding a New Method</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let fruit = { <br>
+                                name: "Banana" <br>
+                            }; <br>
+                            fruit.getName = function() { <br>
+                                return this.name; <br>
+                            }; <br>
+                            console.log(fruit.getName());
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(fruit.getName()); // Output: "Banana"
+                        </code>
+                    </div>
+                
+                    <h3>4. Missing <b>this</b> Keyword</h3>
+                    <p>
+                        What will be the output of this code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let city = { <br>
+                                name: "New York", <br>
+                                getCity: function() { <br>
+                                    return name; <br>
+                                } <br>
+                            }; <br>
+                            console.log(city.getCity());
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <code>
+                            // ReferenceError: name is not defined (because "this.name" should be used instead)
+                        </code>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Object Constructors</b>, which introduce reusable object templates for creating multiple similar objects.
+                    </p>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-modifying-properties.html" class="navigation-button prev-button neutral">&lt; JS Modifying Object Properties</a>
+                        <a href="./js-object-constructors.html" class="navigation-button next-button neutral">JS Object Constructors &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>

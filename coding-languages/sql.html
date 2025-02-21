@@ -720,7 +720,7 @@
     
                     # Insert data into the table<br>
                     INSERT INTO Users (UserID, Name, Age) <br>
-                    VALUES (1, 'John', 25);<br><br>
+                    VALUES (1, 'Stevie', 25);<br><br>
     
                     # Retrieve data from the table<br>
                     SELECT Name FROM Users;<br>
@@ -812,7 +812,7 @@
             </tr>
             <tr>
               <td>1</td>
-              <td>John</td>
+              <td>Stevie</td>
             </tr>
             <tr>
               <td>2</td>
@@ -986,7 +986,7 @@
             <tr>
               <td>FullName</td>
               <td>Composite Attribute</td>
-              <td>John Smith</td>
+              <td>Stevie Smith</td>
             </tr>
             <tr>
               <td>DateOfBirth</td>
@@ -1637,7 +1637,7 @@
     <p>You can insert a new student into the table like this:</p>
     <div class="code-example-html">
       INSERT INTO Students (Name, Age, Major) <br>
-      VALUES ('Jessica Johnson', 20, 'Computer Science');
+      VALUES ('Jessica Stevieson', 20, 'Computer Science');
     </div>
   
     <h3>Inserting Multiple Rows</h3>
@@ -1645,8 +1645,8 @@
     <div class="code-example-html">
       INSERT INTO Students (Name, Age, Major) <br>
       VALUES <br>
-      ('Jessica Johnson', 20, 'Computer Science'), <br>
-      ('Bob Smith', 22, 'Mechanical Engineering'), <br>
+      ('Jessica Stevieson', 20, 'Computer Science'), <br>
+      ('James Smith', 22, 'Mechanical Engineering'), <br>
       ('Clara Adams', 19, 'Mathematics');
     </div>
     <p><strong>Note:</strong> Each set of values is enclosed in parentheses and separated by commas.</p>
@@ -1701,8 +1701,8 @@
       <tbody>
         <tr>
           <td>1</td>
-          <td>John Doe</td>
-          <td>john@example.com</td>
+          <td>Stevie Doe</td>
+          <td>Stevie@example.com</td>
         </tr>
         <tr>
           <td>2</td>
@@ -1967,7 +1967,7 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td>John</td>
+                <td>Stevie</td>
                 <td>150</td>
             </tr>
             <tr>
@@ -1977,7 +1977,7 @@
             </tr>
             <tr>
                 <td>3</td>
-                <td>John</td>
+                <td>Stevie</td>
                 <td>100</td>
             </tr>
             <tr>
@@ -2005,7 +2005,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>John</td>
+                <td>Stevie</td>
                 <td>250</td>
             </tr>
             <tr>
@@ -2257,8 +2257,8 @@
     <table class="table-example">
         <caption><code>students</code> Table</caption>
         <tr><th>student_id</th><th>name</th></tr>
-        <tr><td>1</td><td>Alice</td></tr>
-        <tr><td>2</td><td>Bob</td></tr>
+        <tr><td>1</td><td>Jessica</td></tr>
+        <tr><td>2</td><td>James</td></tr>
     </table>
 
     <table class="table-example">
@@ -2279,7 +2279,7 @@
     <p><strong>Result:</strong> This query retrieves only the rows where there is a match:</p>
     <table class="table-example">
         <tr><th>name</th><th>grade</th></tr>
-        <tr><td>Alice</td><td>A</td></tr>
+        <tr><td>Jessica</td><td>A</td></tr>
     </table>
 
     <h3>Key Takeaways</h3>
@@ -2309,9 +2309,9 @@
         <table class="table-example">
             <caption><code>employees</code> Table</caption>
             <tr><th>employee_id</th><th>name</th><th>department_id</th><th>salary</th></tr>
-            <tr><td>1</td><td>John</td><td>101</td><td>50000</td></tr>
+            <tr><td>1</td><td>Stevie</td><td>101</td><td>50000</td></tr>
             <tr><td>2</td><td>Jane</td><td>102</td><td>60000</td></tr>
-            <tr><td>3</td><td>Alice</td><td>101</td><td>55000</td></tr>
+            <tr><td>3</td><td>Jessica</td><td>101</td><td>55000</td></tr>
         </table>
     
         <p>To find all employees with a salary greater than the average salary, you can write:</p>
@@ -2427,7 +2427,7 @@
         <div class="code-example-html">
             UPDATE HighSalaryEmployees<br>
             SET salary = salary + 5000<br>
-            WHERE name = 'John Doe';<br>
+            WHERE name = 'Stevie Doe';<br>
         </div>
     
         <p><strong>Note:</strong> Not all views are updatable. If a view contains joins, aggregate functions, or subqueries, it is generally not updatable.</p>
@@ -2765,9 +2765,9 @@
         </div>
         <p><strong>Example:</strong></p>
         <div class="code-example-html">
-            GRANT SELECT, INSERT ON my_database.* TO 'john_doe'@'localhost';<br>
+            GRANT SELECT, INSERT ON my_database.* TO 'Stevie_doe'@'localhost';<br>
         </div>
-        <p>This grants the user <code>john_doe</code> the ability to <code>SELECT</code> and <code>INSERT</code> data in all tables within the <code>my_database</code> database.</p>
+        <p>This grants the user <code>Stevie_doe</code> the ability to <code>SELECT</code> and <code>INSERT</code> data in all tables within the <code>my_database</code> database.</p>
     
         <h3>Revoking Privileges</h3>
         <p>If you need to remove specific privileges from a user, use the <code>REVOKE</code> statement:</p>
@@ -2776,7 +2776,7 @@
         </div>
         <p><strong>Example:</strong></p>
         <div class="code-example-html">
-            REVOKE INSERT ON my_database.* FROM 'john_doe'@'localhost';<br>
+            REVOKE INSERT ON my_database.* FROM 'Stevie_doe'@'localhost';<br>
         </div>
     
         <h3>Deleting a User</h3>
@@ -3030,7 +3030,7 @@
     
                     &nbsp;&nbsp;&nbsp;&nbsp;try (Connection connection = DriverManager.getConnection(url, username, password);<br>
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Statement statement = connection.createStatement()) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String sql = "INSERT INTO employees (name, position, salary) VALUES ('John Doe', 'Developer', 75000)";<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String sql = "INSERT INTO employees (name, position, salary) VALUES ('Stevie Doe', 'Developer', 75000)";<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int rowsInserted = statement.executeUpdate(sql);<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(rowsInserted + " row(s) inserted.");<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;} catch (SQLException e) {<br>
@@ -3094,7 +3094,7 @@
             <div>
                 <code>
                     &lt;?php<br>
-                    $sql = "INSERT INTO users (id, name, email) VALUES (1, 'John Doe', 'john@example.com')";<br>
+                    $sql = "INSERT INTO users (id, name, email) VALUES (1, 'Stevie Doe', 'Stevie@example.com')";<br>
                     if ($conn->query($sql) === TRUE) {<br>
                         echo "Record added successfully";<br>
                     } else {<br>
@@ -3302,7 +3302,7 @@
             <code>
             -- Example of a prepared statement in MySQL:
             PREPARE stmt FROM 'SELECT * FROM Users WHERE UserName = ?';
-            SET @username = 'john_doe';
+            SET @username = 'Stevie_doe';
             EXECUTE stmt USING @username;
             </code>
         </pre>
@@ -3374,7 +3374,7 @@
         <pre class="code-example-html">
             <code>
             PREPARE stmt FROM 'SELECT * FROM Orders WHERE CustomerName = ?';
-            SET @customer_name = 'John';
+            SET @customer_name = 'Stevie';
             EXECUTE stmt USING @customer_name;
             </code>
         </pre>
@@ -3581,9 +3581,9 @@
         <h3><strong>2. Inserting Data with Auto Increment</strong></h3>
         <p>Using the <code>Employees</code> table you created in Exercise 1, insert the following employees:</p>
         <ul>
-          <li><strong>John Doe</strong> in the <code>Sales</code> department</li>
+          <li><strong>Stevie Doe</strong> in the <code>Sales</code> department</li>
           <li><strong>Jane Smith</strong> in the <code>HR</code> department</li>
-          <li><strong>Bob Johnson</strong> in the <code>IT</code> department</li>
+          <li><strong>James Stevieson</strong> in the <code>IT</code> department</li>
         </ul>
         <p>Do not specify the <code>EmployeeID</code>; let MySQL handle it.</p>
       
@@ -3992,9 +3992,9 @@
         <table class="table-example">
             <caption><code>employees</code> Table</caption>
             <tr><th>employee_id</th><th>name</th><th>department_id</th></tr>
-            <tr><td>1</td><td>John</td><td>101</td></tr>
+            <tr><td>1</td><td>Stevie</td><td>101</td></tr>
             <tr><td>2</td><td>Jane</td><td>102</td></tr>
-            <tr><td>3</td><td>Alice</td><td>103</td></tr>
+            <tr><td>3</td><td>Jessica</td><td>103</td></tr>
         </table>
     
         <table class="table-example">
@@ -4014,7 +4014,7 @@
         <table class="table-example">
             <caption><code>students</code> Table</caption>
             <tr><th>student_id</th><th>name</th></tr>
-            <tr><td>1</td><td>Bob</td></tr>
+            <tr><td>1</td><td>James</td></tr>
             <tr><td>2</td><td>Susan</td></tr>
         </table>
     
@@ -4261,7 +4261,7 @@
             <p>Delete the user <code>'emma'</code> from the MySQL database.</p>
         
             <strong>5. Viewing Privileges</strong>
-            <p>Show all the privileges currently assigned to the user <code>'john_doe'</code>, who connects from <code>'localhost'</code>.</p>
+            <p>Show all the privileges currently assigned to the user <code>'Stevie_doe'</code>, who connects from <code>'localhost'</code>.</p>
         
             <a href="#mysql-backup-restore-tutorial" class="exercise-link">Ready to move on to Backup Restore?</a>
         </div>
@@ -4366,7 +4366,7 @@
             </div>
             <p>Print the results in the following format:</p>
             <div class="code-example-html">
-                ID: 1, Name: John Doe, Position: Developer, Salary: 75000.00<br>
+                ID: 1, Name: Stevie Doe, Position: Developer, Salary: 75000.00<br>
                 ID: 2, Name: Jane Smith, Position: Manager, Salary: 90000.00<br>
             </div>
         
@@ -4420,7 +4420,7 @@
             </ul>
             <p>Write a Java program that inserts the following data into the table:</p>
             <ul>
-                <li><code>(1, "Java for Beginners", "John Smith", 19.99)</code></li>
+                <li><code>(1, "Java for Beginners", "Stevie Smith", 19.99)</code></li>
                 <li><code>(2, "Advanced Java", "Jane Doe", 29.99)</code></li>
             </ul>
             <p>Print the number of rows inserted.</p>
@@ -4467,8 +4467,8 @@
                 <li>Uses a prepared statement to insert a new record into the <code>students</code> table with the following values:
                     <ul>
                         <li><code>id: 2</code></li>
-                        <li><code>name: "John Smith"</code></li>
-                        <li><code>email: "john.smith@example.com"</code></li>
+                        <li><code>name: "Stevie Smith"</code></li>
+                        <li><code>email: "Stevie.smith@example.com"</code></li>
                     </ul>
                 </li>
                 <li>Executes the prepared statement and displays a success or failure message.</li>
@@ -4555,14 +4555,14 @@
                 <tbody>
                     <tr>
                         <td>101</td>
-                        <td>Alice</td>
+                        <td>Jessica</td>
                         <td>CS101</td>
                         <td>Introduction to Programming</td>
                         <td>Dr. Smith</td>
                     </tr>
                     <tr>
                         <td>102</td>
-                        <td>Bob</td>
+                        <td>James</td>
                         <td>CS101</td>
                         <td>Introduction to Programming</td>
                         <td>Dr. Smith</td>

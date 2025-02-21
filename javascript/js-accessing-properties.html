@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Accesssing Properties - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-accessing-properties-tutorial">
+                    <h2>JS Accessing Object Properties</h2>
+                    <p>
+                        After creating an object, we need to access its properties to retrieve values. JavaScript provides two ways to access object properties: **dot notation** and **bracket notation**.
+                    </p>
+                
+                    <h3>Accessing Properties with Dot Notation</h3>
+                    <p>
+                        The most common way to access object properties is using **dot notation** (<b>.</b>).
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let person = { <br>
+                                name: "Emma", <br>
+                                age: 28, <br>
+                                city: "London" <br>
+                            }; <br>
+                            console.log(person.name); // Output: "Emma"
+                        </code>
+                    </div>
+                
+                    <h3>Accessing Properties with Bracket Notation</h3>
+                    <p>
+                        We can also access object properties using **bracket notation** (<b>[]</b>). This is useful when property names contain spaces or special characters.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let car = { <br>
+                                brand: "Tesla", <br>
+                                model: "Model S", <br>
+                                "top speed": 200 <br>
+                            }; <br>
+                            console.log(car["top speed"]); // Output: 200
+                        </code>
+                    </div>
+                
+                    <h3>Using Variables to Access Properties</h3>
+                    <p>
+                        With bracket notation, we can use variables to dynamically access object properties.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let book = { <br>
+                                title: "1984", <br>
+                                author: "George Orwell" <br>
+                            }; <br>
+                            let key = "title"; <br>
+                            console.log(book[key]); // Output: "1984"
+                        </code>
+                    </div>
+                
+                    <h3>Next Steps</h3>
+                    <p>
+                        In the next lesson, we will explore <b>JS Modifying Object Properties</b>, where we learn how to update and change object values.
+                    </p>
+                    <p>
+                        <a href="./js-accessing-properties.html#js-accessing-properties-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-accessing-properties-exercises">
+                    <h2>JS Accessing Object Properties: Exercises</h2>
+                
+                    <h3>1. Dot Notation</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let laptop = { <br>
+                                brand: "HP", <br>
+                                model: "Pavilion", <br>
+                                year: 2022 <br>
+                            }; <br>
+                            console.log(laptop.brand);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(laptop.brand); // Output: "HP"
+                        </code>
+                    </div>
+                
+                    <h3>2. Bracket Notation</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let phone = { <br>
+                                brand: "Samsung", <br>
+                                model: "Galaxy S22", <br>
+                                "screen size": "6.1 inches" <br>
+                            }; <br>
+                            console.log(phone["screen size"]);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(phone["screen size"]); // Output: "6.1 inches"
+                        </code>
+                    </div>
+                
+                    <h3>3. Using a Variable to Access a Property</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let fruit = { <br>
+                                name: "Mango", <br>
+                                color: "Yellow" <br>
+                            }; <br>
+                            let property = "color"; <br>
+                            console.log(fruit[property]);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(fruit[property]); // Output: "Yellow"
+                        </code>
+                    </div>
+                
+                    <h3>4. Incorrect Property Access</h3>
+                    <p>
+                        What will be the output of this code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let city = { <br>
+                                name: "New York", <br>
+                                country: "USA" <br>
+                            }; <br>
+                            console.log(city.population);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(city.population); // Output: undefined
+                        </code>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Modifying Object Properties</b>, where we will learn how to change values within an object.
+                    </p>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-creating-objects.html" class="navigation-button prev-button neutral">&lt; JS Creating Objects</a>
+                        <a href="./js-modifying-properties.html" class="navigation-button next-button neutral">JS Modifying Object Properties &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>

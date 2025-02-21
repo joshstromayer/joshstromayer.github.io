@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Sorting Arrays - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-sorting-arrays-tutorial">
+                <h2>JS Sorting Arrays</h2>
+                <p>
+                    JavaScript provides methods to sort arrays in different ways. The <b>sort()</b> method allows us to arrange elements alphabetically or numerically, while the <b>reverse()</b> method reverses the order of elements in an array.
+                </p>
+            
+                <h3>Sorting Arrays with <b>sort()</b></h3>
+                <p>
+                    The <b>sort()</b> method sorts an array alphabetically by default.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Banana", "Apple", "Cherry", "Date"]; <br>
+                        fruits.sort(); <br>
+                        console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Date"]
+                    </code>
+                </div>
+            
+                <h3>Sorting Numbers</h3>
+                <p>
+                    By default, <b>sort()</b> treats numbers as strings, which can cause unexpected results. To sort numbers correctly, we need to provide a comparison function.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [40, 5, 25, 10]; <br>
+                        numbers.sort((a, b) => a - b); <br>
+                        console.log(numbers); // Output: [5, 10, 25, 40]
+                    </code>
+                </div>
+            
+                <h3>Reversing an Array</h3>
+                <p>
+                    The <b>reverse()</b> method reverses the order of elements in an array.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let letters = ["A", "B", "C", "D"]; <br>
+                        letters.reverse(); <br>
+                        console.log(letters); // Output: ["D", "C", "B", "A"]
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Searching Arrays</b>, which covers methods for finding elements within an array.
+                </p>
+                <p>
+                    <a href="./js-sorting-arrays.html#js-sorting-arrays-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-sorting-arrays-exercises">
+                <h2>JS Sorting Arrays: Exercises</h2>
+            
+                <h3>1. Sorting Strings</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let cities = ["Paris", "New York", "London", "Berlin"]; <br>
+                        cities.sort(); <br>
+                        console.log(cities);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(cities); // Output: ["Berlin", "London", "New York", "Paris"]
+                    </code>
+                </div>
+            
+                <h3>2. Sorting Numbers Incorrectly</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [100, 20, 3, 50]; <br>
+                        numbers.sort(); <br>
+                        console.log(numbers);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(numbers); // Output: [100, 20, 3, 50] (Sorted as strings)
+                    </code>
+                </div>
+            
+                <h3>3. Sorting Numbers Correctly</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [100, 20, 3, 50]; <br>
+                        numbers.sort((a, b) => a - b); <br>
+                        console.log(numbers);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(numbers); // Output: [3, 20, 50, 100]
+                    </code>
+                </div>
+            
+                <h3>4. Reversing an Array</h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let letters = ["X", "Y", "Z"]; <br>
+                        letters.reverse(); <br>
+                        console.log(letters);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(letters); // Output: ["Z", "Y", "X"]
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Searching Arrays</b>, which introduces methods for finding elements within an array.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-slicing-splicing-arrays.html" class="navigation-button prev-button neutral">&lt; JS Slicing and Splicing Arrays</a>
+                    <a href="./js-searching-arrays.html" class="navigation-button next-button neutral">JS Searching Arrays &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

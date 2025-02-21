@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Prototypes - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-object-prototypes-tutorial">
+                    <h2>JS Object Prototypes</h2>
+                    <p>
+                        In JavaScript, every object has a built-in property called **prototype**, which allows us to add new properties and methods to object constructors. This is useful for sharing methods across multiple object instances without duplicating them.
+                    </p>
+                
+                    <h3>Understanding Prototypes</h3>
+                    <p>
+                        Every JavaScript object is linked to a **prototype object** from which it can inherit properties and methods. We can modify the prototype of a constructor function to add methods for all instances.
+                    </p>
+                
+                    <h3>Adding Methods to a Constructor Using Prototypes</h3>
+                    <p>
+                        Instead of defining methods inside the constructor, we can use the prototype property to attach methods to all instances of an object.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Person(name, age) { <br>
+                                this.name = name; <br>
+                                this.age = age; <br>
+                            } <br>
+                            Person.prototype.greet = function() { <br>
+                                return "Hello, my name is " + this.name; <br>
+                            }; <br>
+                            let person1 = new Person("Jessica", 30); <br>
+                            console.log(person1.greet()); // Output: "Hello, my name is Jessica"
+                        </code>
+                    </div>
+                
+                    <h3>Adding Properties Using Prototypes</h3>
+                    <p>
+                        We can also add new properties to an object’s prototype, and all instances will inherit them.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Car(brand, model) { <br>
+                                this.brand = brand; <br>
+                                this.model = model; <br>
+                            } <br>
+                            Car.prototype.year = 2022; <br>
+                            let myCar = new Car("Toyota", "Corolla"); <br>
+                            console.log(myCar.year); // Output: 2022
+                        </code>
+                    </div>
+                
+                    <h3>Checking Prototype Properties</h3>
+                    <p>
+                        The <b>hasOwnProperty()</b> method allows us to check if a property belongs directly to an object or if it is inherited from the prototype.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            console.log(myCar.hasOwnProperty("brand")); // Output: true <br>
+                            console.log(myCar.hasOwnProperty("year")); // Output: false (inherited from prototype)
+                        </code>
+                    </div>
+                
+                    <h3>Next Steps</h3>
+                    <p>
+                        In the next lesson, we will explore <b>JS Classes</b>, which provide a cleaner way to define object blueprints using modern JavaScript syntax.
+                    </p>
+                    <p>
+                        <a href="./js-object-prototypes.html#js-object-prototypes-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-object-prototypes-exercises">
+                    <h2>JS Object Prototypes: Exercises</h2>
+                
+                    <h3>1. Adding a Method to a Prototype</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Animal(type) { <br>
+                                this.type = type; <br>
+                            } <br>
+                            Animal.prototype.sound = function() { <br>
+                                return "Some sound"; <br>
+                            }; <br>
+                            let dog = new Animal("Dog"); <br>
+                            console.log(dog.sound());
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(dog.sound()); // Output: "Some sound"
+                        </code>
+                    </div>
+                
+                    <h3>2. Inheriting Prototype Properties</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Laptop(brand) { <br>
+                                this.brand = brand; <br>
+                            } <br>
+                            Laptop.prototype.memory = "16GB"; <br>
+                            let myLaptop = new Laptop("HP"); <br>
+                            console.log(myLaptop.memory);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(myLaptop.memory); // Output: "16GB"
+                        </code>
+                    </div>
+                
+                    <h3>3. Checking Property Ownership</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Phone(model) { <br>
+                                this.model = model; <br>
+                            } <br>
+                            Phone.prototype.brand = "Samsung"; <br>
+                            let myPhone = new Phone("Galaxy S21"); <br>
+                            console.log(myPhone.hasOwnProperty("brand"));
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(myPhone.hasOwnProperty("brand")); // Output: false (it's inherited)
+                        </code>
+                    </div>
+                
+                    <h3>4. Prototype vs. Own Properties</h3>
+                    <p>
+                        What will be the output of this code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            function Student(name) { <br>
+                                this.name = name; <br>
+                            } <br>
+                            Student.prototype.school = "High School"; <br>
+                            let student1 = new Student("Liam"); <br>
+                            student1.school = "University"; <br>
+                            console.log(student1.school);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(student1.school); // Output: "University" (overrides prototype property)
+                        </code>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Classes</b>, which introduce a modern way to work with objects and prototypes.
+                    </p>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-object-constructors.html" class="navigation-button prev-button neutral">&lt; JS Object Constructors</a>
+                        <a href="./js-classes.html" class="navigation-button next-button neutral">JS Classes &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>

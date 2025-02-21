@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Iterating Arrays - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-iterating-arrays-tutorial">
+                <h2>JS Iterating Arrays</h2>
+                <p>
+                    Iterating through an array allows us to process each element individually. JavaScript provides multiple ways to loop through arrays, making it easy to access and manipulate elements efficiently.
+                </p>
+            
+                <h3>Common Ways to Iterate Over Arrays</h3>
+                <p>
+                    Here are some common methods to loop through an array:
+                </p>
+                <ul>
+                    <li><b>for loop</b> – A basic way to iterate over an array using an index.</li>
+                    <li><b>while loop</b> – Iterates through an array based on a condition.</li>
+                    <li><b>for...of loop</b> – A simpler way to loop through array elements directly.</li>
+                </ul>
+            
+                <h3>Using a <b>for</b> Loop</h3>
+                <p>
+                    A <b>for</b> loop is commonly used to iterate through an array using an index.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [10, 20, 30, 40]; <br>
+                        for (let i = 0; i < numbers.length; i++) { <br>
+                            console.log(numbers[i]); <br>
+                        }
+                    </code>
+                </div>
+            
+                <h3>Using a <b>while</b> Loop</h3>
+                <p>
+                    A <b>while</b> loop can also be used to iterate through an array by updating the index manually.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let fruits = ["Apple", "Banana", "Cherry"]; <br>
+                        let i = 0; <br>
+                        while (i < fruits.length) { <br>
+                            console.log(fruits[i]); <br>
+                            i++; <br>
+                        }
+                    </code>
+                </div>
+            
+                <h3>Using the <b>for...of</b> Loop</h3>
+                <p>
+                    The <b>for...of</b> loop allows us to loop through array elements directly without using an index.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let colors = ["Red", "Green", "Blue"]; <br>
+                        for (let color of colors) { <br>
+                            console.log(color); <br>
+                        }
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Advanced Array Methods</b>, which includes powerful built-in functions for working with arrays.
+                </p>
+                <p>
+                    <a href="./js-iterating-arrays.html#js-iterating-arrays-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-iterating-arrays-exercises">
+                <h2>JS Iterating Arrays: Exercises</h2>
+            
+                <h3>1. Using a <b>for</b> Loop</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let items = [1, 2, 3, 4]; <br>
+                        for (let i = 0; i < items.length; i++) { <br>
+                            console.log(items[i]); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(1); <br>
+                        console.log(2); <br>
+                        console.log(3); <br>
+                        console.log(4);
+                    </code>
+                </div>
+            
+                <h3>2. Using a <b>while</b> Loop</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let names = ["Jessica", "James", "Charlie"]; <br>
+                        let i = 0; <br>
+                        while (i < names.length) { <br>
+                            console.log(names[i]); <br>
+                            i++; <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log("Jessica"); <br>
+                        console.log("James"); <br>
+                        console.log("Charlie");
+                    </code>
+                </div>
+            
+                <h3>3. Using a <b>for...of</b> Loop</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let letters = ["X", "Y", "Z"]; <br>
+                        for (let letter of letters) { <br>
+                            console.log(letter); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log("X"); <br>
+                        console.log("Y"); <br>
+                        console.log("Z");
+                    </code>
+                </div>
+            
+                <h3>4. Iterating Over an Empty Array</h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let emptyArray = []; <br>
+                        for (let item of emptyArray) { <br>
+                            console.log(item); <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        // No output (the array is empty)
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Advanced Array Methods</b>, which introduces more powerful ways to manipulate arrays.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-array-methods-basics.html" class="navigation-button prev-button neutral">&lt; JS Basic Array Methods</a>
+                    <a href="./js-array-methods-advanced.html" class="navigation-button next-button neutral">JS Advanced Array Methods &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

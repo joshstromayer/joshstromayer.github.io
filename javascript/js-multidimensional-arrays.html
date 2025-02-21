@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Multidimensional Arrays - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-multidimensional-arrays-tutorial">
+                <h2>JS Multidimensional Arrays</h2>
+                <p>
+                    A multidimensional array is an array that contains other arrays as its elements. These arrays allow us to store data in a structured way, such as representing tables or grids.
+                </p>
+            
+                <h3>Creating a Multidimensional Array</h3>
+                <p>
+                    A two-dimensional array (2D array) is an array of arrays. We can define one by nesting arrays inside another array.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let matrix = [ <br>
+                            [1, 2, 3], <br>
+                            [4, 5, 6], <br>
+                            [7, 8, 9] <br>
+                        ]; <br>
+                        console.log(matrix);
+                    </code>
+                </div>
+            
+                <h3>Accessing Elements in a Multidimensional Array</h3>
+                <p>
+                    To access an element in a 2D array, we use two indices: one for the row and one for the column.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [ <br>
+                            [10, 20, 30], <br>
+                            [40, 50, 60] <br>
+                        ]; <br>
+                        console.log(numbers[0][1]); // Output: 20 <br>
+                        console.log(numbers[1][2]); // Output: 60
+                    </code>
+                </div>
+            
+                <h3>Modifying Elements in a Multidimensional Array</h3>
+                <p>
+                    We can modify elements in a multidimensional array by directly accessing them using their row and column indices.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let data = [ <br>
+                            [1, 2], <br>
+                            [3, 4] <br>
+                        ]; <br>
+                        data[1][0] = 99; <br>
+                        console.log(data); // Output: [[1, 2], [99, 4]]
+                    </code>
+                </div>
+            
+                <h3>Iterating Through a Multidimensional Array</h3>
+                <p>
+                    We can use nested loops to iterate over a multidimensional array.
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let matrix = [ <br>
+                            [1, 2, 3], <br>
+                            [4, 5, 6] <br>
+                        ]; <br>
+                        for (let i = 0; i < matrix.length; i++) { <br>
+                            for (let j = 0; j < matrix[i].length; j++) { <br>
+                                console.log(matrix[i][j]); <br>
+                            } <br>
+                        }
+                    </code>
+                </div>
+            
+                <h3>Next Steps</h3>
+                <p>
+                    In the next lesson, we will explore <b>JS Introduction to Objects</b>, where we learn how to structure data using objects.
+                </p>
+                <p>
+                    <a href="./js-multidimensional-arrays.html#js-multidimensional-arrays-exercises" class="neutral">
+                        Ready to test your knowledge? Head to the exercises section!
+                    </a>
+                </p>
+            </div>
+            
+            <div class="detailed-plan-klm123" id="js-multidimensional-arrays-exercises">
+                <h2>JS Multidimensional Arrays: Exercises</h2>
+            
+                <h3>1. Accessing Elements</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let array = [ <br>
+                            [5, 10], <br>
+                            [15, 20] <br>
+                        ]; <br>
+                        console.log(array[1][0]);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(array[1][0]); // Output: 15
+                    </code>
+                </div>
+            
+                <h3>2. Modifying an Element</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let grid = [ <br>
+                            [2, 4], <br>
+                            [6, 8] <br>
+                        ]; <br>
+                        grid[0][1] = 99; <br>
+                        console.log(grid);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(grid); // Output: [[2, 99], [6, 8]]
+                    </code>
+                </div>
+            
+                <h3>3. Iterating Through a 2D Array</h3>
+                <p>
+                    What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let numbers = [ <br>
+                            [1, 3], <br>
+                            [5, 7] <br>
+                        ]; <br>
+                        for (let row of numbers) { <br>
+                            for (let num of row) { <br>
+                                console.log(num); <br>
+                            } <br>
+                        }
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(1); <br>
+                        console.log(3); <br>
+                        console.log(5); <br>
+                        console.log(7);
+                    </code>
+                </div>
+            
+                <h3>4. Nested Arrays</h3>
+                <p>
+                    What will be the output of this code?
+                </p>
+                <div class="code-example-html">
+                    <code>
+                        let data = [ <br>
+                            ["a", "b"], <br>
+                            ["c", ["d", "e"]] <br>
+                        ]; <br>
+                        console.log(data[1][1][0]);
+                    </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                <div id="answer-4" class="code-example-html blurred-answer">
+                    <code>
+                        console.log(data[1][1][0]); // Output: "d"
+                    </code>
+                </div>
+            
+                <p>
+                    In the next lesson, we will cover <b>JS Introduction to Objects</b>, which introduces how to work with objects in JavaScript.
+                </p>
+            
+                <div class="navigation-buttons">
+                    <a href="./js-searching-arrays.html" class="navigation-button prev-button neutral">&lt; JS Searching Arrays</a>
+                    <a href="./js-introduction-objects.html" class="navigation-button next-button neutral">JS Introduction to Objects &gt;</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

@@ -18,149 +18,152 @@
     
             <!-- Detailed Plan -->
             <div class="main-tutorial-content">
-                <div class="detailed-plan-klm123" id="js-objects-intro-tutorial">
-                    <h2>Introduction to Objects</h2>
+                <div class="detailed-plan-klm123" id="js-introduction-objects-tutorial">
+                    <h2>JS Introduction to Objects</h2>
                     <p>
-                        In JavaScript, objects are a fundamental way to store and manage <b>structured data</b>.
-                        Unlike primitive data types (numbers, strings, booleans, etc.), <b>objects</b> allow you to store multiple pieces of related data together.
+                        Objects are one of the most important features in JavaScript. They allow us to store multiple values in a structured way using key-value pairs.
                     </p>
                 
                     <h3>What is an Object?</h3>
                     <p>
-                        An <b>object</b> is a collection of <b>key-value pairs</b>. Each key is a <b>property name</b>, and its corresponding value can be any data type, including numbers, strings, arrays, or even other objects.
+                        An object in JavaScript is a collection of properties, where each property consists of a key (also known as a property name) and a corresponding value.
                     </p>
-                    <p><b>Example:</b> Creating a simple JavaScript object</p>
                     <div class="code-example-html">
                         <code>
                             let person = { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;name: "Jordan", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;age: 25, <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;isStudent: false <br>
+                                name: "Stevie", <br>
+                                age: 30, <br>
+                                city: "New York" <br>
                             }; <br>
                             console.log(person);
                         </code>
                     </div>
-                    <p>
-                        In this example, the object `person` has <b>three properties</b>: `name`, `age`, and `isStudent`.
-                    </p>
                 
                     <h3>Why Use Objects?</h3>
                     <p>
-                        Objects are useful when you need to <b>group related data</b> together. Instead of having separate variables, objects let you organize data in a structured way.
+                        Objects help organize data efficiently and allow us to store related information in a single entity. They are commonly used to represent real-world entities, such as a person, a car, or a user profile.
                     </p>
-                    <p><b>Example:</b> Without objects vs with objects</p>
-                    <div class="code-example-html">
-                        <code>
-                            // Without an object <br>
-                            let name = "Jordan"; <br>
-                            let age = 25; <br>
-                            let isStudent = false; <br><br>
                 
-                            // With an object <br>
-                            let person = { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;name: "Jordan", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;age: 25, <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;isStudent: false <br>
-                            };
-                        </code>
-                    </div>
-                
-                    <h3>Objects Can Store Functions</h3>
+                    <h3>Basic Structure of an Object</h3>
                     <p>
-                        Objects can also store <b>functions</b> as properties. These functions are called <b>methods</b>.
+                        An object consists of key-value pairs. The keys are always strings, and the values can be any data type, including numbers, strings, arrays, or even other objects.
                     </p>
-                    <p><b>Example:</b> Adding a method to an object</p>
                     <div class="code-example-html">
                         <code>
                             let car = { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;brand: "Toyota", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;model: "Corolla", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;year: 2022, <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;start: function() { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("The car is starting..."); <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                                brand: "Toyota", <br>
+                                model: "Corolla", <br>
+                                year: 2022 <br>
                             }; <br>
-                            car.start(); // Calls the method
+                            console.log(car.model); // Output: "Corolla"
                         </code>
                     </div>
                 
-                    <h3>Conclusion</h3>
+                    <h3>Next Steps</h3>
                     <p>
-                        Objects are one of the most important parts of JavaScript programming.
-                        They allow you to store <b>complex data</b>, define <b>methods</b>, and structure your programs in a more readable and maintainable way.
+                        In the next lesson, we will explore <b>JS Creating Objects</b>, where we will learn different ways to create objects in JavaScript.
                     </p>
-                
                     <p>
-                        In the next lesson, we will explore how to <b>create objects</b> using `{}` and `new Object()`.
-                    </p>
-                
-                    <p>
-                        <a href="./js-objects-intro.html#js-objects-intro-exercises" class="neutral">
+                        <a href="./js-introduction-objects.html#js-introduction-objects-exercises" class="neutral">
                             Ready to test your knowledge? Head to the exercises section!
                         </a>
                     </p>
                 </div>
                 
-                <div class="detailed-plan-klm123" id="js-objects-intro-exercises">
-                    <h2>Introduction to Objects: Exercises</h2>
+                <div class="detailed-plan-klm123" id="js-introduction-objects-exercises">
+                    <h2>JS Introduction to Objects: Exercises</h2>
                 
-                    <h3>1. Creating a Simple Object</h3>
+                    <h3>1. Understanding Objects</h3>
                     <p>
-                        Create an object called `book` with the properties `title`, `author`, and `year`. Then, log the object to the console.
-                    </p>
-                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
-                    <div id="answer-1" class="code-example-html blurred-answer">
-                        <code>
-                            let book = { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;title: "The Great Gatsby", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;author: "F. Scott Fitzgerald", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;year: 1925 <br>
-                            }; <br>
-                            console.log(book);
-                        </code>
-                    </div>
-                
-                    <h3>2. Accessing Object Properties</h3>
-                    <p>
-                        Given the object below, how would you access the person's age?
+                        What will be the output of the following code?
                     </p>
                     <div class="code-example-html">
                         <code>
-                            let person = { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;name: "Sophia", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;age: 30, <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;job: "Engineer" <br>
-                            };
+                            let student = { <br>
+                                name: "Emma", <br>
+                                grade: "A", <br>
+                                subject: "Math" <br>
+                            }; <br>
+                            console.log(student.name);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(student.name); // Output: "Emma"
+                        </code>
+                    </div>
+                
+                    <h3>2. Object Property Access</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let phone = { <br>
+                                brand: "Samsung", <br>
+                                model: "Galaxy S21", <br>
+                                price: 999 <br>
+                            }; <br>
+                            console.log(phone.model);
                         </code>
                     </div>
                     <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
                     <div id="answer-2" class="code-example-html blurred-answer">
                         <code>
-                            console.log(person.age); // Output: 30
+                            console.log(phone.model); // Output: "Galaxy S21"
                         </code>
                     </div>
                 
-                    <h3>3. Object with a Method</h3>
+                    <h3>3. Object with Multiple Data Types</h3>
                     <p>
-                        Create an object called `phone` with properties `brand` and `model`. Add a method `ring()` that logs `"Ringing..."` when called.
+                        What will be the output of the following code?
                     </p>
+                    <div class="code-example-html">
+                        <code>
+                            let book = { <br>
+                                title: "The Great Gatsby", <br>
+                                author: "F. Scott Fitzgerald", <br>
+                                pages: 180 <br>
+                            }; <br>
+                            console.log(book.pages);
+                        </code>
+                    </div>
                     <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
                     <div id="answer-3" class="code-example-html blurred-answer">
                         <code>
-                            let phone = { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;brand: "Samsung", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;model: "Galaxy S21", <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;ring: function() { <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Ringing..."); <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-                            }; <br>
-                            phone.ring();
+                            console.log(book.pages); // Output: 180
                         </code>
                     </div>
                 
+                    <h3>4. Creating an Object</h3>
+                    <p>
+                        Predict the output of the following code.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let laptop = { <br>
+                                brand: "Dell", <br>
+                                memory: "16GB", <br>
+                                year: 2021 <br>
+                            }; <br>
+                            console.log(laptop.memory);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(laptop.memory); // Output: "16GB"
+                        </code>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Creating Objects</b>, where we will learn different ways to create objects in JavaScript.
+                    </p>
+                
                     <div class="navigation-buttons">
-                        <a href="./js-break-continue.html" class="navigation-button prev-button neutral">&lt; JS Break and Continue</a>
-                        <a href="./js-create-objects.html" class="navigation-button next-button neutral">Creating Objects &gt;</a>
+                        <a href="./js-multidimensional-arrays.html" class="navigation-button prev-button neutral">&lt; JS Multidimensional Arrays</a>
+                        <a href="./js-creating-objects.html" class="navigation-button next-button neutral">JS Creating Objects &gt;</a>
                     </div>
                 </div>
         </main>

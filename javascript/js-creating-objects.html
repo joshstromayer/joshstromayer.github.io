@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Creating Objects - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-creating-objects-tutorial">
+                    <h2>JS Creating Objects</h2>
+                    <p>
+                        In JavaScript, there are multiple ways to create objects. The most common methods are using object literals <b>{}</b> and the <b>new Object()</b> constructor.
+                    </p>
+                
+                    <h3>Creating an Object Using an Object Literal</h3>
+                    <p>
+                        The easiest and most common way to create an object is by using curly braces <b>{}</b>, also known as an object literal.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let person = { <br>
+                                name: "Jessica", <br>
+                                age: 25, <br>
+                                city: "Paris" <br>
+                            }; <br>
+                            console.log(person);
+                        </code>
+                    </div>
+                
+                    <h3>Creating an Object Using <b>new Object()</b></h3>
+                    <p>
+                        Another way to create an object is by using the <b>new Object()</b> constructor. This method is less commonly used but still valid.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let car = new Object(); <br>
+                            car.brand = "Ford"; <br>
+                            car.model = "Mustang"; <br>
+                            car.year = 2023; <br>
+                            console.log(car);
+                        </code>
+                    </div>
+                
+                    <h3>Comparison of Object Creation Methods</h3>
+                    <p>
+                        Both methods achieve the same result, but using object literals <b>{}</b> is generally preferred because it is shorter and more readable.
+                    </p>
+                
+                    <h3>Next Steps</h3>
+                    <p>
+                        In the next lesson, we will explore <b>JS Accessing Object Properties</b>, where we will learn how to retrieve values from objects.
+                    </p>
+                    <p>
+                        <a href="./js-creating-objects.html#js-creating-objects-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-creating-objects-exercises">
+                    <h2>JS Creating Objects: Exercises</h2>
+                
+                    <h3>1. Object Literal</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let book = { <br>
+                                title: "JavaScript Guide", <br>
+                                author: "Stevie Doe", <br>
+                                pages: 250 <br>
+                            }; <br>
+                            console.log(book.title);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(book.title); // Output: "JavaScript Guide"
+                        </code>
+                    </div>
+                
+                    <h3>2. Using <b>new Object()</b></h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let laptop = new Object(); <br>
+                            laptop.brand = "HP"; <br>
+                            laptop.memory = "8GB"; <br>
+                            console.log(laptop.memory);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(laptop.memory); // Output: "8GB"
+                        </code>
+                    </div>
+                
+                    <h3>3. Creating an Object</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let phone = { <br>
+                                brand: "Apple", <br>
+                                model: "iPhone 14", <br>
+                                price: 999 <br>
+                            }; <br>
+                            console.log(phone.model);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(phone.model); // Output: "iPhone 14"
+                        </code>
+                    </div>
+                
+                    <h3>4. Object Comparison</h3>
+                    <p>
+                        Which of the following is the preferred way to create an object in JavaScript?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let obj1 = {}; <br>
+                            let obj2 = new Object();
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <p>
+                            The preferred way is <b>let obj1 = {};</b> because it is shorter and more readable.
+                        </p>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Accessing Object Properties</b>, which introduces different ways to retrieve values from objects.
+                    </p>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-introduction-objects.html" class="navigation-button prev-button neutral">&lt; JS Introduction to Objects</a>
+                        <a href="./js-accessing-properties.html" class="navigation-button next-button neutral">JS Accessing Object Properties &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Modifying Properties - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/coding.css">
+</head>
+<div id="header-container"></div>
+      <body class="html-page-klm123">
+<link rel="stylesheet" href="../styles/coding.css">
+
+    
+        <main class="html-main-klm123">
+            <!-- Quick Start Plan -->
+            <div id="js-quick-menu"></div>
+    
+            <!-- Detailed Plan -->
+            <div class="main-tutorial-content">
+                <div class="detailed-plan-klm123" id="js-modifying-properties-tutorial">
+                    <h2>JS Modifying Object Properties</h2>
+                    <p>
+                        Once an object is created, its properties can be modified by assigning new values to them. JavaScript allows us to update object properties using **dot notation** or **bracket notation**.
+                    </p>
+                
+                    <h3>Modifying Properties with Dot Notation</h3>
+                    <p>
+                        The most common way to modify an object property is using **dot notation** (<b>.</b>).
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let person = { <br>
+                                name: "Emma", <br>
+                                age: 28, <br>
+                                city: "London" <br>
+                            }; <br>
+                            person.age = 30; <br>
+                            console.log(person.age); // Output: 30
+                        </code>
+                    </div>
+                
+                    <h3>Modifying Properties with Bracket Notation</h3>
+                    <p>
+                        We can also modify object properties using **bracket notation** (<b>[]</b>).
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let car = { <br>
+                                brand: "Tesla", <br>
+                                model: "Model S", <br>
+                                year: 2022 <br>
+                            }; <br>
+                            car["year"] = 2023; <br>
+                            console.log(car.year); // Output: 2023
+                        </code>
+                    </div>
+                
+                    <h3>Adding New Properties</h3>
+                    <p>
+                        JavaScript allows us to add new properties to an existing object simply by assigning a value to a new key.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let book = { <br>
+                                title: "1984", <br>
+                                author: "George Orwell" <br>
+                            }; <br>
+                            book.pages = 328; <br>
+                            console.log(book.pages); // Output: 328
+                        </code>
+                    </div>
+                
+                    <h3>Deleting Object Properties</h3>
+                    <p>
+                        We can remove a property from an object using the <b>delete</b> keyword.
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let laptop = { <br>
+                                brand: "Dell", <br>
+                                memory: "16GB" <br>
+                            }; <br>
+                            delete laptop.memory; <br>
+                            console.log(laptop.memory); // Output: undefined
+                        </code>
+                    </div>
+                
+                    <h3>Next Steps</h3>
+                    <p>
+                        In the next lesson, we will explore <b>JS Object Methods</b>, where we will learn how to define and use functions inside objects.
+                    </p>
+                    <p>
+                        <a href="./js-modifying-properties.html#js-modifying-properties-exercises" class="neutral">
+                            Ready to test your knowledge? Head to the exercises section!
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="detailed-plan-klm123" id="js-modifying-properties-exercises">
+                    <h2>JS Modifying Object Properties: Exercises</h2>
+                
+                    <h3>1. Updating a Property</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let user = { <br>
+                                name: "Jessica", <br>
+                                age: 25 <br>
+                            }; <br>
+                            user.age = 26; <br>
+                            console.log(user.age);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                    <div id="answer-1" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(user.age); // Output: 26
+                        </code>
+                    </div>
+                
+                    <h3>2. Adding a New Property</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let city = { <br>
+                                name: "New York", <br>
+                                country: "USA" <br>
+                            }; <br>
+                            city.population = 8_000_000; <br>
+                            console.log(city.population);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                    <div id="answer-2" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(city.population); // Output: 8000000
+                        </code>
+                    </div>
+                
+                    <h3>3. Deleting a Property</h3>
+                    <p>
+                        What will be the output of the following code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let fruit = { <br>
+                                name: "Mango", <br>
+                                color: "Yellow" <br>
+                            }; <br>
+                            delete fruit.color; <br>
+                            console.log(fruit.color);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                    <div id="answer-3" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(fruit.color); // Output: undefined
+                        </code>
+                    </div>
+                
+                    <h3>4. Bracket Notation Modification</h3>
+                    <p>
+                        What will be the output of this code?
+                    </p>
+                    <div class="code-example-html">
+                        <code>
+                            let animal = { <br>
+                                type: "Dog", <br>
+                                breed: "Golden Retriever" <br>
+                            }; <br>
+                            animal["breed"] = "Labrador"; <br>
+                            console.log(animal.breed);
+                        </code>
+                    </div>
+                    <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
+                    <div id="answer-4" class="code-example-html blurred-answer">
+                        <code>
+                            console.log(animal.breed); // Output: "Labrador"
+                        </code>
+                    </div>
+                
+                    <p>
+                        In the next lesson, we will cover <b>JS Object Methods</b>, which introduces how to define and use functions inside objects.
+                    </p>
+                
+                    <div class="navigation-buttons">
+                        <a href="./js-accessing-properties.html" class="navigation-button prev-button neutral">&lt; JS Accessing Object Properties</a>
+                        <a href="./js-object-methods.html" class="navigation-button next-button neutral">JS Object Methods &gt;</a>
+                    </div>
+                </div>
+        </main>
+
+<div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+
+    </html>
