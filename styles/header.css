@@ -117,6 +117,7 @@ text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: no-drop;
 }
 
 .icon-images {
@@ -376,6 +377,11 @@ text-transform: uppercase;
 
 .coding-languages-list-9321pookie a:hover {
   background-color: rgb(40, 40, 40);
+}
+
+#not-clickable-header-nav-link {
+  color: rgb(181, 181, 181);
+  cursor: no-drop;
 }
 
 .scroll-button {
