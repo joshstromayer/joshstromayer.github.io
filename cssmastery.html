@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeItClear CSS Mastery</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <script type="module" defer src="script.js"></script>
+</head>
+
+<div id="header-container"></div>
+<body>
+    <link rel="stylesheet" href="/css/coding.css">
+    <header class="mastery-header">
+        <h1 class="mastery-h1">CSS Mastery</h1>
+        <button id="theme-toggle">🌙</button>
+    </header>
+    <main class="mastery-main-body">
+        <div class="mastery-main-page-grid-container" id="gridContainer">
+             <!-- Quick Menu -->
+            <div class="grid-left-section" id="quick-menu">
+            <h2 class="mastery-h2">Exercises</h2>
+            <div id="mastery-roadmap">
+                <button class="topic-button-mastery" id="shuffle-quiz-button">Shuffle</button>
+                <!-- Chapter 1: CSS Basics -->
+                <div class="mastery-chapter">
+                    <h3>CSS Basics</h3>
+                    <div class="mastery-topics">
+                        <button class="topic-button-mastery" data-topic="css-introduction">Introduction to CSS</button>
+                        <button class="topic-button-mastery" data-topic="css-selectors">CSS Selectors</button>
+                        <button class="topic-button-mastery" data-topic="css-colors-backgrounds">Colors & Backgrounds</button>
+                        <button class="topic-button-mastery" data-topic="css-text-styling">Text Styling & Fonts</button>
+                    </div>
+                </div>
+        
+                <!-- Chapter 2: Box Model & Layout -->
+                <div class="mastery-chapter">
+                    <h3>Box Model & Layout</h3>
+                    <div class="mastery-topics">
+                        <button class="topic-button-mastery" data-topic="css-box-model">Box Model</button>
+                        <button class="topic-button-mastery" data-topic="css-spacing">Margins, Padding & Borders</button>
+                        <button class="topic-button-mastery" data-topic="css-sizing-overflow">Width, Height & Overflow</button>
+                    </div>
+                </div>
+        
+                <!-- Chapter 3: Display & Positioning -->
+                <div class="mastery-chapter">
+                    <h3>Display & Positioning</h3>
+                    <div class="mastery-topics">
+                        <button class="topic-button-mastery" data-topic="css-display">CSS Display</button>
+                        <button class="topic-button-mastery" data-topic="css-positioning">CSS Positioning</button>
+                        <button class="topic-button-mastery" data-topic="css-float-clear">Float & Clear</button>
+                        <button class="topic-button-mastery" data-topic="css-z-index">Z-Index & Stacking</button>
+                    </div>
+                </div>
+        
+                <!-- More chapters can be added here -->
+            </div>
+            </div>
+
+            <div class="grid-right-section">
+                <h2>Next Section:</h2>
+            </div>
+        </div>
+       
+    
+        <!-- Quiz Section -->
+        <div class="quiz-container-mastery" id="quiz-container-mastery" style="display: none;">
+            <h2 id="question-text">Loading question...</h2>
+            <div id="answer-options-mastery"></div>
+            <div id="quiz-buttons">
+                <button id="back-to-menu">Back to Menu</button>
+                <button id="next-button">Next</button>
+                <button id="return-to-menu" style="display: none;">Return to Menu</button>
+            </div>
+        </div>
+
+        <div class="quiz-container-mastery" id="shuffle-container" style="display: none;">
+            <h2 id="shuffle-question-text">Loading question...</h2>
+            <div id="shuffle-answer-options-mastery"></div>
+            <div id="shuffle-quiz-buttons">
+                <button id="shuffle-back-to-menu">Back to Menu</button>
+                <button id="shuffle-next-button">Next</button>
+                <button id="shuffle-return-to-menu" style="display: none;">Return to Menu</button>
+            </div>
+        </div>
+
+        <div id="review-popup" class="popup-container">
+            <div class="popup-content">
+                <p id="popup-message">You’re almost there! A few more correct answers and you’ll hit 100%.</p>
+                <button id="close-popup" class="popup-button">Let’s Go!</button>
+            </div>
+        </div>
+
+        <div id="completion-popup" class="popup-container">
+            <div class="popup-content">
+                <p id="completion-message">Great job! You've completed the quiz!</p>
+                <button id="return-to-menu-popup" class="popup-button">Return to Menu</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+</body>
+</html>

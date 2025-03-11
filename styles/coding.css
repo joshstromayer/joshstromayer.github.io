@@ -1,25 +1,66 @@
 :root {
-    --bg-color: white;
-    --text-color: black;
+    --bg-color: #282C34;
+    --text-color: #ffffff;
+    --button-bg: #1e90ff;
+    --button-text: #ffffff;
+    --container-border: 1px solid white;
+    --answer-button-mastery-bg-color: white;
+
+    --code-example-mastery-bg-color: #1E1E1E;
+    --code-example-mastery-border-left: 4px solid #007bff;
+    --code-example-mastery-color: #f4f4f4;
+
+    --footer-bg-color: #282C34;
+    --footer-text-color: #ffffff;
 }
 
-b {
-    font-weight: bold !important;
+/* Light Mode (When Data Attribute is Set) */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --container-border: 1px solid #282C34;
+    --answer-button-mastery-bg-color: darkgrey;
+
+    --code-example-mastery-bg-color: #f4f4f4;
+    --code-example-mastery-border-left: 4px solid #007bff;
+    --code-example-mastery-color: #2a2b43;
+
+    --footer-bg-color: #282C34;
+    --footer-text-color: #ffffff;
+}
+
+/* General Styling */
+
+html, body {
+    scroll-padding-top: 122.59px;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden; /* Prevents scrolling */
 }
 
 /* Styling for the coding page header */
 html {
     scroll-padding-top: 122.59px;
     scroll-behavior: smooth;
-
 }
 
 body {
     font-family: Arial, sans-serif;
     padding: 0;
     margin: 0;
-    background-color: rgb(241, 247, 253) !important;
-    padding-top: 110.5px;
+    padding-top: 112px;
 
 }
 
@@ -49,7 +90,8 @@ body, html {
 }
 
 .cta-button {
-    background-color: white;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     color: #4a90e2;
     padding: 10px 20px;
     border-radius: 5px;
@@ -66,7 +108,8 @@ body, html {
     font-size: 32px;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     margin: 5px 0;
     padding: 20px;
 }
@@ -88,12 +131,13 @@ body, html {
 }
 
 .language-card {
-    background-color: white;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     height: 270px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: auto;
+    padding: 5px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -104,7 +148,8 @@ body, html {
 }
 
 #every-other-box {
-    background-color: rgb(242, 242, 242);
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
 }
 
 .language-card h3 {
@@ -127,14 +172,16 @@ body, html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 2px;
-    background-color: #f9f9f9;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     text-align: center;
 }
 
 .path-card {
     margin: 0px auto;
     padding: 20px;
-    background: white;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     height: 100%;
     width: 100%;
 }
@@ -177,7 +224,8 @@ body, html {
 /* Frontend Box */
 #frontend-box-9429abc,
 #backend-box-9429abc {
-    background-color: #fce4ec; /* Frontend: Pastel pink */
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     padding: 30px;
     width: 100%;
     height: 100%;
@@ -188,7 +236,8 @@ body, html {
 
 /* Make the Backend box pastel blue */
 #backend-box-9429abc {
-    background-color: #e3f2fd; /* Backend: Pastel blue */
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
 }
 
 /* Hover effect for both boxes */
@@ -211,7 +260,8 @@ body, html {
 #backend-box-9429abc p {
     font-size: 16px;
     margin-bottom: 20px;
-    color: black; /* Slightly darker text */
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
 }
 
 /* Language Dividers */
@@ -242,7 +292,7 @@ body, html {
 
 /* Use a different shade for Backend languages */
 #backend-box-9429abc .language-9429abc {
-    background-color: #dbe9f6; /* Light blue for language blocks */
+    background-color: var(--bg-colour); /* Light blue for language blocks */
     color: #1565c0;
 }
 
@@ -285,7 +335,8 @@ body.html-page-klm123 {
     margin: 0;
     padding: 0;
     padding-top: 112px;
-    color: #333;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     position: relative;
 }
 
@@ -295,8 +346,7 @@ body.html-page-klm123 {
     padding: 20px;
     background-color: #4a90e2; 
     color: white;
-    margin-left: 249px;
-    margin-bottom: 5px;
+    margin-left: 250px;
 }
 
 .html-header-klm123 h1 {
@@ -318,7 +368,8 @@ body.html-page-klm123 {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 15px;
-    color: #333; /* Neutral text color */
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
 }
 
 .html-introduction-section ul {
@@ -350,6 +401,8 @@ body.html-page-klm123 {
     width: 100%;
     margin: 0;
     top: 110.5px;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
 }
 
 .subtle-text {
@@ -366,7 +419,8 @@ body.html-page-klm123 {
     overflow-y: auto; /* Allow the sidebar content to scroll independently */
     width: 250px; /* Fixed width for the sidebar */
     min-width: 250px;
-    background-color: #f5f5f5;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
     margin-bottom: 10px;
     scrollbar-width: none;
     padding-bottom: 50px;
@@ -510,7 +564,6 @@ body.html-page-klm123 {
 .detailed-plan-klm123 {
     background-color: #ffffff;
     padding: 20px;
-    margin-bottom: 5px;
 }
 
 .detailed-plan-klm123 h2 {
@@ -886,6 +939,357 @@ textarea {
 
 /* Apply margin to main content when the menu is visible */
 
+.mastery-header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it stays above other elements */
+    border-bottom: 1px solid white;
+    margin-bottom: 15px;
+}
+
+.mastery-h1 {
+    font-weight: 400;
+    font-size: 25px;
+    margin: 0;
+}
+
+#theme-toggle {
+    position: absolute;
+    float: right;
+    padding: 10px 15px;
+    top: 15px;
+    right: 15px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#theme-toggle:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Dark Mode Button in Light Theme */
+[data-theme="light"] #theme-toggle {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Hover Effect in Light Mode */
+[data-theme="light"] #theme-toggle:hover {
+    background-color: #0056b3;
+}
+
+.mastery-main-page-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns, menu takes 1 part, right takes 2 parts */
+    gap: 20px; /* Spacing between sections */
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.grid-left-section {
+    width: 400px;
+    text-align: left;
+}
+
+.grid-left-section h2 {
+    font-size: 14px;
+}
+
+.grid-right-section {
+width: auto;
+}
+
+/* Question Text */
+#question-text {
+    font-size: 22px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 5px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #2a2b43;
+    border-top: 2px solid #2a2b43;
+}
+
+.mastery-main-body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#quick-menu {
+    border: 1px solid white;
+}
+
+#mastery-roadmap {
+    border-top: 1px solid white;
+    padding: 10px;
+}
+
+.mastery-topics {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Quiz Container */
+.quiz-container-mastery {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-width: 450px;
+    max-width: 450px;
+    margin: 10px;
+    border: var(--container-border);
+}
+
+.topic-button-mastery {
+    background-color: #282C34;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: left;
+    opacity: 0.8;
+}
+
+/* Answer Buttons */
+#answer-options-mastery {
+    background-color: var(--bg-colour);
+    padding: 1px;
+    border-bottom: 2px solid var(--bg-colour);
+}
+
+.answer-button-mastery {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px 10px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.answer-button-mastery:hover {
+    background-color: #6da3e2;
+}
+
+.answer-button-mastery:disabled {
+    cursor: not-allowed;
+}
+
+#shuffle-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-width: 450px;
+    max-width: 450px;
+    margin: 10px;
+    border: var(--container-border);
+}
+
+/* Shuffle answer buttons (match regular answer buttons) */
+.shuffle-answer-button-mastery {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px 10px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.shuffle-answer-button-mastery:hover {
+    background-color: #6da3e2;
+}
+
+.shuffle-answer-button-mastery:disabled {
+    cursor: not-allowed;
+}
+
+/* Score Display */
+#score-tracker {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.code-example-mastery {
+    background-color: var(--code-example-mastery-bg-color);
+    border-left: var(--code-example-mastery-border-left);
+    padding: 10px;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+.code-example-mastery pre {
+    margin: 0;
+    text-align: left;
+}
+
+.code-example-mastery code {
+    color: var(--code-example-mastery-color);
+    font-size: 16px;
+}
+
+.topic-button-mastery {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    background: #4a90e2;
+    color: white;
+}
+
+.topic-button-mastery:hover {
+    background-color: #6da3e2;
+}
+
+.topic-button-mastery {
+    padding: 5px;
+}
+
+#quiz-buttons {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    gap: 10px; /* Add some spacing between them */
+}
+
+#quiz-buttons button {
+    flex: 1; /* Make both buttons take equal space */
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* "Next Question" Button */
+#next-button {
+    display: none; /* Initially hidden */
+    margin: 0 10px 10px 0;
+    max-width: 30%;
+}
+
+/* "Back to Menu" Button */
+#back-to-menu {
+    display: none; /* Initially hidden */
+    margin: 0 0 10px 10px;
+    max-width: 30%;
+}
+
+/* "Return to Menu" Button */
+#return-to-menu {
+    color: black;
+    display: none; /* Initially hidden */
+    margin: 0 5px 5px 5px;
+}
+
+/* "Next Question" Button */
+#shuffle-next-button {
+    display: none; /* Initially hidden */
+    margin: 0 10px 10px 0;
+    max-width: 30%;
+}
+
+/* "Back to Menu" Button */
+#shuffle-back-to-menu {
+    margin: 0 0 10px 10px;
+    max-width: 30%;
+}
+
+/* "Return to Menu" Button */
+#shuffle-return-to-menu {
+    color: black;
+    display: none; /* Initially hidden */
+    margin: 0 5px 5px 5px;
+}
+
+#progress-bar {
+    width: calc(100% - 10px);
+    height: 10px;
+    margin: 5px 5px 5px 5px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 10px;
+    background: #007bff;
+    transition: width 0.3s ease-in-out;
+    border-radius: 4px;
+}
+
+#progress-tracker {
+    margin: 0;
+    padding: 0;
+}
+
+/* Blurred Background when Active */
+.blurred-background {
+    filter: blur(10px);
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Popup Container */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(20, 20, 20, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When Active, Scale Up */
+.popup-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Popup Message */
+.popup-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* "Let’s Go!" Button */
+.popup-button {
+    background: #4a90e2;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    #theme-toggle {
+        top: 15px;  /* Move it further up */
+        right: 15px; /* Push it further into the corner */
+        padding: 6px 10px; /* Make it smaller */
+        font-size: 18px;  /* Reduce text size */
+    }
+}
 
 
 @media (max-width: 1024px) {

@@ -1,0 +1,210 @@
+[
+    {
+        "topic": "css-introduction",
+        "question": "What does CSS stand for?",
+        "options": ["Cascading Style Sheets", "Creative Style System", "Computer Style Syntax", "Coded Style System"],
+        "answer": "Cascading Style Sheets"
+    },
+    {
+        "topic": "css-introduction",
+        "question": "Which HTML tag is used to link an external CSS file?",
+        "options": ["&lt;css&gt;", "&lt;style&gt;", "&lt;link&gt;", "&lt;stylesheet&gt;"],
+        "answer": "<link>"
+    },
+    {
+        "topic": "css-introduction",
+        "question": "Which attribute is used in an HTML element to apply inline CSS styles?",
+        "options": ["style", "css", "inline", "format"],
+        "answer": "style"
+    },
+    {
+        "topic": "css-introduction",
+        "question": "Where is the best place to include an external CSS file?",
+        "options": ["Inside the &lt;head&gt;", "Inside the &lt;body&gt;", "At the bottom of the document", "Inside a &lt;div&gt;"],
+        "answer": "Inside the <head>"
+    },
+    {
+        "topic": "css-introduction",
+        "question": "Which of the following is NOT a way to apply CSS to an HTML document?",
+        "options": ["External stylesheet", "Inline styles", "JavaScript styling", "Internal stylesheet"],
+        "answer": "JavaScript styling"
+    },
+    {
+        "topic": "css-selectors",
+        "question": "What is the correct syntax for selecting all &lt;p&gt; elements in CSS?",
+        "options": ["p {}", "#p {}", ".p {}", "&lt;p&gt; {}"],
+        "answer": "p {}"
+    },
+    {
+        "topic": "css-selectors",
+        "question": "Which CSS selector targets an element with a specific `id`?",
+        "options": ["#id", ".id", "id {}", "&lt;id&gt;"],
+        "answer": "#id"
+    },
+    {
+        "topic": "css-selectors",
+        "question": "What does the `*` selector do in CSS?",
+        "options": ["Targets all elements", "Targets all &lt;p&gt; elements", "Targets only body elements", "Targets inline elements only"],
+        "answer": "Targets all elements"
+    },
+    {
+        "topic": "css-selectors",
+        "question": "What is the correct way to select all &lt;p&gt; elements inside a &lt;div&gt;?",
+        "options": ["div p", "div > p", "div, p", "#div p"],
+        "answer": "div p"
+    },
+    {
+        "topic": "css-selectors",
+        "question": "Which selector targets only direct children of a &lt;div&gt;?",
+        "options": ["div > p", "div p", "div + p", "div ~ p"],
+        "answer": "div > p"
+    },
+    {
+        "topic": "css-colors-backgrounds",
+        "question": "Which CSS property is used to change text color?",
+        "options": ["font-color", "text-color", "color", "foreground"],
+        "answer": "color"
+    },
+    {
+        "topic": "css-colors-backgrounds",
+        "question": "Which CSS property is used to set a background color?",
+        "options": ["background", "bg-color", "background-color", "color"],
+        "answer": "background-color"
+    },
+    {
+        "topic": "css-colors-backgrounds",
+        "question": "What is the hexadecimal code for black?",
+        "options": ["#000", ".black", "black", ".000"],
+        "answer": "#000"
+    },
+    {
+        "topic": "css-colors-backgrounds",
+        "question": "What does `rgba(255, 0, 0, 0.5)` represent?",
+        "options": ["Solid red", "Transparent red", "Half-opacity blue", "Transparent black"],
+        "answer": "Transparent red"
+    },
+    {
+        "topic": "css-colors-backgrounds",
+        "question": "Which CSS property is used to apply a background image?",
+        "options": ["background", "background-image", "image-src", "bg-img"],
+        "answer": "background-image"
+    },
+    {
+        "topic": "css-text-styling",
+        "question": "Which CSS property is used to change the font size?",
+        "options": ["font-size", "text-size", "size", "font"],
+        "answer": "font-size"
+    },
+    {
+        "topic": "css-text-styling",
+        "question": "Which CSS property is used to make text bold?",
+        "options": ["font-weight", "text-bold", "bold", "font-style"],
+        "answer": "font-weight"
+    },
+    {
+        "topic": "css-text-styling",
+        "question": "Which CSS property is used to change the font family?",
+        "options": ["font-family", "text-font", "font", "family"],
+        "answer": "font-family"
+    },
+    {
+        "topic": "css-text-styling",
+        "question": "Which unit is relative to the font size of the element?",
+        "options": ["px", "em", "vh", "rem"],
+        "answer": "em"
+    },
+    {
+        "topic": "css-text-styling",
+        "question": "Which CSS property is used to control letter spacing?",
+        "options": ["letter-spacing", "word-spacing", "line-height", "spacing"],
+        "answer": "letter-spacing"
+    },
+        {
+          "topic": "css-box-model",
+          "question": "What are the four main components of the CSS Box Model?",
+          "options": [
+            "Content, Padding, Border, Margin",
+            "Width, Height, Border, Margin",
+            "Padding, Border, Background, Margin",
+            "Content, Width, Border, Overflow"
+          ],
+          "answer": "Content, Padding, Border, Margin"
+        },
+        {
+          "topic": "css-box-model",
+          "question": "Which CSS property is used to specify the width of an element's border?",
+          "options": [
+            "border-width",
+            "border-size",
+            "border-style",
+            "border"
+          ],
+          "answer": "border-width"
+        },
+        {
+          "topic": "css-spacing",
+          "question": "What is the difference between margin and padding?",
+          "options": [
+            "Margin controls spacing inside an element, padding controls spacing outside an element",
+            "Padding controls spacing inside an element, margin controls spacing outside an element",
+            "There is no difference, they both do the same thing",
+            "Margin is only used for block elements, padding is used for inline elements"
+          ],
+          "answer": "Padding controls spacing inside an element, margin controls spacing outside an element"
+        },
+        {
+          "topic": "css-spacing",
+          "question": "How can you set equal margins on all four sides of an element?",
+          "options": [
+            "margin: 10px;",
+            "margin: 10px 10px;",
+            "margin: 10px 10px 10px;",
+            "margin: 10px 10px 10px 10px;"
+          ],
+          "answer": "margin: 10px;"
+        },
+        {
+          "topic": "css-spacing",
+          "question": "What happens when the margin of one element overlaps with the margin of another?",
+          "options": [
+            "The larger margin is applied",
+            "Both margins are added together",
+            "The smaller margin is applied",
+            "Margins never overlap"
+          ],
+          "answer": "The larger margin is applied"
+        },
+        {
+          "topic": "css-sizing-overflow",
+          "question": "Which CSS property is used to specify the height of an element?",
+          "options": [
+            "height",
+            "min-height",
+            "max-height",
+            "element-height"
+          ],
+          "answer": "height"
+        },
+        {
+          "topic": "css-sizing-overflow",
+          "question": "Which value of the `overflow` property will hide overflowing content?",
+          "options": [
+            "hidden",
+            "visible",
+            "auto",
+            "scroll"
+          ],
+          "answer": "hidden"
+        },
+        {
+          "topic": "css-sizing-overflow",
+          "question": "What does the `box-sizing: border-box;` property do?",
+          "options": [
+            "Includes padding and border in the total width and height",
+            "Excludes padding and border from the total width and height",
+            "Applies only to inline elements",
+            "Automatically adjusts width based on screen size"
+          ],
+          "answer": "Includes padding and border in the total width and height"
+        }
+]

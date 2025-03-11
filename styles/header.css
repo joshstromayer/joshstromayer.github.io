@@ -217,7 +217,7 @@ text-transform: uppercase;
   background-color: white;
   border: none;
   cursor: pointer;
-  margin-left: 10px;
+  margin: 0 10px;
   z-index: 2000;
 }
 
@@ -329,7 +329,7 @@ text-transform: uppercase;
   background-color: rgb(34, 34, 34);
   position: relative;
   height: 40px;
-  padding: 0px 35px;
+  padding: 0px 40px;
   width: 100%; /* Ensure the list doesn't stretch unnecessarily */
   min-width: max-content;
   list-style: none;
@@ -472,6 +472,7 @@ position: relative;
 color: #aaa;
 cursor: not-allowed;
 }
+
 .tooltip-text {
 display: none;
 position: absolute;
@@ -703,16 +704,11 @@ background-color: #222;
 color: white;
 }
 
-/* Adjust footer width for course pages */
-.course-page #footer-container {
-width: calc(100% - 260px); /* Adjust based on your course layout */
-margin-left: 260px; /* To align with sidebar or other elements */
+.html-page-klm123 #footer-container {
+width: calc(100% - 250px); /* Adjust based on your course layout */
+margin-left: 250px; /* To align with sidebar or other elements */
 }
 
-.html-page-klm123 #footer-container {
-width: calc(100% - 249px);
-margin-left: 254px;
-}
 
 /* MEDIA QUERIES */
 
