@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Inheritance - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-inheritance-tutorial">
+                <h2>JS Inheritance</h2>
+                <p>
+                  In JavaScript, <b>inheritance</b> allows one class to acquire properties and methods from another class. This helps in reusing code and maintaining an organized structure.
+                </p>
+              
+                <h3>Extending a Class</h3>
+                <p>
+                  The <b>extends</b> keyword is used to create a class that inherits from another class.
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Animal { <br>
+                    &nbsp;&nbsp;constructor(name) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.name = name; <br>
+                    &nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;speak() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.name} makes a noise.`); <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+              
+                    class Dog extends Animal { <br>
+                    &nbsp;&nbsp;bark() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.name} barks!`); <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+              
+                    let dog1 = new Dog("Buddy"); <br>
+                    dog1.speak(); // Output: Buddy makes a noise. <br>
+                    dog1.bark();  // Output: Buddy barks!
+                  </code>
+                </div>
+              
+                <h3>Using <b>super()</b> in Inheritance</h3>
+                <p>
+                  The <b>super()</b> function allows us to call the constructor of the parent class.
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Animal { <br>
+                    &nbsp;&nbsp;constructor(name) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.name = name; <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+              
+                    class Dog extends Animal { <br>
+                    &nbsp;&nbsp;constructor(name, breed) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;super(name); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.breed = breed; <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+              
+                    let dog2 = new Dog("Rocky", "Golden Retriever"); <br>
+                    console.log(dog2.name); // Output: Rocky <br>
+                    console.log(dog2.breed); // Output: Golden Retriever
+                  </code>
+                </div>
+              
+                <h3>Overriding Methods</h3>
+                <p>
+                  A subclass can override a method from its parent class by defining a method with the same name.
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Animal { <br>
+                    &nbsp;&nbsp;speak() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("An animal makes a sound."); <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+              
+                    class Cat extends Animal { <br>
+                    &nbsp;&nbsp;speak() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("Meow!"); <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+              
+                    let cat1 = new Cat(); <br>
+                    cat1.speak(); // Output: Meow!
+                  </code>
+                </div>
+              
+              </div>
+            
+              <div class="detailed-plan-klm123 exercise-section" id="js-inheritance-exercises">
+                <div class="detailed-plan-klm123-exercises">
+                  <h2>JS Inheritance: Exercises</h2>
+              
+                  <h3>1. Understanding Inheritance</h3>
+                  <p>
+                    What will be the output of the following code?
+                  </p>
+                  <div class="code-example-html">
+                    <code>
+                      class Parent { <br>
+                      &nbsp;&nbsp;sayHello() { <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello from Parent!"); <br>
+                      &nbsp;&nbsp;} <br>
+                      } <br><br>
+              
+                      class Child extends Parent {} <br><br>
+              
+                      let child1 = new Child(); <br>
+                      child1.sayHello();
+                    </code>
+                  </div>
+                  <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                  <div id="answer-1" class="code-example-html blurred-answer">
+                    <code>
+                      Hello from Parent!
+                    </code>
+                  </div>
+              
+                  <h3>2. Calling <b>super()</b></h3>
+                  <p>
+                    What will be the output of the following code?
+                  </p>
+                  <div class="code-example-html">
+                    <code>
+                      class Vehicle { <br>
+                      &nbsp;&nbsp;constructor(type) { <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;this.type = type; <br>
+                      &nbsp;&nbsp;} <br>
+                      } <br><br>
+              
+                      class Car extends Vehicle { <br>
+                      &nbsp;&nbsp;constructor(type, brand) { <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;super(type); <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;this.brand = brand; <br>
+                      &nbsp;&nbsp;} <br>
+                      } <br><br>
+              
+                      let myCar = new Car("Sedan", "Honda"); <br>
+                      console.log(myCar.type, myCar.brand);
+                    </code>
+                  </div>
+                  <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                  <div id="answer-2" class="code-example-html blurred-answer">
+                    <code>
+                      Sedan Honda
+                    </code>
+                  </div>
+              
+                  <h3>3. Overriding Methods</h3>
+                  <p>
+                    What will be the output of the following code?
+                  </p>
+                  <div class="code-example-html">
+                    <code>
+                      class Animal { <br>
+                      &nbsp;&nbsp;speak() { <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;console.log("Animal makes a noise"); <br>
+                      &nbsp;&nbsp;} <br>
+                      } <br><br>
+              
+                      class Dog extends Animal { <br>
+                      &nbsp;&nbsp;speak() { <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;console.log("Bark!"); <br>
+                      &nbsp;&nbsp;} <br>
+                      } <br><br>
+              
+                      let dog1 = new Dog(); <br>
+                      dog1.speak();
+                    </code>
+                  </div>
+                  <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                  <div id="answer-3" class="code-example-html blurred-answer">
+                    <code>
+                      Bark!
+                    </code>
+                  </div>
+                </div>
+              </div>
+              <div class="navigation-buttons">
+                <a href="./js-classes.html" class="navigation-button prev-button neutral">&lt; JS Classes</a>
+                <a href="./js-object-prototypes.html" class="navigation-button next-button neutral">JS Object Prototypes &gt;</a>
+              </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

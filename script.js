@@ -1,28 +1,61 @@
+const languageMapping = {
+  html: [ "html-introduction", "html-structure", "html-elements", "html-attributes", "html-headings", "html-paragraphs", "html-formatting", "html-comments", "html-links", "html-images", "html-lists", "html-tables", "html-forms", "html-divs", "html-classes", "html-ids", "html-iframe", "html-css", "html-javascript", "html-file-paths", "html-head"],
+  css: [ "css-introduction", "css-syntax", "css-selectors", "css-in-html", "css-adv-selectors", "css-colors", "css-backgrounds", "css-borders", "css-margins", "css-padding", "css-box-model", "css-width-height", "css-units", "css-fonts", "css-text", "css-links", "css-lists", "css-position", "css-display", "css-float-clear", "css-overflow", "css-flexbox", "css-grid", "css-flex", "css-media-queries", "css-responsive", "css-transitions", "css-animations", "css-transform", "css-shadows", "css-variables", "css-z-index", "css-clipping", "css-masking", "css-filters", "css-shapes"],
+  javascript: [ "js-introduction", "js-setting-up", "js-syntax", "js-output", "js-comments", "js-variables", "js-let-const-var", "js-data-types", "js-type-conversion", "js-arithmetic-operators", "js-assignment-operators", "js-comparison-operators", "js-logical-operators", "js-bitwise-operators", "js-if-else", "js-switch", "js-ternary-operator", "js-loops-introduction", "js-for-loops", "js-while-loops", "js-do-while-loops", "js-break-continue", "js-methods-basics", "js-creating-modifying-arrays.html","js-introduction-objects", "js-creating-objects", "js-accessing-properties", "js-modifying-properties", "js-object-methods", "js-object-constructors", "js-object-prototypes", "js-classes-inheritance", "js-introduction-arrays", "js-creating-modifying-arrays", "js-array-methods-advanced", "js-slicing-splicing-arrays", "js-sorting-arrays", "js-searching-arrays", "js-array-methods-basic", "js-iterating-arrays", "js-sorting-searching-arrays", "js-creating-modifying-arrays" ,"js-multidimensional-arrays", "js-this-keyword", "js-es6-modules", "js-destructuring", "js-spread-rest-operators", "js-default-parameters", "js-template-literals", "js-error-handling", "js-strict-mode", "js-json", "js-regex", "js-date-time", "js-classes", "js-inheritance"],
+};
+
+const masteryMapping = {
+  html: [ "htmlmastery"],
+  css: [ "cssmastery"],
+  javascript: [ "jsmastery"],
+};
+
+(function() {
+  let storedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", storedTheme);
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/header.html') // Adjust the path if needed
+  loadHeader();
+});
+
+function setupThemeToggle() {
+  const themeToggle = document.getElementById("theme-toggle");
+  if (!themeToggle) {
+      console.error("❌ Theme toggle button not found!");
+      return;
+  }
+
+  let currentTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  themeToggle.innerText = currentTheme === "dark" ? "🌙" : "☀️";
+
+  themeToggle.addEventListener("click", () => {
+      let newTheme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      themeToggle.innerText = newTheme === "dark" ? "🌙" : "☀️";
+      console.log(`✅ Theme switched to: ${newTheme}`);
+  });
+}
+
+function loadHeader() {
+  fetch("/header.html")
       .then(response => {
           if (!response.ok) throw new Error(`Failed to fetch header: ${response.statusText}`);
           return response.text();
       })
-      .then(data => {
-          const container = document.getElementById('header-container');
+      .then(html => {
+          const container = document.getElementById("header-container");
           if (!container) {
-              console.error("Error: #header-container not found in the DOM.");
+              console.error("❌ Error: #header-container not found in the DOM.");
               return;
           }
-          container.innerHTML = data;
-
-          console.log("Header successfully loaded.");
-
-          // Attach dropdown menu event listeners
-          if (typeof attachDropdownMenuListeners === 'function') {
-              attachDropdownMenuListeners();
-          } else {
-              console.error("attachDropdownMenuListeners is not defined.");
-          }
+          container.innerHTML = html;
+          setTimeout(setupThemeToggle, 100);
       })
-      .catch(error => console.error("Error loading header:", error));
-});
+      .catch(error => console.error("❌ Error loading header:", error));
+}
 
 // Check if the required elements exist on the page
 document.addEventListener("DOMContentLoaded", () => {
@@ -200,15 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // coding language nav link active button thing
 function activateNavLink() {
-  console.log("Checking active nav link...");
-
-  // Define the mapping between parent languages and their pages
-  const languageMapping = {
-    html: [ "html-introduction", "html-structure", "html-elements", "html-attributes", "html-headings", "html-paragraphs", "html-formatting", "html-comments", "html-links", "html-images", "html-lists", "html-tables", "html-forms", "html-divs", "html-classes", "html-ids", "html-iframe", "html-css", "html-javascript", "html-file-paths", "html-head"],
-    css: [ "css-introduction", "css-syntax", "css-selectors", "css-in-html", "css-adv-selectors", "css-colors", "css-backgrounds", "css-borders", "css-margins", "css-padding", "css-box-model", "css-width-height", "css-units", "css-fonts", "css-text", "css-links", "css-lists", "css-position", "css-display", "css-float-clear", "css-overflow", "css-flexbox", "css-grid", "css-flex", "css-media-queries", "css-responsive", "css-transitions", "css-animations", "css-transform", "css-shadows", "css-variables", "css-z-index", "css-clipping", "css-masking", "css-filters", "css-shapes"],
-    javascript: [ "js-introduction", "js-setting-up", "js-syntax", "js-output", "js-comments", "js-variables", "js-let-const-var", "js-data-types", "js-type-conversion", "js-arithmetic-operators", "js-assignment-operators", "js-comparison-operators", "js-logical-operators", "js-bitwise-operators", "js-if-else", "js-switch", "js-ternary-operator", "js-loops-introduction", "js-for-loops", "js-while-loops", "js-do-while-loops", "js-break-continue", "js-methods-basics", "js-creating-modifying-arrays.html","js-introduction-objects", "js-creating-objects", "js-accessing-properties", "js-modifying-properties", "js-object-methods", "js-object-constructors", "js-object-prototypes", "js-classes-inheritance", "js-introduction-arrays", "js-creating-modifying-arrays", "js-array-methods-advanced", "js-slicing-splicing-arrays", "js-sorting-arrays", "js-searching-arrays", "js-array-methods-basic", "js-iterating-arrays", "js-sorting-searching-arrays", "js-creating-modifying-arrays" ,"js-multidimensional-arrays", "js-this-keyword", "js-es6-modules", "js-destructuring", "js-spread-rest-operators", "js-default-parameters", "js-template-literals", "js-error-handling", "js-strict-mode", "js-json", "js-regex", "js-date-time"],
-  };
-
   const navLinks = document.querySelectorAll(".coding-languages-list-9321pookie li a");
   const currentPath = window.location.pathname;
   const currentFile = currentPath.split('/').pop().split('.')[0];
@@ -217,10 +241,21 @@ function activateNavLink() {
     const hrefFile = link.getAttribute("href").split('/').pop().split('.')[0];
     let isActive = false;
 
+    // Check in languageMapping
     for (const [language, pages] of Object.entries(languageMapping)) {
       if (pages.includes(currentFile) && pages.includes(hrefFile)) {
         isActive = true;
         break;
+      }
+    }
+
+    // Check in masteryMapping
+    if (!isActive) {
+      for (const [category, pages] of Object.entries(masteryMapping)) {
+        if (pages.includes(currentFile) && pages.includes(hrefFile)) {
+          isActive = true;
+          break;
+        }
       }
     }
 
@@ -230,8 +265,6 @@ function activateNavLink() {
       link.classList.remove("active");
     }
   });
-
-  console.log("Active nav link check complete.");
 }
 
 // exercise reveal/hide answer button 
@@ -340,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Universal Ranking System Initialization
 function initializeTopicRankingSystem() {
-  const statuses = ["neutral", "green", "amber", "red"]; // Define all statuses
+  const statuses = ["neutral", "green", "amber", "red"];
   const allQuickMenus = document.querySelectorAll(".quick-plan-list-klm123");
 
   allQuickMenus.forEach(menu => {
@@ -351,13 +384,11 @@ function initializeTopicRankingSystem() {
           const statusButton = menuItem.querySelector(".status-button");
           const hrefKey = link.getAttribute("href");
 
-          // Load saved status from localStorage
           const savedStatus = localStorage.getItem(hrefKey);
           if (savedStatus) {
-              link.className = `menu-link ${savedStatus}`; // Apply the saved status
+              link.className = `menu-link ${savedStatus}`;
           }
 
-          // Add click listener to the status button
           statusButton.addEventListener("click", () => {
               const currentStatus = statuses.find(status =>
                   link.classList.contains(status)
@@ -366,15 +397,169 @@ function initializeTopicRankingSystem() {
               const nextIndex = (currentIndex + 1) % statuses.length;
               const nextStatus = statuses[nextIndex];
 
-              // Update the link's class
               link.className = `menu-link ${nextStatus}`;
 
-              // Save the updated status in localStorage
               localStorage.setItem(hrefKey, nextStatus);
           });
       });
   });
 }
+
+const STATUSES = ["neutral", "green", "amber", "red"];
+
+// Initialize the Quick Menu Status System
+function initializeQuickMenuStatusSystem() {
+  console.log("🚀 Initializing Quick Menu Status System...");
+
+  const quickMenuItems = document.querySelectorAll(".quick-plan-list-klm123 .menu-item");
+  console.log(`📌 Found ${quickMenuItems.length} quick menu items.`);
+
+  quickMenuItems.forEach((menuItem, index) => {
+    const link = menuItem.querySelector(".menu-link");
+    const statusButton = menuItem.querySelector(".status-button");
+    const hrefKey = link.getAttribute("href");
+
+    console.log(`🔗 Processing quick menu item ${index + 1}: ${hrefKey}`);
+
+    // Load saved status from localStorage
+    const savedStatus = localStorage.getItem(hrefKey);
+    if (savedStatus) {
+      console.log(`📂 Loaded saved status for ${hrefKey}: ${savedStatus}`);
+      link.className = `menu-link ${savedStatus}`;
+    }
+
+    // Add click event to cycle through statuses
+    statusButton.addEventListener("click", () => {
+      const currentStatus = STATUSES.find((status) => link.classList.contains(status));
+      const currentIndex = STATUSES.indexOf(currentStatus);
+      const nextIndex = (currentIndex + 1) % STATUSES.length;
+      const nextStatus = STATUSES[nextIndex];
+
+      console.log(`🖱 Clicked status button for ${hrefKey}. Changing status from ${currentStatus} to ${nextStatus}.`);
+
+      // Update the link class and save to localStorage
+      link.className = `menu-link ${nextStatus}`;
+      localStorage.setItem(hrefKey, nextStatus);
+    });
+  });
+}
+
+// Initialize the Lesson Rating System
+function initializeLessonRatingSystem() {
+  console.log("🚀 Initializing Lesson Rating System...");
+
+  // Find the exercise section
+  const exerciseSection = document.querySelector(".exercise-section"); // Adjust the selector as needed
+  if (!exerciseSection) {
+    console.log("❌ Exercise section not found. Exiting.");
+    return; // Exit if no exercise section is found
+  }
+
+  // Get the current page's filename (e.g., "js-introduction-arrays.html")
+  const currentPage = window.location.pathname.split("/").pop();
+  console.log(`📄 Current page: ${currentPage}`);
+
+  // Create the rating container
+  const ratingContainer = document.createElement("div");
+  ratingContainer.className = "lesson-rating-container";
+
+  // Create rating buttons for each status
+  STATUSES.forEach((status) => {
+    if (status === "neutral") return; // Skip neutral (default state)
+
+    const button = document.createElement("button");
+    button.className = `lesson-rating-btn ${status}`;
+    button.textContent = status.charAt(0).toUpperCase() + status.slice(1); // Capitalize status
+    button.dataset.status = status;
+
+    // Highlight the saved status
+    const savedStatus = localStorage.getItem(currentPage);
+    if (savedStatus === status) {
+      console.log(`✅ Loaded saved status for ${currentPage}: ${status}`);
+      button.classList.add("selected");
+    }
+
+    // Add click event to update status
+    button.addEventListener("click", () => {
+      console.log(`🖱 Clicked rating button: ${status} for ${currentPage}`);
+
+      // Remove 'selected' class from all buttons
+      ratingContainer.querySelectorAll(".lesson-rating-btn").forEach((btn) => btn.classList.remove("selected"));
+
+      // Highlight the clicked button
+      button.classList.add("selected");
+
+      // Save status to localStorage
+      localStorage.setItem(currentPage, status);
+      console.log(`💾 Saved status for ${currentPage}: ${status}`);
+
+      // Update the corresponding quick menu item
+      updateQuickMenuStatus(currentPage, status);
+    });
+
+    ratingContainer.appendChild(button);
+  });
+
+  // Insert the rating buttons AFTER the exercise section
+  exerciseSection.insertAdjacentElement("afterend", ratingContainer);
+  console.log("📍 Inserted rating buttons below the exercise section.");
+}
+
+// Update the Quick Menu Status for the corresponding lesson
+function updateQuickMenuStatus(hrefKey, status) {
+  console.log(`🔄 Updating quick menu for ${hrefKey} -> ${status}`);
+
+  const quickMenuLinks = document.querySelectorAll(".quick-plan-list-klm123 .menu-link");
+  console.log(`🔍 Found ${quickMenuLinks.length} quick menu links.`);
+
+  quickMenuLinks.forEach((link) => {
+    // Normalize the link's href by removing leading './' if present
+    const linkHref = link.getAttribute("href").replace(/^\.\//, "");
+    console.log(`🔗 Checking quick menu link: ${linkHref}`);
+
+    // Normalize the hrefKey by removing leading './' if present
+    const normalizedHrefKey = hrefKey.replace(/^\.\//, "");
+
+    // Compare the normalized hrefKey with the normalized linkHref
+    if (linkHref === normalizedHrefKey) {
+      console.log(`✅ Match found! Updating quick menu for ${linkHref}.`);
+
+      // Remove all status classes
+      link.classList.remove(...STATUSES);
+
+      // Add the new status class
+      link.classList.add(status);
+      localStorage.setItem(hrefKey, status);
+    }
+  });
+}
+
+// Load saved statuses for the Quick Menu on page load
+function loadQuickMenuStatuses() {
+  console.log("🔄 Loading quick menu statuses from localStorage...");
+
+  const quickMenuLinks = document.querySelectorAll(".quick-plan-list-klm123 .menu-link");
+  console.log(`🔍 Found ${quickMenuLinks.length} quick menu links.`);
+
+  quickMenuLinks.forEach((link) => {
+    const hrefKey = link.getAttribute("href").replace(/^\.\//, "");
+    const savedStatus = localStorage.getItem(hrefKey);
+
+    if (savedStatus) {
+      console.log(`📂 Loaded saved status for ${hrefKey}: ${savedStatus}`);
+      link.classList.remove(...STATUSES);
+      link.classList.add(savedStatus);
+    }
+  });
+}
+
+// Initialize everything when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("📄 DOM fully loaded. Initializing systems...");
+  initializeQuickMenuStatusSystem();
+  initializeLessonRatingSystem();
+  loadQuickMenuStatuses();
+});
 
 // Select all navigation links
 const navLinks = document.querySelectorAll('.nav-link');
@@ -521,8 +706,6 @@ document.querySelectorAll('.completion-button').forEach(button => {
 
 // Load in the course VSP quick menu and header
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded. Attempting to fetch quick menu...");
-
   fetch("vsp-quick-menu.html")
       .then((response) => {
           if (!response || !response.ok) {
@@ -796,7 +979,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Wait for the dynamically loaded progress bar to appear
   const progressBarContainer = document.getElementById(progressBarContainerId);
   if (!progressBarContainer) {
-      console.log(`Waiting for progress bar (#${progressBarContainerId}) to load...`);
       const observer = new MutationObserver(() => {
           if (document.getElementById(progressBarFillId)) {
               console.log("Progress bar loaded. Initializing...");
@@ -1009,8 +1191,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // sub topic and topic completion thing 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded, starting fetch operations...");
-
   // Fetch the header file
   fetch('/header.html')
     .then(response => {
@@ -1021,9 +1201,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const headerContainer = document.getElementById('header-container');
       if (headerContainer) {
         headerContainer.innerHTML = headerData;
-        console.log("Header loaded successfully.");
-
-        // Run nav link activation **after** header is inserted
         setTimeout(() => {
           activateNavLink();
         }, 100);
@@ -1041,17 +1218,15 @@ document.addEventListener("DOMContentLoaded", () => {
       let menuOrder = [];
 
       if (isHTMLPage) {
-        console.log("Detected HTML Page. Loading HTML Quick Menu...");
         menuFetches.push(fetch('/html/html-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("HTML Quick Menu failed")));
         menuOrder.push("html");
       }
       if (isCSSPage) {
-        console.log("Detected CSS Page. Loading CSS Quick Menu...");
+      
         menuFetches.push(fetch('/css/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
         menuOrder.push("css");
       }
       if (isJSPage) {
-        console.log("Detected JavaScript Page. Loading JS Quick Menu...");
         menuFetches.push(fetch('/javascript/js-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("JS Quick Menu failed")));
         menuOrder.push("js");
       }
@@ -1060,13 +1235,13 @@ document.addEventListener("DOMContentLoaded", () => {
         menuOrder.forEach((menuType, index) => {
           if (menuType === "html") {
             document.getElementById('html-quick-menu').innerHTML = menuData[index];
-            console.log("HTML Quick Menu loaded.");
+            
           } else if (menuType === "css") {
             document.getElementById('css-quick-menu').innerHTML = menuData[index];
-            console.log("CSS Quick Menu loaded.");
+            
           } else if (menuType === "js") {
             document.getElementById('js-quick-menu').innerHTML = menuData[index];
-            console.log("JS Quick Menu loaded.");
+          
           }
         });
 
@@ -1082,8 +1257,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // hamburger menu for quick menu 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded, starting fetch operations...");
-
   // Fetch the header file
   fetch('/header.html')
     .then(response => {
@@ -1094,9 +1267,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const headerContainer = document.getElementById('header-container');
       if (headerContainer) {
         headerContainer.innerHTML = headerData;
-        console.log("Header loaded successfully.");
-      } else {
-        console.error("Header container not found.");
       }
 
       // Detect which type of page this is
@@ -1108,15 +1278,15 @@ document.addEventListener("DOMContentLoaded", () => {
       let menuFetches = [];
 
       if (isHTMLPage) {
-        console.log("Detected HTML Page. Loading HTML Quick Menu...");
+        
         menuFetches.push(fetch('/html/html-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("HTML Quick Menu failed")));
       }
       if (isCSSPage) {
-        console.log("Detected CSS Page. Loading CSS Quick Menu...");
+        
         menuFetches.push(fetch('/css/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
       }
       if (isJSPage) {
-        console.log("Detected JavaScript Page. Loading JS Quick Menu...");
+        
         menuFetches.push(fetch('/javascript/js-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("JS Quick Menu failed")));
       }
 
@@ -1125,15 +1295,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((menuData) => {
       if (document.getElementById('html-quick-menu')) {
         document.getElementById('html-quick-menu').innerHTML = menuData[0];
-        console.log("HTML Quick Menu loaded.");
       }
       if (document.getElementById('css-quick-menu')) {
         document.getElementById('css-quick-menu').innerHTML = menuData[0]; // If this is a CSS page, menuData[0] contains the CSS menu
-        console.log("CSS Quick Menu loaded.");
       }
       if (document.getElementById('js-quick-menu')) {
         document.getElementById('js-quick-menu').innerHTML = menuData[0]; // If this is a JS page, menuData[0] contains the JS menu
-        console.log("JS Quick Menu loaded.");
       }
 
       // Initialize the hamburger menu only after the relevant quick menu has loaded
@@ -1144,8 +1311,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Error during fetch operations:", error));
 });
 function initializeHamburgerMenu() {
-  console.log("Initializing hamburger menu...");
-
   setTimeout(() => {
     const menuButton = document.getElementById("hamburger-menu");
     const htmlMenu = document.getElementById("html-quick-menu");
@@ -1153,8 +1318,6 @@ function initializeHamburgerMenu() {
     const jsMenu = document.getElementById("js-quick-menu");
 
     if (menuButton && (htmlMenu || cssMenu || jsMenu)) {
-      console.log("Hamburger menu button & relevant quick menu found.");
-
       // **Remove existing event listeners before adding new ones**
       menuButton.removeEventListener("click", toggleQuickMenu);
       menuButton.addEventListener("click", toggleQuickMenu);
@@ -1194,7 +1357,6 @@ function closeQuickMenus(event) {
 
 // buttons for scrolling on mouse for coding extention menu thing
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("⏳ Waiting for header to load...");
 
   const checkExist = setInterval(() => {
       const scrollContainer = document.querySelector(".coding-extension-9321pookie"); // Parent container
@@ -1203,8 +1365,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
           clearInterval(checkExist);
-          console.log("✅ Header loaded! Activating scroll buttons.");
-
           const scrollSpeed = 1; // Adjust how fast it scrolls
           let scrollInterval; // Variable to store the interval
 
@@ -1236,6 +1396,62 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// quick menu selection stuff 
+function waitForSidebars() {
+  const observer = new MutationObserver((mutations, obs) => {
+      const sidebar = document.getElementById("tutorial-coding-extention-9321pookie");
+      const sidebarT = document.getElementById("mastery-coding-extention-9321pookie");
+
+      if (sidebar && sidebarT) {
+          obs.disconnect(); // Stop observing once the elements exist
+          applySidebarVisibility(sidebar, sidebarT);
+      }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Fallback: Check for elements after a delay
+  setTimeout(() => {
+      const sidebar = document.getElementById("tutorial-coding-extention-9321pookie");
+      const sidebarT = document.getElementById("mastery-coding-extention-9321pookie");
+      if (sidebar && sidebarT) {
+          applySidebarVisibility(sidebar, sidebarT);
+      }
+  }, 100); // Check after 1 second
+}
+
+
+function applySidebarVisibility(sidebar, sidebarT) {
+  sidebar.style.display = "none";  
+  sidebarT.style.display = "none";  
+
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split("/").pop().replace(".html", "");
+
+  let pageCategory = null;
+
+  for (const [category, pages] of Object.entries(languageMapping)) {
+      if (pages.includes(currentPage)) {
+          pageCategory = category;
+          break;
+      }
+  }
+
+    if (currentPage === "tutorials" || pageCategory) {
+        sidebar.style.display = "flex";
+        sidebarT.style.display = "none";
+    } 
+
+ else if (currentPage === "masteries" || currentPage === "cssmastery" ) {
+  sidebar.style.display = "none";
+  sidebarT.style.display = "flex";
+}
+}
+
+
+waitForSidebars();
+
+
 
 // mastery code 
 
@@ -1244,7 +1460,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let cssBasicsQuestions = [];
 let totalQuestions = 0;
 
-fetch("questions.json")
+fetch("/questions.json")
   .then(response => response.json())
   .then(data => {
     cssBasicsQuestions = [...data];

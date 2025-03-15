@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Classes - CodeItClear</title>
+    <link rel="icon" class="webpage-icon" href="/images/stromayer-icon.png" type="image/png">
+    <link rel="stylesheet" href="/styles/coding.css">
+</head>
+
+<div id="header-container"></div>
+<body class="html-page-klm123">
+    <link rel="stylesheet" href="/styles/coding.css">
+    <main class="html-main-klm123">
+        <!-- Quick Start Plan -->
+        <div id="js-quick-menu"></div>
+    
+        <!-- Detailed Plan -->
+        <div class="main-tutorial-content">
+            <div class="detailed-plan-klm123" id="js-classes-tutorial">
+                <h2>JS Classes</h2>
+                <p>
+                  In JavaScript, <b>classes</b> provide a structured way to create objects. They help organize code and make object creation easier.
+                </p>
+              
+                <h3>Defining a Class</h3>
+                <p>
+                  A class is defined using the <b>class</b> keyword. The <b>constructor</b> method inside a class initializes the object's properties.
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Person { <br>
+                    &nbsp;&nbsp;constructor(name, age) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.name = name; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.age = age; <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+                    let person1 = new Person("Liam", 25); <br>
+                    console.log(person1.name); // Output: Liam
+                  </code>
+                </div>
+              
+                <h3>Adding Methods to a Class</h3>
+                <p>
+                  You can add methods to a class to define actions that objects of that class can perform.
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Person { <br>
+                    &nbsp;&nbsp;constructor(name, age) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.name = name; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.age = age; <br>
+                    &nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;greet() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, my name is ${this.name}.`); <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+                    let person2 = new Person("Emily", 30); <br>
+                    person2.greet(); // Output: Hello, my name is Emily.
+                  </code>
+                </div>
+              
+                <h3>Using Class Instances</h3>
+                <p>
+                  When you create an object from a class, it is called an <b>instance</b>. Each instance has its own unique values.
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    let person3 = new Person("Nathan", 28); <br>
+                    let person4 = new Person("Sophia", 22); <br>
+                    console.log(person3.name); // Output: Nathan <br>
+                    console.log(person4.name); // Output: Sophia
+                  </code>
+                </div>
+              </div>
+            
+              <div class="detailed-plan-klm123 exercise-section" id="js-classes-exercises">
+                <div class="detailed-plan-klm123-exercises">
+                <h2>JS Classes: Exercises</h2>
+              
+                <h3>1. Creating a Class</h3>
+                <p>
+                  What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Car { <br>
+                    &nbsp;&nbsp;constructor(brand) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.brand = brand; <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+                    let myCar = new Car("Toyota"); <br>
+                    console.log(myCar.brand);
+                  </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-1">Reveal Answer</button>
+                <div id="answer-1" class="code-example-html blurred-answer">
+                  <code>
+                    console.log(myCar.brand); // Output: Toyota
+                  </code>
+                </div>
+              
+                <h3>2. Using a Method</h3>
+                <p>
+                  What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Animal { <br>
+                    &nbsp;&nbsp;constructor(name) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.name = name; <br>
+                    &nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;speak() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.name} makes a sound.`); <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+                    let cat = new Animal("Whiskers"); <br>
+                    cat.speak();
+                  </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-2">Reveal Answer</button>
+                <div id="answer-2" class="code-example-html blurred-answer">
+                  <code>
+                    cat.speak(); // Output: Whiskers makes a sound.
+                  </code>
+                </div>
+              
+                <h3>3. Multiple Instances</h3>
+                <p>
+                  What will be the output of the following code?
+                </p>
+                <div class="code-example-html">
+                  <code>
+                    class Book { <br>
+                    &nbsp;&nbsp;constructor(title, author) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.title = title; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.author = author; <br>
+                    &nbsp;&nbsp;} <br>
+                    } <br><br>
+                    let book1 = new Book("1984", "George Orwell"); <br>
+                    let book2 = new Book("Brave New World", "Aldous Huxley"); <br>
+                    console.log(book2.title);
+                  </code>
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="answer-3">Reveal Answer</button>
+                <div id="answer-3" class="code-example-html blurred-answer">
+                  <code>
+                    console.log(book2.title); // Output: Brave New World
+                  </code>
+                </div>
+
+              </div>
+              </div>
+
+          
+            <div class="navigation-buttons">
+              <a href="./js-object-prototypes.html" class="navigation-button prev-button neutral">&lt; JS Object Prototypes</a>
+              <a href="./js-inheritance.html" class="navigation-button next-button neutral">JS Inheritance &gt;</a>
+            </div>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="/script.js?v=2"></script>
+</body>
+</html>

@@ -1,3 +1,30 @@
+[data-theme="light"] {
+    --header-bg-color: white;
+    --header-text-color: black;
+}
+
+[data-theme="dark"] {
+    --header-bg-color: #1e1e1e;
+    --header-text-color: white;
+}
+
+#theme-toggle {
+    padding: 10px 15px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#theme-toggle:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
 @font-face {
   font-family: 'Fredoka';
   src: url('../fonts/Fredoka-VariableFont_wdth,wght.ttf') format('truetype');
@@ -19,27 +46,27 @@
 
 body {
   overflow-x: hidden;
-  background-color: white;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
 }
 
 #sticky-header {
   position: fixed;
   z-index: 1000;
   top: 0;
-  width: 100%; /* Fixed width based on your reference screen width */
-  height: 72px; /* 4vw converted to px: 4% of 1470px */
-  background-color: white; /* Adjust to match your design */
+  width: 100%;
+  height: 72px;
 }
 
 /* Header Styling */
 .sticky-header {
-  background-color: white; /* Adjust color as needed */
-  color: black;
-  height: 72px; /* 7vh converted to px: 7% of 840px */
+  height: 72px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center header content horizontally */
+  justify-content: center;
   z-index: 1000;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-colour);
 }
 
 .sticky-header-container {
@@ -52,6 +79,8 @@ body {
   height: 72px; /* 7vh converted to px */
   padding: 0; /* Adjust padding as needed */
   white-space: nowrap;
+  background-color: var(--header-bg-color);
+  color: var(--header-bg-color);
 }
 
 /* Sticky Logo */
@@ -99,6 +128,8 @@ text-transform: uppercase;
   max-height: 58.8px; /* 7vh converted to px: 7% of 840px */
   height: 58.8px; /* Fixed height */
   margin-right: 39.69px; /* 2.7vw converted to px: 2.7% of 1470px */
+  background-color: var(--header-bg-color);
+  color: var(--header-text-colour);
 }
 
 /* Sticky Header Icons Section */
@@ -126,7 +157,8 @@ text-transform: uppercase;
 
 /* Sticky Icon Navigation */
 .sticky-icon-navigation {
-  background-color: white;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
   border: none;
   cursor: pointer;
 }
@@ -135,11 +167,10 @@ text-transform: uppercase;
 
 .sticky-c-sitePrimaryMenu_item {
   height: 33.6px; /* 4vh converted to px: 4% of 840px */
-  background-color: white;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
   border: none;
   font-size: 14.11px; /* 0.96vw converted to px: 0.96% of 1470px */
-
-  color: black;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -163,6 +194,7 @@ text-transform: uppercase;
   width: 100%;
   height: 100%;
   margin-left: auto; /* 3.4vw converted to px: 3.4% of 1470px */
+  background-color: var(--header-bg-color);
 }
 
 /* Fullscreen Menu */
@@ -172,7 +204,8 @@ text-transform: uppercase;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,7 +224,8 @@ text-transform: uppercase;
 }
 
 .fullscreen-menu nav ul li a {
-  color: white;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
   font-size: 24px;
   text-decoration: none;
   transition: color 0.3s;
@@ -214,7 +248,8 @@ text-transform: uppercase;
 #hamburger-menu {
   display: none;
   position: fixed;
-  background-color: white;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
   border: none;
   cursor: pointer;
   margin: 0 10px;
@@ -222,7 +257,8 @@ text-transform: uppercase;
 }
 
 .menu-button {
-  background-color: white;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
   border: none;
   cursor: pointer;
   height: 20px;
@@ -238,7 +274,8 @@ text-transform: uppercase;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white; /* Change background to white */
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
   color: black; /* Change text color to black */
   display: none; /* Initially hidden */
   flex-direction: column;
@@ -265,7 +302,7 @@ text-transform: uppercase;
 }
 
 .dropdown-menu a {
-  color: black; /* Change link color to black */
+    color: var(--header-text-color);
   text-decoration: none;
   font-size: 22px; /* Larger font for main nav links */
   transition: color 0.3s ease;
@@ -316,21 +353,26 @@ text-transform: uppercase;
   width: 100%; 
   top: 0;
   z-index: 1000;
-  overflow-x: auto;
   height: 40px;
   white-space: nowrap; /* Prevents wrapping */
-  overflow-y: hidden; /* Prevent vertical scrolling */
-  display: flex;
+  overflow: visible; /* Prevent vertical scrolling */
   align-items: center;
   scrollbar-width: none;
+  display: flex;
 }
+
+#tutorial-coding-extention-9321pookie, #mastery-coding-extention-9321pookie {
+    display: none;
+}
+
 
 .coding-languages-list-9321pookie {
   background-color: rgb(34, 34, 34);
+  color: white;
   position: relative;
   height: 40px;
   padding: 0px 40px;
-  width: 100%; /* Ensure the list doesn't stretch unnecessarily */
+  width: 100%;
   min-width: max-content;
   list-style: none;
   display: flex;  
@@ -338,13 +380,6 @@ text-transform: uppercase;
   margin: 0;
   align-items: center;
   z-index: 1000;
-  overflow-x: hidden !important;
-  overflow-y: hidden;
-}
-
-.coding-languages-list-9321pookie a.active {
-  background-color: #4a90e2;
-  font-weight: normal !important;
 }
 
 .coding-languages-list-9321pookie li {
@@ -357,8 +392,7 @@ text-transform: uppercase;
 
 .coding-languages-list-9321pookie li a.active {
   background-color: #4a90e2;
-  color: white;
-  font-weight: bold;
+  color: var(--header-bg-color);
 }
 
 .coding-languages-list-9321pookie li a {
@@ -396,7 +430,7 @@ text-transform: uppercase;
     font-size: 20px;
     transition: background 0.3s;
     z-index: 1030;
-    display: flex;
+    display: inherit;
     align-items: center;
     justify-content: center;
     pointer-events: auto; /* Enables clicking */
@@ -415,8 +449,9 @@ text-transform: uppercase;
 }
 
 .nav-item {
-position: relative; /* Essential for positioning the sub-menu */
+    display: flex;
 }
+
 #hamburger-item {
 padding: 0;
 }
@@ -425,7 +460,8 @@ padding: 0;
 all: unset;
 list-style: none;
 position: absolute;
-background-color: white;
+background-color: var(--header-bg-color);
+  color: var(--header-text-color);
 top: 100%;
 margin-top: 6px; /* Aligns the sub-menu right below the parent link */
 left: 50%; /* Position the sub-menu in the center relative to the parent */
@@ -448,7 +484,8 @@ text-decoration: none;
 font-size: 11px !important;
 padding: 8px 12px; /* Adjust padding for better spacing */
 border-radius: 4px;
-color: #fff; /* White text for contrast */
+background-color: var(--header-bg-color);
+  color: var(--header-text-color);
 transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -459,7 +496,7 @@ transform: scale(1.00000005); /* Add slight zoom effect */
 }
 
 .nav-item:hover .sub-menu {
-display: flex; /* Show the sub-menu on hover */
+display: inherit; /* Show the sub-menu on hover */
 }
 
 #unavailable-course-nav-link {
@@ -571,7 +608,7 @@ height: 72px;
 /* Basic Footer Styles */
 footer {
   background-color: black;
-  color: white; /* White text */
+  color: white;
   padding: 20px;
   padding-top: 30px;
   font-family: Arial, sans-serif;
@@ -641,7 +678,7 @@ footer {
 .footer-bottom {
   text-align: center;
   font-size: 12px;
-  color: white;
+  color: var(--header-text-colour);
   padding: 10px 0;
   border-bottom: 1px solid black;
 }
@@ -669,7 +706,7 @@ footer {
 }
 
 .social-links {
-  color: white;
+    color: white;
 }
 
 .social-links a {
@@ -700,8 +737,8 @@ footer {
 /* Default footer styling */
 #footer-container {
 width: 100%;
-background-color: #222;
-color: white;
+background-color: var(--header-text-color);
+  color: var(--header-bg-colorr);
 }
 
 .html-page-klm123 #footer-container {
