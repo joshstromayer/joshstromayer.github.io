@@ -225,8 +225,8 @@
             <p>
                 Create a button that dynamically changes the background color of the page to lightcoral when clicked. Use the following steps:
                 <ul>
-                    <li>Define a CSS variable <code>--bg-color</code> in the <code>:root</code> selector with an initial value of lightblue.</li>
-                    <li>Use JavaScript to update <code>--bg-color</code> to lightcoral when the button is clicked.</li>
+                    <li>Define a CSS variable <code>--bg-colour</code> in the <code>:root</code> selector with an initial value of lightblue.</li>
+                    <li>Use JavaScript to update <code>--bg-colour</code> to lightcoral when the button is clicked.</li>
                 </ul>
             </p>
             <button class="reveal-answer-btn" data-answer-id="answer-4">Reveal Answer</button>
@@ -234,10 +234,10 @@
                 <code>
                     &lt;style&gt;<br>
                     :root {<br>
-                    &nbsp;&nbsp;--bg-color: lightblue;<br>
+                    &nbsp;&nbsp;--bg-colour: lightblue;<br>
                     }<br>
                     body {<br>
-                    &nbsp;&nbsp;background-color: var(--bg-color);<br>
+                    &nbsp;&nbsp;background-color: var(--bg-colour);<br>
                     &nbsp;&nbsp;margin: 0;<br>
                     &nbsp;&nbsp;padding: 20px;<br>
                     }<br>
@@ -252,7 +252,7 @@
                     &lt;button onclick="changeColor()"&gt;Change Background&lt;/button&gt;<br>
                     &lt;script&gt;<br>
                     function changeColor() {<br>
-                    &nbsp;&nbsp;document.documentElement.style.setProperty('--bg-color', 'lightcoral');<br>
+                    &nbsp;&nbsp;document.documentElement.style.setProperty('--bg-colour', 'lightcoral');<br>
                     }<br>
                     &lt;/script&gt;
                 </code>

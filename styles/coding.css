@@ -1,5 +1,5 @@
 [data-theme="light"] {
-    --bg-color: #ffffff;
+    --bg-colour: #ffffff;
     --bg-colour-exercises: #e7e7e7;
     --text-color: #000000;
     --button-bg: #007bff;
@@ -14,13 +14,15 @@
     --menu-link-neutral: rgb(230, 230, 230);
     --status-button: #ffffff;
 
+    --mastery-road-map: black;
+
     --footer-bg-color: #282C34;
     --footer-text-color: #ffffff;
 }
 
 /* Light Mode (When Data Attribute is Set) */
 [data-theme="dark"] {
-    --bg-color: #282C34;
+    --bg-colour: #282C34;
     --bg-colour-exercises: #313843;
     --text-color: #ffffff;
     --button-bg: #1e90ff;
@@ -34,6 +36,8 @@
     --code-example-html-color: #f4f4f4;
     --menu-link-neutral: #21252B;
     --status-button: rgb(70, 70, 70);
+
+    --mastery-road-map: white;
 
     --footer-bg-color: #282C34;
     --footer-text-color: #ffffff;
@@ -51,7 +55,7 @@ html, body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    background-color: var(--bg-colour);
     color: var(--text-color);
     width: 100vw;
     max-width: 100vw;
@@ -581,9 +585,10 @@ body.html-page-klm123 {
 
 .detailed-plan-klm123-exercises {
     inherits: all;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     background-color: var(--bg-colour-exercises);
+    margin: 0 10px;
 }
 
 .detailed-plan-klm123 h2 {
@@ -860,7 +865,18 @@ textarea {
 }
 
 .navigation-button:hover {
-    background-color: #3a78c2; /* Hover color */
+    background-color: #3a78c2;
+}
+
+.unlock-exercises-button-parent-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#unlock-exercises {
+    display: inline-block;
+    margin: 20px auto;
 }
 
 .prev-button {
@@ -1068,7 +1084,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensures it stays above other elements */
+    z-index: 1000;
     border-bottom: 1px solid white;
     margin-bottom: 15px;
 }
@@ -1081,11 +1097,15 @@ textarea {
 
 .mastery-main-page-grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Two columns, menu takes 1 part, right takes 2 parts */
-    gap: 20px; /* Spacing between sections */
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
     padding: 20px;
     max-width: 1000px;
     margin: auto;
+}
+
+.mastery-main-page-grid-container h3 {
+    margin-top: 15px;
 }
 
 .grid-left-section {
@@ -1101,7 +1121,6 @@ textarea {
 width: auto;
 }
 
-/* Question Text */
 #question-text {
     font-size: 22px;
     margin: auto;
@@ -1117,15 +1136,20 @@ width: auto;
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: var(--bg-colour);
 }
 
 #quick-menu {
-    border: 1px solid white;
+    border: 1px solid var(--mastery-road-map);
 }
 
 #mastery-roadmap {
-    border-top: 1px solid white;
+    border-top: 1px solid var(--mastery-road-map);
     padding: 10px;
+}
+
+#mastery-roadmap h3 {
+    padding-top: 15px;
 }
 
 .mastery-topics {
@@ -1136,7 +1160,7 @@ width: auto;
 
 /* Quiz Container */
 .quiz-container-mastery {
-    background-color: var(--bg-color);
+    background-color: var(--bg-colour);
     color: var(--text-color);
     min-width: 450px;
     max-width: 450px;
@@ -1179,7 +1203,7 @@ width: auto;
 }
 
 #shuffle-container {
-    background-color: var(--bg-color);
+    background-color: var(--bg-colour);
     color: var(--text-color);
     min-width: 450px;
     max-width: 450px;

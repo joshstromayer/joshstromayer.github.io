@@ -1,7 +1,29 @@
+function checkLocalStorageUsage() {
+  let total = 0;
+  for (let key in localStorage) {
+      if (localStorage.hasOwnProperty(key)) {
+          total += ((localStorage[key].length * 2) / 1024); // Convert to KB (each character is 2 bytes)
+      }
+  }
+  
+  const maxStorageKB = 5120; // 5MB in KB
+  const usedPercentage = ((total / maxStorageKB) * 100).toFixed(2);
+
+  console.log(`🔹 Used: ${total.toFixed(2)} KB / 5120 KB (${usedPercentage}%)`);
+  console.log(`📌 Remaining: ${(maxStorageKB - total).toFixed(2)} KB`);
+  
+  if (total >= maxStorageKB) {
+      console.warn("⚠️ You've hit the 5MB localStorage limit!");
+  }
+}
+
+// Run the function to check localStorage usage
+checkLocalStorageUsage();
+
 const languageMapping = {
   html: [ "html-introduction", "html-structure", "html-elements", "html-attributes", "html-headings", "html-paragraphs", "html-formatting", "html-comments", "html-links", "html-images", "html-lists", "html-tables", "html-forms", "html-divs", "html-classes", "html-ids", "html-iframe", "html-css", "html-javascript", "html-file-paths", "html-head"],
   css: [ "css-introduction", "css-syntax", "css-selectors", "css-in-html", "css-adv-selectors", "css-colors", "css-backgrounds", "css-borders", "css-margins", "css-padding", "css-box-model", "css-width-height", "css-units", "css-fonts", "css-text", "css-links", "css-lists", "css-position", "css-display", "css-float-clear", "css-overflow", "css-flexbox", "css-grid", "css-flex", "css-media-queries", "css-responsive", "css-transitions", "css-animations", "css-transform", "css-shadows", "css-variables", "css-z-index", "css-clipping", "css-masking", "css-filters", "css-shapes"],
-  javascript: [ "js-introduction", "js-setting-up", "js-syntax", "js-output", "js-comments", "js-variables", "js-let-const-var", "js-data-types", "js-type-conversion", "js-arithmetic-operators", "js-assignment-operators", "js-comparison-operators", "js-logical-operators", "js-bitwise-operators", "js-if-else", "js-switch", "js-ternary-operator", "js-loops-introduction", "js-for-loops", "js-while-loops", "js-do-while-loops", "js-break-continue", "js-methods-basics", "js-creating-modifying-arrays.html","js-introduction-objects", "js-creating-objects", "js-accessing-properties", "js-modifying-properties", "js-object-methods", "js-object-constructors", "js-object-prototypes", "js-classes-inheritance", "js-introduction-arrays", "js-creating-modifying-arrays", "js-array-methods-advanced", "js-slicing-splicing-arrays", "js-sorting-arrays", "js-searching-arrays", "js-array-methods-basic", "js-iterating-arrays", "js-sorting-searching-arrays", "js-creating-modifying-arrays" ,"js-multidimensional-arrays", "js-this-keyword", "js-es6-modules", "js-destructuring", "js-spread-rest-operators", "js-default-parameters", "js-template-literals", "js-error-handling", "js-strict-mode", "js-json", "js-regex", "js-date-time", "js-classes", "js-inheritance"],
+  javascript: [ "js-introduction", "js-setting-up", "js-syntax", "js-output", "js-comments", "js-variables", "js-let-var", "js-const", "js-data-types", "js-type-conversion", "js-arithmetic-operators", "js-assignment-operators", "js-comparison-operators", "js-logical-operators", "js-bitwise-operators", "js-if-else", "js-switch", "js-ternary-operator", "js-loops-introduction", "js-for-loops", "js-while-loops", "js-do-while-loops", "js-break-continue", "js-methods-basics", "js-creating-modifying-arrays.html","js-introduction-objects", "js-creating-objects", "js-accessing-properties", "js-modifying-properties", "js-object-methods", "js-object-constructors", "js-object-prototypes", "js-classes-inheritance", "js-introduction-arrays", "js-creating-modifying-arrays", "js-array-methods-advanced", "js-slicing-splicing-arrays", "js-sorting-arrays", "js-searching-arrays", "js-array-methods-basic", "js-iterating-arrays", "js-sorting-searching-arrays", "js-creating-modifying-arrays" ,"js-multidimensional-arrays", "js-this-keyword", "js-es6-modules", "js-destructuring", "js-spread-rest-operators", "js-default-parameters", "js-template-literals", "js-error-handling", "js-strict-mode", "js-json", "js-regex", "js-date-time", "js-classes", "js-inheritance"],
 };
 
 const masteryMapping = {
@@ -450,12 +472,8 @@ function initializeLessonRatingSystem() {
 
   // Find the exercise section
   const exerciseSection = document.querySelector(".exercise-section"); // Adjust the selector as needed
-  if (!exerciseSection) {
-    console.log("❌ Exercise section not found. Exiting.");
-    return; // Exit if no exercise section is found
-  }
 
-  // Get the current page's filename (e.g., "js-introduction-arrays.html")
+  // Get the current page's filename
   const currentPage = window.location.pathname.split("/").pop();
   console.log(`📄 Current page: ${currentPage}`);
 
@@ -473,7 +491,7 @@ function initializeLessonRatingSystem() {
     button.dataset.status = status;
 
     // Highlight the saved status
-    const savedStatus = localStorage.getItem(currentPage);
+    const savedStatus = localStorage.getItem(`./${currentPage}`);
     if (savedStatus === status) {
       console.log(`✅ Loaded saved status for ${currentPage}: ${status}`);
       button.classList.add("selected");
@@ -490,8 +508,10 @@ function initializeLessonRatingSystem() {
       button.classList.add("selected");
 
       // Save status to localStorage
-      localStorage.setItem(currentPage, status);
-      console.log(`💾 Saved status for ${currentPage}: ${status}`);
+      const normalizedPage = `./${currentPage}`;
+      localStorage.setItem(normalizedPage, status);
+      updateQuickMenuStatus(normalizedPage, status);
+      console.log(`💾 Saved status for ${normalizedPage}: ${status}`);
 
       // Update the corresponding quick menu item
       updateQuickMenuStatus(currentPage, status);
@@ -930,6 +950,63 @@ console.log("Updated progress saved to localStorage:", savedProgress);
 console.error("Final completion button not found.");
 }
 });
+
+// tutorial unlock exericse section thing
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tutorialId = document.querySelector(".detailed-plan-klm123").id; // Get tutorial ID
+  const nextButton = document.getElementById("unlock-exercises");
+  const exerciseSection = document.getElementById(tutorialId.replace("-tutorial", "-exercises")); // Match the exercise section
+
+  // Check if this tutorial has been completed before
+  if (localStorage.getItem(`${tutorialId}-completed`)) {
+      exerciseSection.style.display = "block"; // Unlock the exercises
+  } else {
+      exerciseSection.style.display = "none"; // Keep it locked
+  }
+
+  // Unlock on button click
+  nextButton.addEventListener("click", () => {
+      localStorage.setItem(`${tutorialId}-completed`, "true"); // Mark as completed
+      exerciseSection.style.display = "block"; // Show exercises
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all tutorial sections
+  const tutorialSections = document.querySelectorAll(".detailed-plan-klm123[id$='-tutorial']");
+
+  tutorialSections.forEach(tutorial => {
+    const tutorialId = tutorial.id; // Get tutorial ID
+    const exerciseSection = document.getElementById(tutorialId.replace("-tutorial", "-exercises")); // Match the exercise section
+
+    // Check if this tutorial has been completed before
+    if (localStorage.getItem(`${tutorialId}-completed`)) {
+      exerciseSection.style.display = "block"; // Unlock the exercises
+    } else {
+      exerciseSection.style.display = "none"; // Keep it locked
+    }
+
+    // Create the wrapper div
+    const buttonWrapper = document.createElement("div");
+    buttonWrapper.className = "unlock-exercises-button-parent-div";
+
+    // Create the button
+    const button = document.createElement("a");
+    button.className = "navigation-button";
+    button.textContent = "Try out the exercise questions";
+
+    // Add click event to unlock exercises
+    button.addEventListener("click", () => {
+      localStorage.setItem(`${tutorialId}-completed`, "true"); // Mark as completed
+      exerciseSection.style.display = "block"; // Show exercises
+    });
+
+    // Append button to wrapper, then add to tutorial section
+    buttonWrapper.appendChild(button);
+    tutorial.appendChild(buttonWrapper);
+  });
+}); 
 
 // progress bar styling 
 document.addEventListener("DOMContentLoaded", () => {
