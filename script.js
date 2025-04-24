@@ -253,6 +253,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("hashchange", adjustScroll);
 });
 
+// code for identifying which content goes in each page header. 
+
+const metaTag = document.querySelector('meta[name="page-type"]');
+let pageType = null;
+
+if (metaTag) {
+    pageType = metaTag.getAttribute('content');
+    console.log(`Page type detected: ${pageType}`);
+} else {
+    console.warn('No page-type meta tag found.');
+}
+
 // coding language nav link active button thing
 function activateNavLink() {
   const navLinks = document.querySelectorAll(".coding-languages-list-9321pookie li a");
@@ -348,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // CSS Quick Menu Loader
 document.addEventListener('DOMContentLoaded', () => {
   // Fetch the CSS Quick Menu content
-  fetch('/css/css-quick-menu.html') // Adjust the path based on your folder structure
+  fetch('/css/tutorials/css-quick-menu.html') // Adjust the path based on your folder structure
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Failed to fetch CSS Quick Menu: ${response.statusText}`);
@@ -1300,7 +1312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (isCSSPage) {
       
-        menuFetches.push(fetch('/css/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
+        menuFetches.push(fetch('/css/tutorials/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
         menuOrder.push("css");
       }
       if (isJSPage) {
@@ -1360,7 +1372,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (isCSSPage) {
         
-        menuFetches.push(fetch('/css/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
+        menuFetches.push(fetch('/css/tutorials/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
       }
       if (isJSPage) {
         
@@ -1624,20 +1636,29 @@ masteryTopicButtons.forEach(button => {
             ? [...cssBasicsQuestions]
             : cssBasicsQuestions.filter(q => q.topic === selectedTopic);
 
-            totalQuestions = shuffledQuestions.length; 
-totalAnsweredQuestions = 0;
-progressBar.value = 0;  
-previouslyIncorrect.clear();  
-correctAnswers = 0;  
-updateProgress();  
+        totalQuestions = shuffledQuestions.length; 
+        totalAnsweredQuestions = 0;
+        progressBar.value = 0;  
+        previouslyIncorrect.clear();  
+        correctAnswers = 0;  
+        updateProgress();  
 
         shuffleArray(shuffledQuestions);
         currentQuestionIndex = 0;
 
-        mainContainer.style.display = "none";
+        console.log("📦 backToMenuButton =", backToMenuButton);
+        if (mainContainer) {
+          mainContainer.style.display = "none";
+        } else {
+          console.warn("mainContainer not found in the DOM.");
+        }
         quizContainer.style.display = "block";
         returnToMenuButton.style.display = "none";
-        backToMenuButton.style.display = "block";
+        if (backToMenuButton) {
+          backToMenuButton.style.display = "block";
+        } else {
+          console.warn("backToMenuButton not found in the DOM.");
+        }
 
         updateProgress();
         displayQuestion();
