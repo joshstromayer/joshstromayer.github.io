@@ -1472,68 +1472,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 300);
 });
 
-
-// quick menu selection stuff 
-function waitForSidebars() {
-  const observer = new MutationObserver((mutations, obs) => {
-      const sidebar = document.getElementById("tutorial-coding-extention-9321pookie");
-      const sidebarT = document.getElementById("mastery-coding-extention-9321pookie");
-
-      if (sidebar && sidebarT) {
-          obs.disconnect(); // Stop observing once the elements exist
-          applySidebarVisibility(sidebar, sidebarT);
-      }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  // Fallback: Check for elements after a delay
-  setTimeout(() => {
-      const sidebar = document.getElementById("tutorial-coding-extention-9321pookie");
-      const sidebarT = document.getElementById("mastery-coding-extention-9321pookie");
-      if (sidebar && sidebarT) {
-          applySidebarVisibility(sidebar, sidebarT);
-      }
-  }, 100); // Check after 1 second
-}
-
-
-function applySidebarVisibility(sidebar, sidebarT) {
-  sidebar.style.display = "none";  
-  sidebarT.style.display = "none";  
-
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.split("/").pop().replace(".html", "");
-
-  let pageCategory = null;
-
-  for (const [category, pages] of Object.entries(languageMapping)) {
-      if (pages.includes(currentPage)) {
-          pageCategory = category;
-          break;
-      }
-  }
-
-    if (currentPage === "tutorials" || pageCategory) {
-        sidebar.style.display = "flex";
-        sidebarT.style.display = "none";
-    } 
-
- else if (currentPage === "masteries" || currentPage === "cssmastery" ) {
-  sidebar.style.display = "none";
-  sidebarT.style.display = "flex";
-}
-}
-
-
-waitForSidebars();
-
-
-
-// mastery code 
-
-// css mastery 
-
 let cssBasicsQuestions = [];
 let totalQuestions = 0;
 
