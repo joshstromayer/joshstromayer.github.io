@@ -1,4 +1,7 @@
 [data-theme="light"] {
+    --header-bg-color: white;
+    --header-text-color: black;
+
     --bg-colour: #ffffff;
     --bg-colour-exercises: #e7e7e7;
     --text-color: #000000;
@@ -22,6 +25,9 @@
 
 /* Light Mode (When Data Attribute is Set) */
 [data-theme="dark"] {
+    --header-bg-color: #1e1e1e;
+    --header-text-color: white;
+
     --bg-colour: #282C34;
     --bg-colour-exercises: #313843;
     --text-color: #ffffff;
@@ -46,7 +52,7 @@
 /* General Styling */
 
 html, body {
-    scroll-padding-top: 122.59px;
+    scroll-padding-top: 72px;
     scroll-behavior: smooth;
     font-family: Arial, sans-serif;
     height: 100%;
@@ -62,24 +68,9 @@ html, body {
     overflow-x: hidden; /* Prevents scrolling */
 }
 
-/* Styling for the coding page header */
-html {
-    scroll-padding-top: 122.59px;
-    scroll-behavior: smooth;
-}
 
 body {
-    font-family: Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-    padding-top: 112px;
-
-}
-
-body, html {
-    transform: none !important;
-    zoom: 100% !important;
-    max-width: none !important;
+    padding-top: 72px;
 }
 
 /* main coding page */
@@ -220,9 +211,7 @@ body, html {
 /* Styling for the overall section container */
 
 .main-tutorial-content {
-    margin-left: 249px;
-    top: 112px;
-    margin-right: 0;
+    margin-top: 48px;
     width: 100%;
 }
 
@@ -346,7 +335,7 @@ body.html-page-klm123 {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    padding-top: 112px;
+    padding-top: 72px;
     background-color: var(--bg-colour);
     color: var(--text-colour);
     position: relative;
@@ -358,7 +347,7 @@ body.html-page-klm123 {
     padding: 20px;
     background-color: var(--bg-colour); 
     color: var(--text-colour);
-    margin-left: 250px;
+    margin-top: 48px;
 }
 
 .html-header-klm123 h1 {
@@ -548,7 +537,7 @@ body.html-page-klm123 {
 /* Toggle Button Styling */
 .toggle-button {
     background-color: var(--menu-link-neutral);
-    color: var(--bg-colour);
+    color: var(--text-colour);
     border: none;
     cursor: pointer;
     text-align: left;
@@ -558,7 +547,7 @@ body.html-page-klm123 {
 }
 
 .toggle-button:hover {
-    background-color: #eaeaea;
+    
 }
 
 /* Collapsible Content */
@@ -1158,14 +1147,49 @@ width: auto;
     gap: 3px;
 }
 
+/* sub header css */
+
+.sub-course-header {
+    position: fixed;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-colour);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid var(--bg-colour-exercises);
+    border-bottom: 1px solid var(--bg-colour-exercises);
+    color: var(--header-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#sub-header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#sub-header-progress {
+    position: absolute;
+    right: 20px;
+}
+
 /* Quiz Container */
-.quiz-container-mastery {
+#quiz-container {
     background-color: var(--bg-colour);
     color: var(--text-color);
     min-width: 450px;
     max-width: 450px;
     margin: 10px;
     border: var(--container-border);
+    margin-top: 120px;
 }
 
 .topic-button-mastery {
@@ -1453,4 +1477,12 @@ width: auto;
         display: block; /* Ensure the menu is visible when the "show" class is added */
       }
 
+}
+
+/* new idea - code */ 
+
+.topic-button.completed {
+    background-color: #28a745;
+    color: white;
+    border: none;
 }

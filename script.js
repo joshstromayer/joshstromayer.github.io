@@ -331,267 +331,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// HTML Quick Menu Loader
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('/html/html-quick-menu.html') // Adjust based on your folder structure
-      .then(response => {
-          if (!response.ok) {
-              throw new Error(`Failed to fetch HTML Quick Menu: ${response.statusText}`);
-          }
-          return response.text();
-      })
-      .then(data => {
-          const container = document.getElementById('html-quick-menu');
-          if (!container) {
-              console.error("Error: #html-quick-menu not found in the DOM.");
-              return;
-          }
-          container.innerHTML = data;
-
-          // 🟢 Initialize previous ranking system AFTER loading menu
-          initializeTopicRankingSystem();
-
-          // 🟢 Attach event listeners for the hamburger menu AFTER menu loads
-          initializeHamburgerMenu();
-      })
-      .catch(error => console.error("Error loading HTML Quick Menu:", error));
-});
-
-// CSS Quick Menu Loader
-document.addEventListener('DOMContentLoaded', () => {
-  // Fetch the CSS Quick Menu content
-  fetch('/css/tutorials/css-quick-menu.html') // Adjust the path based on your folder structure
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to fetch CSS Quick Menu: ${response.statusText}`);
-      }
-      return response.text();
-    })
-    .then((data) => {
-      const container = document.getElementById('css-quick-menu');
-      if (!container) {
-        console.error("Error: #css-quick-menu not found in the DOM.");
-        return;
-      }
-      container.innerHTML = data;
-
-      // Initialize topic ranking system after menu is loaded
-      initializeTopicRankingSystem();
-    })
-    .catch((error) => console.error('Error loading CSS Quick Menu:', error));
-});
-
-// JS Quick Menu Loader
-document.addEventListener('DOMContentLoaded', () => {
-  // Fetch the JavaScript Quick Menu content
-  fetch('/javascript/js-quick-menu.html') // Adjust the path based on your folder structure
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to fetch JavaScript Quick Menu: ${response.statusText}`);
-      }
-      return response.text();
-    })
-    .then((data) => {
-      const container = document.getElementById('js-quick-menu');
-      if (!container) {
-        console.error("Error: #js-quick-menu not found in the DOM.");
-        return;
-      }
-      container.innerHTML = data;
-
-      // Initialize topic ranking system after menu is loaded
-      initializeTopicRankingSystem();
-    })
-    .catch((error) => console.error('Error loading JavaScript Quick Menu:', error));
-});
-
-// Universal Ranking System Initialization
-function initializeTopicRankingSystem() {
-  const statuses = ["neutral", "green", "amber", "red"];
-  const allQuickMenus = document.querySelectorAll(".quick-plan-list-klm123");
-
-  allQuickMenus.forEach(menu => {
-      const menuItems = menu.querySelectorAll(".menu-item");
-
-      menuItems.forEach(menuItem => {
-          const link = menuItem.querySelector(".menu-link");
-          const statusButton = menuItem.querySelector(".status-button");
-          const hrefKey = link.getAttribute("href");
-
-          const savedStatus = localStorage.getItem(hrefKey);
-          if (savedStatus) {
-              link.className = `menu-link ${savedStatus}`;
-          }
-
-          statusButton.addEventListener("click", () => {
-              const currentStatus = statuses.find(status =>
-                  link.classList.contains(status)
-              );
-              const currentIndex = statuses.indexOf(currentStatus);
-              const nextIndex = (currentIndex + 1) % statuses.length;
-              const nextStatus = statuses[nextIndex];
-
-              link.className = `menu-link ${nextStatus}`;
-
-              localStorage.setItem(hrefKey, nextStatus);
-          });
-      });
-  });
-}
-
-const STATUSES = ["neutral", "green", "amber", "red"];
-
-// Initialize the Quick Menu Status System
-function initializeQuickMenuStatusSystem() {
-  console.log("🚀 Initializing Quick Menu Status System...");
-
-  const quickMenuItems = document.querySelectorAll(".quick-plan-list-klm123 .menu-item");
-  console.log(`📌 Found ${quickMenuItems.length} quick menu items.`);
-
-  quickMenuItems.forEach((menuItem, index) => {
-    const link = menuItem.querySelector(".menu-link");
-    const statusButton = menuItem.querySelector(".status-button");
-    const hrefKey = link.getAttribute("href");
-
-    console.log(`🔗 Processing quick menu item ${index + 1}: ${hrefKey}`);
-
-    // Load saved status from localStorage
-    const savedStatus = localStorage.getItem(hrefKey);
-    if (savedStatus) {
-      console.log(`📂 Loaded saved status for ${hrefKey}: ${savedStatus}`);
-      link.className = `menu-link ${savedStatus}`;
-    }
-
-    // Add click event to cycle through statuses
-    statusButton.addEventListener("click", () => {
-      const currentStatus = STATUSES.find((status) => link.classList.contains(status));
-      const currentIndex = STATUSES.indexOf(currentStatus);
-      const nextIndex = (currentIndex + 1) % STATUSES.length;
-      const nextStatus = STATUSES[nextIndex];
-
-      console.log(`🖱 Clicked status button for ${hrefKey}. Changing status from ${currentStatus} to ${nextStatus}.`);
-
-      // Update the link class and save to localStorage
-      link.className = `menu-link ${nextStatus}`;
-      localStorage.setItem(hrefKey, nextStatus);
-    });
-  });
-}
-
-// Initialize the Lesson Rating System
-function initializeLessonRatingSystem() {
-  console.log("🚀 Initializing Lesson Rating System...");
-
-  // Find the exercise section
-  const exerciseSection = document.querySelector(".exercise-section"); // Adjust the selector as needed
-
-  // Get the current page's filename
-  const currentPage = window.location.pathname.split("/").pop();
-  console.log(`📄 Current page: ${currentPage}`);
-
-  // Create the rating container
-  const ratingContainer = document.createElement("div");
-  ratingContainer.className = "lesson-rating-container";
-
-  // Create rating buttons for each status
-  STATUSES.forEach((status) => {
-    if (status === "neutral") return; // Skip neutral (default state)
-
-    const button = document.createElement("button");
-    button.className = `lesson-rating-btn ${status}`;
-    button.textContent = status.charAt(0).toUpperCase() + status.slice(1); // Capitalize status
-    button.dataset.status = status;
-
-    // Highlight the saved status
-    const savedStatus = localStorage.getItem(`./${currentPage}`);
-    if (savedStatus === status) {
-      console.log(`✅ Loaded saved status for ${currentPage}: ${status}`);
-      button.classList.add("selected");
-    }
-
-    // Add click event to update status
-    button.addEventListener("click", () => {
-      console.log(`🖱 Clicked rating button: ${status} for ${currentPage}`);
-
-      // Remove 'selected' class from all buttons
-      ratingContainer.querySelectorAll(".lesson-rating-btn").forEach((btn) => btn.classList.remove("selected"));
-
-      // Highlight the clicked button
-      button.classList.add("selected");
-
-      // Save status to localStorage
-      const normalizedPage = `./${currentPage}`;
-      localStorage.setItem(normalizedPage, status);
-      updateQuickMenuStatus(normalizedPage, status);
-      console.log(`💾 Saved status for ${normalizedPage}: ${status}`);
-
-      // Update the corresponding quick menu item
-      updateQuickMenuStatus(currentPage, status);
-    });
-
-    ratingContainer.appendChild(button);
-  });
-
-  // Insert the rating buttons AFTER the exercise section
-  exerciseSection.insertAdjacentElement("afterend", ratingContainer);
-  console.log("📍 Inserted rating buttons below the exercise section.");
-}
-
-// Update the Quick Menu Status for the corresponding lesson
-function updateQuickMenuStatus(hrefKey, status) {
-  console.log(`🔄 Updating quick menu for ${hrefKey} -> ${status}`);
-
-  const quickMenuLinks = document.querySelectorAll(".quick-plan-list-klm123 .menu-link");
-  console.log(`🔍 Found ${quickMenuLinks.length} quick menu links.`);
-
-  quickMenuLinks.forEach((link) => {
-    // Normalize the link's href by removing leading './' if present
-    const linkHref = link.getAttribute("href").replace(/^\.\//, "");
-    console.log(`🔗 Checking quick menu link: ${linkHref}`);
-
-    // Normalize the hrefKey by removing leading './' if present
-    const normalizedHrefKey = hrefKey.replace(/^\.\//, "");
-
-    // Compare the normalized hrefKey with the normalized linkHref
-    if (linkHref === normalizedHrefKey) {
-      console.log(`✅ Match found! Updating quick menu for ${linkHref}.`);
-
-      // Remove all status classes
-      link.classList.remove(...STATUSES);
-
-      // Add the new status class
-      link.classList.add(status);
-      localStorage.setItem(hrefKey, status);
-    }
-  });
-}
-
-// Load saved statuses for the Quick Menu on page load
-function loadQuickMenuStatuses() {
-  console.log("🔄 Loading quick menu statuses from localStorage...");
-
-  const quickMenuLinks = document.querySelectorAll(".quick-plan-list-klm123 .menu-link");
-  console.log(`🔍 Found ${quickMenuLinks.length} quick menu links.`);
-
-  quickMenuLinks.forEach((link) => {
-    const hrefKey = link.getAttribute("href").replace(/^\.\//, "");
-    const savedStatus = localStorage.getItem(hrefKey);
-
-    if (savedStatus) {
-      console.log(`📂 Loaded saved status for ${hrefKey}: ${savedStatus}`);
-      link.classList.remove(...STATUSES);
-      link.classList.add(savedStatus);
-    }
-  });
-}
-
-// Initialize everything when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("📄 DOM fully loaded. Initializing systems...");
-  initializeQuickMenuStatusSystem();
-  initializeLessonRatingSystem();
-  loadQuickMenuStatuses();
-});
 
 // Select all navigation links
 const navLinks = document.querySelectorAll('.nav-link');
@@ -687,280 +426,6 @@ document.addEventListener('DOMContentLoaded', () => {
               contentContainer.innerHTML = newContent;
           });
   });
-});
-
-// Select all chapter titles
-const chapterTitles = document.querySelectorAll(".chapter-title-unique-004");
-
-// Add click event listeners to toggle chapters
-chapterTitles.forEach((title) => {
-  title.addEventListener("click", () => {
-    const chapterNumber = title.dataset.chapter; // Get chapter number
-    const topicsList = document.getElementById(`chapter-${chapterNumber}-topics-unique-006`);
-
-    // Toggle visibility of the topics
-    if (topicsList.style.display === "block") {
-      topicsList.style.display = "none"; // Collapse
-    } else {
-      topicsList.style.display = "block"; // Expand
-    }
-  });
-});
-
-// Add functionality for topic buttons
-const topicButtons = document.querySelectorAll(".topic-button-unique-007");
-
-topicButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    alert(`You clicked on: ${e.target.textContent}`);
-    // Replace the alert with actual functionality as needed
-  });
-});
-
-// Toggle chapters open/close
-document.querySelectorAll('.unique-chapter-button').forEach(button => {
-  button.addEventListener('click', () => {
-      const chapterId = button.getAttribute('data-chapter');
-      const topicsContainer = document.querySelector(`#unique-${chapterId}-topics`);
-      topicsContainer.classList.toggle('open');
-      topicsContainer.style.display = topicsContainer.style.display === 'block' ? 'none' : 'block';
-  });
-});
-
-// Toggle completion for topics and chapters
-document.querySelectorAll('.completion-button').forEach(button => {
-  button.addEventListener('click', (event) => {
-      event.preventDefault(); // Prevent triggering the topic link
-      const circle = button.querySelector('.completion-circle');
-      circle.classList.toggle('completed');
-  });
-});
-
-// Load in the course VSP quick menu and header
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("vsp-quick-menu.html")
-      .then((response) => {
-          if (!response || !response.ok) {
-              throw new Error(`HTTP error! status: ${response ? response.status : "undefined response"}`);
-          }
-          return response.text();
-      })
-      .then((html) => {
-          // Insert the quick menu HTML into the placeholder
-          const quickMenuContainer = document.getElementById("vsp-quick-menu");
-          if (quickMenuContainer) {
-              quickMenuContainer.innerHTML = html;
-              console.log("Quick menu loaded successfully.");
-
-              // Add event listeners after content injection
-              const hamburgerButton = document.getElementById("hamburger-menu-toggle");
-              const menuContainer = document.getElementById("unique-quick-menu-container");
-
-              if (hamburgerButton && menuContainer) {
-                  hamburgerButton.addEventListener("click", () => {
-                      menuContainer.classList.toggle("hidden");
-                  });
-                  console.log("Hamburger menu event listener attached.");
-              } else {
-                  console.error("Hamburger button or menu container not found.");
-              }
-          } else {
-              console.error("Quick menu placeholder not found.");
-          }
-      })
-      .catch((error) => {
-          console.error("Error fetching quick menu:", error);
-      });
-});
-
-// code for course topic section revealing stuff 
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all completion buttons
-  const completionButtons = document.querySelectorAll(".unique-completion-button-001");
-
-  completionButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-          // Get the current section and next section ID
-          const currentSection = button.parentElement;
-          const nextSectionId = currentSection.nextElementSibling?.id;
-
-          // If there's a next section, show it and scroll into view with offset
-          if (nextSectionId) {
-              const nextSection = document.getElementById(nextSectionId);
-              if (nextSection) {
-                  nextSection.style.display = "block"; // Make it visible
-
-                // Adjust scrolling for fixed header and custom offset
-const headerHeight = document.querySelector('header')?.offsetHeight || 0;
-const customOffset = 95; // Customize this value for additional spacing
-const sectionPosition = nextSection.offsetTop - headerHeight - customOffset;
-
-window.scrollTo({
-    top: sectionPosition,
-    behavior: "smooth",
-});
-              }
-          }
-
-          // Check if all sections in the main container are visible
-          const parentMain = button.closest("main");
-          const allSections = parentMain.querySelectorAll(".unique-section-container-001");
-          const allCompleted = Array.from(allSections).every(
-              (section) => section.style.display === "block"
-          );
-
-          // If all sections are completed, mark the chapter as complete
-          if (allCompleted) {
-              const chapterButton = document.querySelector(
-                  `[data-chapter="${parentMain.getAttribute("data-chapter")}"]`
-              );
-              if (chapterButton) {
-                  const completionCircle = chapterButton.querySelector(".completion-circle");
-                  if (completionCircle) {
-                      completionCircle.style.backgroundColor = "green"; // Mark chapter complete
-                  }
-              }
-          }
-      });
-  });
-});
-
-// completion button status thing 
-document.addEventListener("DOMContentLoaded", () => {
-
-  const finalCompletionButton = document.getElementById("final-completion-button");
-
-  // Load progress from localStorage
-  const savedProgress = JSON.parse(localStorage.getItem("topicProgress")) || {};
-
-  const topicLinks = document.querySelectorAll(".unique-topic-link");
-
-  let isAnyUnmarked = false; // Initialize the flag
-  const currentUrl = window.location.href; // Initialize the current URL
-
-  if (finalCompletionButton) {
-      finalCompletionButton.addEventListener("click", () => {
-          console.log("Final completion button clicked.");
-
-          // Get the current URL
-          const currentUrl = window.location.href;
-
-          // Find the corresponding completion-circle based on the current URL
-          const topicLinks = document.querySelectorAll(".unique-topic-link");
-          let isAnyUnmarked; // Flag to track if any section is unmarked
-
-          topicLinks.forEach((link) => {
-              const linkHref = new URL(link.getAttribute("href"), window.location.origin).href; // Absolute URL
-              console.log("Checking link:", linkHref);
-
-              if (currentUrl === linkHref) {
-                  console.log("Match found for link:", linkHref);
-
-                  // Find the completion-circle and toggle its state
-                  const completionCircle = link.querySelector(".completion-circle");
-                  if (completionCircle) {
-                      const isCompleted = completionCircle.classList.contains("completed");
-                      if (isCompleted) {
-                          // Mark as complete
-                          completionCircle.classList.add("completed");
-                          console.log("Marked as completed.");
-                          savedProgress[linkHref] = true;
-                      } else {
-                          // Mark as complete
-                          completionCircle.classList.add("completed");
-                          console.log("Marked as completed.");
-                          savedProgress[linkHref] = true;
-                      }
-                  }
-              }
-          });
-
-
-            // Save progress to localStorage
-if (!isAnyUnmarked) {
-  savedProgress[currentUrl] = true; // Save the current URL as completed
-} else {
-  delete savedProgress[currentUrl]; // Remove the current URL from completed
-}
-      });
-  } else {
-      console.error("Final completion button not found.");
-  }
-
-localStorage.setItem("topicProgress", JSON.stringify(savedProgress));
-console.log("Updated progress saved to localStorage:", savedProgress);
-
-  // Restore progress
-  document.addEventListener("DOMContentLoaded", () => {
-    restoreProgress(); 
-  });
-    const restoreProgress = () => {
-        console.log("Restoring progress from localStorage...");
-        const savedProgress = JSON.parse(localStorage.getItem("topicProgress")) || {};
-console.log("Retrieved progress from localStorage:", savedProgress);
-
-        const topicLinks = document.querySelectorAll(".unique-topic-link");
-        topicLinks.forEach((link) => {
-            const completionCircle = link.querySelector(".completion-circle");
-            if (completionCircle) {
-                const linkHref = new URL(link.getAttribute("href"), window.location.origin).href;
-                if (savedProgress[linkHref]) {
-                    completionCircle.classList.add("completed");
-                    console.log(`Restored ${linkHref} as completed.`);
-                }
-            }
-        });
-    };
-
-    // If the menu is dynamically loaded, call restoreProgress after it's loaded
-    const quickMenu = document.getElementById("vsp-quick-menu");
-    if (quickMenu && quickMenu.innerHTML.trim() === "") {
-        const observer = new MutationObserver(() => {
-            restoreProgress();
-            observer.disconnect(); // Stop observing once progress is restored
-        });
-        observer.observe(quickMenu, { childList: true, subtree: true });
-    } else {
-        restoreProgress();
-    }
-  
-  // Call the function immediately to set the button text on page load
-
-// Handle the final completion button click
-if (finalCompletionButton) {
-  finalCompletionButton.addEventListener("click", () => {
-      let isAnyUnmarked = false;
-
-      topicLinks.forEach((link) => {
-          const linkHref = new URL(link.getAttribute("href"), window.location.origin).href;
-          const completionCircle = link.querySelector(".completion-circle");
-
-          if (completionCircle) {
-              const isCompleted = completionCircle.classList.contains("completed");
-
-              if (isCompleted) {
-                  // Unmark as complete
-                  completionCircle.classList.remove("completed");
-                  delete savedProgress[linkHref];
-                  isAnyUnmarked = true;
-              } else {
-                  // Mark as complete
-                  completionCircle.classList.add("completed");
-                  savedProgress[linkHref] = true;
-              }
-          }
-      });
-
-
-// Save updated progress to localStorage
-localStorage.setItem("topicProgress", JSON.stringify(savedProgress));
-console.log("Updated progress saved to localStorage:", savedProgress);
-
-// Update the text of the final-completion-button
-});
-} else {
-console.error("Final completion button not found.");
-}
 });
 
 // tutorial unlock exericse section thing
@@ -1081,1209 +546,199 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// exercise sections in courses
-document.addEventListener("DOMContentLoaded", () => {
-  // Define correct answers
-  const correctAnswers = {
-    "html-intro-q1": "HyperText Markup Language",
-    "html-tags-elements-q1": "&lt;/p&gt;",
-    "html-paragraph-q1": "&lt;p&gt;CodeItClear has taught me how to create a paragraph.&lt;/p&gt;",
-  };
+// new idea - code 
+
+const completeButton = document.getElementById("mark-complete-button");
+
+document.addEventListener("click", function (event) {
+  if (event.target && event.target.id === "mark-complete-button") {
+    const url = window.location.pathname;
+    const parts = url.split("/");
+    const topic = parts.pop().replace(".html", "").replace("-quiz", "");
+    const type = url.includes("/mastery/") ? "mastery" : "tutorial";
+    const key = `completed-${topic}-${type}`;
+
+    localStorage.setItem(key, "true");
+
+    event.target.textContent = "Returning to main page...";
+    event.target.classList.add("completed");
+    setTimeout(() => {
+      window.location.href = "/css/learncss.html";
+    }, 300);
+  }
+});
+
+// List of topic buttons to check (use data attributes if needed)
+const topicButtons = document.querySelectorAll(".topic-entry");
+
+topicButtons.forEach(entry => {
+    const topicLabel = entry.querySelector("span")?.textContent?.toLowerCase().replace(/\s+/g, "-");
+
+    const tutorialBtn = entry.querySelector(".topic-button:nth-of-type(1)");
+    const masteryBtn = entry.querySelector(".topic-button:nth-of-type(2)");
+
+    if (tutorialBtn && localStorage.getItem(`completed-${topicLabel}-tutorial`) === "true") {
+        tutorialBtn.classList.add("completed");
+        tutorialBtn.textContent = "✓ Tutorial";
+    }
+
+    if (masteryBtn && localStorage.getItem(`completed-${topicLabel}-mastery`) === "true") {
+        masteryBtn.classList.add("completed");
+        masteryBtn.textContent = "✓ Mastery";
+    }
+});
 
 
-  // Track attempts for each question
-  const attempts = {};
+let currentQuestionIndex = 0;
 
-  // Add event listener to each submit button
-  document.querySelectorAll(".exercise-question .submit-answers").forEach((submitButton) => {
-    submitButton.addEventListener("click", () => {
-      // Get the parent container of the question
-      const questionContainer = submitButton.closest(".exercise-question");
-      const userInput = questionContainer.querySelector(".user-answer");
-      const questionId = userInput?.id; // Ensure questionId is retrieved safely
-      const feedback = questionContainer.querySelector(".feedback");
-      const displayAnswer = questionContainer.querySelector(".answer-display");
-      const nextButton = questionContainer.querySelector(".unique-completion-button-001");
+function displayQuestion() {
+  const container = document.getElementById("quiz-container");
+  const q = quizQuestions[currentQuestionIndex];
 
-      // Log for debugging
-      console.log("Question ID:", questionId);
-      console.log("Correct Answers Object:", correctAnswers);
+  // Clear previous content
+  container.innerHTML = "";
 
-      // Check if questionId exists in correctAnswers
-      if (!questionId || !(questionId in correctAnswers)) {
-        console.error(`No correct answer found for question ID: ${questionId}`);
-        feedback.textContent = "Error: Question not configured properly.";
-        feedback.style.color = "red";
-        return;
-      }
+  // Create question element
+  const questionEl = document.createElement("h2");
+  questionEl.textContent = q.question;
+  container.appendChild(questionEl);
 
-      if (!attempts[questionId]) attempts[questionId] = 0; // Initialize attempts
+  // Create choices
+  q.choices.forEach((choice, i) => {
+    const choiceEl = document.createElement("div");
+    choiceEl.textContent = choice;
+    choiceEl.classList.add("quiz-choice");
+    choiceEl.style.cursor = "pointer";
+    choiceEl.addEventListener("click", () => {
+      // Prevent multiple selections
+      const allChoices = container.querySelectorAll(".quiz-choice");
+      allChoices.forEach(c => c.style.pointerEvents = "none");
 
-      const userAnswer = userInput.value.trim()
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-      attempts[questionId]++; // Increment attempts
-
-      console.log("User answer:", userAnswer);
-      console.log("Correct answer:", correctAnswers[questionId]);
-
-      if (userAnswer.toLowerCase() === correctAnswers[questionId].toLowerCase()) {
-        // Correct answer
-        userInput.classList.add("correct");
-        userInput.classList.remove("incorrect");
-        feedback.textContent = "Correct!";
-        feedback.style.color = "green";
-
-        // Remove check button and show the next button
-        submitButton.style.display = "none";
-        nextButton.style.display = "block";
+      // Check if correct
+      if (i === q.answer) {
+        choiceEl.style.backgroundColor = "#28a745"; // green
+        choiceEl.style.color = "#fff";
       } else {
-        // Incorrect answer
-        userInput.classList.add("incorrect");
-        userInput.classList.remove("correct");
+        choiceEl.style.backgroundColor = "#dc3545"; // red
+        choiceEl.style.color = "#fff";
 
-        if (attempts[questionId] === 1) {
-          feedback.textContent = "Double check your answer!";
-          feedback.style.color = "orange";
-          feedback.style.fontWeight = "bold";
-        } else if (attempts[questionId] === 2) {
-          feedback.textContent = "Incorrect!";
-          feedback.style.color = "red";
-          feedback.style.fontWeight = "bold";
-
-          // Remove check button and show the next button
-          submitButton.style.display = "none";
-          nextButton.style.display = "block";
-
-          // Show feedback with user and correct answers
-          displayAnswer.innerHTML = `
-            <div style="color: red; border-radius: 10px; background: #ffe6e6; padding: 10px; margin-top: 5px;">
-              Your Answer: ${userAnswer}
-            </div>
-            <div style="color: green; border-radius: 10px; background: #e6ffe6; padding: 10px; margin-top: 5px;">
-              Correct Answer: ${correctAnswers[questionId]}
-            </div>`;
-        }
+        // Highlight correct answer
+        allChoices[q.answer].style.backgroundColor = "#28a745";
+        allChoices[q.answer].style.color = "#fff";
       }
-    });
-  });
-});
 
-// mcq section in courses 
-document.addEventListener("DOMContentLoaded", () => {
-  // Add event listener to each submit button for multiple-choice questions
-  document.querySelectorAll(".mcq-question .submit-answers").forEach((submitButton) => {
-      submitButton.addEventListener("click", () => {
-          // Get the parent container of the question
-          const questionContainer = submitButton.closest(".mcq-question");
-          const feedback = questionContainer.querySelector(".feedback");
-          const displayAnswer = questionContainer.querySelector(".answer-display");
-          const nextButton = questionContainer.querySelector(".unique-completion-button-001");
-
-          // Get the selected option
-          const selectedOption = questionContainer.querySelector('input[name="mcq"]:checked');
-
-          if (!selectedOption) {
-              feedback.textContent = "Please select an option!";
-              feedback.style.color = "orange";
-              return;
-          }
-
-          const userAnswer = selectedOption.value;
-          const correctAnswer = selectedOption.getAttribute("data-correct-answer");
-
-          if (userAnswer === correctAnswer) {
-              // Correct answer
-              feedback.textContent = "Correct!";
-              feedback.style.color = "green";
-
-              displayAnswer.innerHTML = `<div style="color: green; border: 1px solid green; background: #e6ffe6; padding: 10px; margin-top: 5px;">
-                  Correct Answer: ${correctAnswer}
-              </div>`;
+      // Add "Next" button if it doesn't already exist
+      if (!document.getElementById("next-question-button")) {
+        const nextButton = document.createElement("button");
+        nextButton.id = "next-question-button";
+        nextButton.textContent = "Next Question";
+        nextButton.classList.add("next-button");
+        nextButton.style.marginTop = "20px";
+        nextButton.addEventListener("click", () => {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < quizQuestions.length) {
+            displayQuestion();
           } else {
-              // Incorrect answer
-              feedback.textContent = "Incorrect!";
-              feedback.style.color = "red";
+            container.innerHTML = "";
 
-              displayAnswer.innerHTML = `
-              <div style="color: red; border: 1px solid red; background: #ffe6e6; padding: 10px; margin-top: 5px;">
-                  Your Answer: ${userAnswer}
-              </div>
-              <div style="color: green; border: 1px solid green; background: #e6ffe6; padding: 10px; margin-top: 5px;">
-                  Correct Answer: ${correctAnswer}
-              </div>`;
-          }
+            const completeMsg = document.createElement("h2");
+            container.appendChild(completeMsg);
 
-          // Remove check button and show the next button
-          submitButton.style.display = "none";
-          nextButton.style.display = "block"; // Show the Next button
-          console.log("Next button displayed.");
-      });
-  });
-});
-
-// exercise box styling
-document.querySelectorAll(".inline-code-input").forEach((input) => {
-  input.addEventListener("input", (e) => {
-      const target = e.target;
-      target.style.width = `${target.value.length + 1}ch`; // Dynamically set width
-  });
-});
-
-// lesson folder vsp quick menu thing 
-document.addEventListener("DOMContentLoaded", () => {
-  // Add toggle functionality for folders
-  document.querySelectorAll(".unique-topic-folder").forEach((folder) => {
-      folder.addEventListener("click", () => {
-          const targetId = folder.getAttribute("data-toggle");
-          const targetContainer = document.getElementById(`${targetId}-subtopics`);
-
-          if (targetContainer) {
-              // Toggle visibility
-              if (targetContainer.style.display === "block") {
-                  targetContainer.style.display = "none";
-              } else {
-                  targetContainer.style.display = "block";
-              }
-          } else {
-              console.error(`No element found with ID ${targetId}-subtopics`);
-          }
-      });
-  });
-
-  // Update folder-circle completion status dynamically
-  const updateFolderCompletion = () => {
-      document.querySelectorAll(".unique-topic-folder").forEach((folder) => {
-          const targetId = folder.getAttribute("data-toggle");
-          const subtopics = document.querySelectorAll(`#${targetId}-subtopics .unique-topic-link .completion-circle`);
-          const allCompleted = Array.from(subtopics).every((circle) =>
-              circle.style.backgroundColor === "green"
-          );
-
-          const folderCircle = folder.querySelector(".folder-circle");
-          if (folderCircle) {
-              folderCircle.style.backgroundColor = allCompleted ? "green" : "lightgrey";
-          }
-      });
-  };
-
-  // Initialize folder completion status
-  updateFolderCompletion();
-
-  // Add event listeners to subtopic circles to update folder circles dynamically
-  document.querySelectorAll(".completion-circle").forEach((circle) => {
-      circle.addEventListener("click", () => {
-          updateFolderCompletion();
-      });
-  });
-});
-
-// sub topic and topic completion thing 
-document.addEventListener("DOMContentLoaded", () => {
-  // Fetch the header file
-  fetch('/header.html')
-    .then(response => {
-      if (!response.ok) throw new Error(`Failed to fetch header: ${response.statusText}`);
-      return response.text();
-    })
-    .then(headerData => {
-      const headerContainer = document.getElementById('header-container');
-      if (headerContainer) {
-        headerContainer.innerHTML = headerData;
-        setTimeout(() => {
-          activateNavLink();
-        }, 100);
-      } else {
-        console.error("Header container not found.");
-      }
-
-      // Detect which type of page this is
-      const isHTMLPage = document.getElementById('html-quick-menu') !== null;
-      const isCSSPage = document.getElementById('css-quick-menu') !== null;
-      const isJSPage = document.getElementById('js-quick-menu') !== null;
-
-      // Fetch the correct quick menu
-      let menuFetches = [];
-      let menuOrder = [];
-
-      if (isHTMLPage) {
-        menuFetches.push(fetch('/html/html-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("HTML Quick Menu failed")));
-        menuOrder.push("html");
-      }
-      if (isCSSPage) {
-      
-        menuFetches.push(fetch('/css/tutorials/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
-        menuOrder.push("css");
-      }
-      if (isJSPage) {
-        menuFetches.push(fetch('/javascript/js-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("JS Quick Menu failed")));
-        menuOrder.push("js");
-      }
-
-      return Promise.all(menuFetches).then((menuData) => {
-        menuOrder.forEach((menuType, index) => {
-          if (menuType === "html") {
-            document.getElementById('html-quick-menu').innerHTML = menuData[index];
-            
-          } else if (menuType === "css") {
-            document.getElementById('css-quick-menu').innerHTML = menuData[index];
-            
-          } else if (menuType === "js") {
-            document.getElementById('js-quick-menu').innerHTML = menuData[index];
-          
+            const completeButton = document.createElement("button");
+            completeButton.id = "mark-complete-button";
+            completeButton.className = "topic-complete-button";
+            completeButton.textContent = "Complete Lesson";
+            container.appendChild(completeButton);
           }
         });
+        container.appendChild(nextButton);
+      }
+    });
 
-        // **Run ranking system & hamburger menu after quick menus are loaded**
-        setTimeout(() => {
-          initializeHamburgerMenu();
-          initializeTopicRankingSystem(); // Fix: Reinitialize ranking system after loading
-        }, 300);
-      });
-    })
-    .catch(error => console.error("Error during fetch operations:", error));
-});
+    container.appendChild(choiceEl);
+  });
+}
 
-// hamburger menu for quick menu 
+// Run on load
 document.addEventListener("DOMContentLoaded", () => {
-  // Fetch the header file
-  fetch('/header.html')
-    .then(response => {
-      if (!response.ok) throw new Error(`Failed to fetch header: ${response.statusText}`);
-      return response.text();
-    })
-    .then(headerData => {
-      const headerContainer = document.getElementById('header-container');
-      if (headerContainer) {
-        headerContainer.innerHTML = headerData;
-      }
-
-      // Detect which type of page this is
-      const isHTMLPage = document.getElementById('html-quick-menu') !== null;
-      const isCSSPage = document.getElementById('css-quick-menu') !== null;
-      const isJSPage = document.getElementById('js-quick-menu') !== null;
-
-      // Fetch the correct quick menu
-      let menuFetches = [];
-
-      if (isHTMLPage) {
-        
-        menuFetches.push(fetch('/html/html-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("HTML Quick Menu failed")));
-      }
-      if (isCSSPage) {
-        
-        menuFetches.push(fetch('/css/tutorials/css-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("CSS Quick Menu failed")));
-      }
-      if (isJSPage) {
-        
-        menuFetches.push(fetch('/javascript/js-quick-menu.html').then(res => res.ok ? res.text() : Promise.reject("JS Quick Menu failed")));
-      }
-
-      return Promise.all(menuFetches);
-    })
-    .then((menuData) => {
-      if (document.getElementById('html-quick-menu')) {
-        document.getElementById('html-quick-menu').innerHTML = menuData[0];
-      }
-      if (document.getElementById('css-quick-menu')) {
-        document.getElementById('css-quick-menu').innerHTML = menuData[0]; // If this is a CSS page, menuData[0] contains the CSS menu
-      }
-      if (document.getElementById('js-quick-menu')) {
-        document.getElementById('js-quick-menu').innerHTML = menuData[0]; // If this is a JS page, menuData[0] contains the JS menu
-      }
-
-      // Initialize the hamburger menu only after the relevant quick menu has loaded
-      setTimeout(() => {
-        initializeHamburgerMenu();
-      }, 300);
-    })
-    .catch(error => console.error("Error during fetch operations:", error));
+  displayQuestion();
 });
-function initializeHamburgerMenu() {
-  setTimeout(() => {
-    const menuButton = document.getElementById("hamburger-menu");
-    const htmlMenu = document.getElementById("html-quick-menu");
-    const cssMenu = document.getElementById("css-quick-menu");
-    const jsMenu = document.getElementById("js-quick-menu");
 
-    if (menuButton && (htmlMenu || cssMenu || jsMenu)) {
-      // **Remove existing event listeners before adding new ones**
-      menuButton.removeEventListener("click", toggleQuickMenu);
-      menuButton.addEventListener("click", toggleQuickMenu);
+function setupDynamicSubHeader() {
+  const titleEl = document.getElementById("sub-header-title");
+  const progressEl = document.getElementById("sub-header-progress");
 
-      document.removeEventListener("click", closeQuickMenus);
-      document.addEventListener("click", closeQuickMenus);
-    } else {
-      console.error("Hamburger menu button or one of the quick menus not found.");
-    }
-  }, 300); // Delay to ensure elements exist
-}
-function toggleQuickMenu(event) {
-  console.log("Menu button clicked! Toggling menu...");
-  const htmlMenu = document.getElementById("html-quick-menu");
-  const cssMenu = document.getElementById("css-quick-menu");
-  const jsMenu = document.getElementById("js-quick-menu");
+  if (!titleEl || !progressEl) {
+    console.log("❌ Missing sub-header elements");
+    return;
+  }
 
-  if (htmlMenu) htmlMenu.classList.toggle("show");
-  if (cssMenu) cssMenu.classList.toggle("show");
-  if (jsMenu) jsMenu.classList.toggle("show");
+  // Detect language based on path folder
+  const path = (document.referrer || window.location.href).toLowerCase();
+  console.log("📂 Detected path:", path);
 
-  event.stopPropagation();
-}
-function closeQuickMenus(event) {
-  const menuButton = document.getElementById("hamburger-menu");
-  const htmlMenu = document.getElementById("html-quick-menu");
-  const cssMenu = document.getElementById("css-quick-menu");
-  const jsMenu = document.getElementById("js-quick-menu");
+  const language = path.includes("/css/") ? "CSS"
+                : path.includes("/javascript/") ? "JavaScript"
+                : path.includes("/html/") ? "HTML"
+                : "Course";
 
-  if (!menuButton.contains(event.target) && !htmlMenu?.contains(event.target) && !cssMenu?.contains(event.target) && !jsMenu?.contains(event.target)) {
-    console.log("Clicked outside. Closing menu...");
-    if (htmlMenu) htmlMenu.classList.remove("show");
-    if (cssMenu) cssMenu.classList.remove("show");
-    if (jsMenu) jsMenu.classList.remove("show");
+  console.log("🌐 Detected language:", language);
+
+  // Detect page type from meta
+  const metaType = document.querySelector('meta[name="page-type"]');
+  const pageType = metaType ? metaType.getAttribute("content") : "tutorial";
+  const capitalizedType = pageType.charAt(0).toUpperCase() + pageType.slice(1);
+
+  console.log("📄 Page type from meta:", pageType);
+
+  // Update header title with clickable language link
+  const langLink = language.toLowerCase();
+  titleEl.innerHTML = `Learn <a href="/${langLink}/learn${langLink}.html">${language}</a>`;
+  console.log("🔠 Header title set to:", titleEl.innerHTML);
+
+  // Define topic list based on language (only CSS for now)
+  const topicList = language === "CSS" ? [
+    "css-introduction",
+    "css-syntax",
+    "css-selectors",
+    "css-in-html",
+    "css-colors"
+  ] : [];
+
+  const completed = topicList.filter(topic => {
+    const key = `completed-${topic}-${pageType}`;
+    return localStorage.getItem(key) === "true";
+  });
+
+  console.log("✅ Completed topics:", completed.length, "of", topicList.length);
+
+  // If in quiz mode, show question progress
+  const isQuizPage = document.getElementById("quiz-container") !== null;
+
+  if (isQuizPage && typeof quizQuestions !== "undefined" && Array.isArray(quizQuestions)) {
+    const current = Math.min(currentQuestionIndex + 1, quizQuestions.length);
+    progressEl.textContent = `${current} / ${quizQuestions.length}`;
+  } else {
+    // Fallback for tutorial/mastery topic-based progress
+    progressEl.textContent = `${completed.length} / ${topicList.length}`;
   }
 }
 
-// buttons for scrolling on mouse for coding extention menu thing
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  setupDynamicSubHeader();
+});
 
-  const checkExist = setInterval(() => {
-      const scrollContainer = document.querySelector(".coding-extension-9321pookie"); // Parent container
-      const scrollLeftBtn = document.getElementById("scroll-left");
-      const scrollRightBtn = document.getElementById("scroll-right");
-
-      if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
-          clearInterval(checkExist);
-          const scrollSpeed = 1; // Adjust how fast it scrolls
-          let scrollInterval; // Variable to store the interval
-
-          // 🔵 Function to start scrolling in a direction
-          function startScrolling(direction) {
-              stopScrolling(); // Clear any existing interval
-              scrollInterval = setInterval(() => {
-                  scrollContainer.scrollLeft += direction * scrollSpeed; // Move left (-1) or right (+1)
-              }, 0.001); // Adjust speed (lower value = smoother)
-          }
-
-          // 🛑 Function to stop scrolling when the button is released
-          function stopScrolling() {
-              clearInterval(scrollInterval);
-          }
-
-          // 🔼 Scroll left while holding the button
-          scrollLeftBtn.addEventListener("mousedown", () => startScrolling(-1));
-          scrollLeftBtn.addEventListener("mouseup", stopScrolling);
-          scrollLeftBtn.addEventListener("mouseleave", stopScrolling); // Stop if the user moves away
-
-          // 🔽 Scroll right while holding the button
-          scrollRightBtn.addEventListener("mousedown", () => startScrolling(1));
-          scrollRightBtn.addEventListener("mouseup", stopScrolling);
-          scrollRightBtn.addEventListener("mouseleave", stopScrolling);
-
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/sub-header.html")
+    .then(res => res.text())
+    .then(html => {
+      const container = document.getElementById("sub-header-container");
+      if (container) {
+        container.innerHTML = html;
+        if (typeof setupDynamicSubHeader === "function") {
+          setupDynamicSubHeader();
+        }
       }
-  }, 300);
-});
-
-let cssBasicsQuestions = [];
-let totalQuestions = 0;
-
-fetch("/questions.json")
-  .then(response => response.json())
-  .then(data => {
-    cssBasicsQuestions = [...data];
-    shuffleQuestions = [...data];
-  })
-  .catch(error => console.error("❌ ERROR: Failed to load questions!", error));
-const cssChapters = [
-    {
-        chapter: "CSS Basics",
-        topics: [
-            { topic: "Introduction to CSS", id: "css-introduction" },
-            { topic: "CSS Syntax & Selectors", id: "css-selectors" },
-            { topic: "CSS Colors & Backgrounds", id: "css-colors-backgrounds" },
-            { topic: "Text Styling & Fonts", id: "css-text-styling" }
-        ]
-    },
-    {
-        chapter: "CSS Box Model & Layout",
-        topics: [
-            { topic: "Box Model", id: "css-box-model" },
-            { topic: "Margins, Padding & Borders", id: "css-spacing" },
-            { topic: "Width, Height & Overflow", id: "css-sizing-overflow" }
-        ]
-    },
-    {
-        chapter: "CSS Display & Positioning",
-        topics: [
-            { topic: "CSS Display", id: "css-display" },
-            { topic: "CSS Positioning", id: "css-positioning" },
-            { topic: "Float & Clear", id: "css-float-clear" },
-            { topic: "Z-Index & Stacking Context", id: "css-z-index" }
-        ]
-    },
-    {
-        chapter: "CSS Flexbox",
-        topics: [
-            { topic: "Introduction to Flexbox", id: "css-flexbox-intro" },
-            { topic: "Flexbox Properties", id: "css-flexbox-properties" },
-            { topic: "Flexbox Alignment & Justification", id: "css-flexbox-alignment" }
-        ]
-    },
-    {
-        chapter: "CSS Grid",
-        topics: [
-            { topic: "Introduction to Grid", id: "css-grid-intro" },
-            { topic: "Grid Template & Areas", id: "css-grid-template" },
-            { topic: "Grid Alignment & Justification", id: "css-grid-alignment" }
-        ]
-    },
-    {
-        chapter: "CSS Styling & Effects",
-        topics: [
-            { topic: "Shadows & Borders", id: "css-shadows-borders" },
-            { topic: "Gradients", id: "css-gradients" },
-            { topic: "CSS Transitions", id: "css-transitions" },
-            { topic: "CSS Animations", id: "css-animations" },
-            { topic: "Transformations (Rotate, Scale, Skew)", id: "css-transforms" }
-        ]
-    },
-    {
-        chapter: "Responsive Design",
-        topics: [
-            { topic: "CSS Media Queries", id: "css-media-queries" },
-            { topic: "Mobile-First Design", id: "css-mobile-first" },
-            { topic: "CSS Viewport Units", id: "css-viewport-units" }
-        ]
-    },
-    {
-        chapter: "Advanced CSS",
-        topics: [
-            { topic: "Custom Properties (CSS Variables)", id: "css-variables" },
-            { topic: "CSS Preprocessors (SASS & LESS)", id: "css-preprocessors" },
-            { topic: "CSS Specificity & Inheritance", id: "css-specificity-inheritance" },
-            { topic: "CSS Pseudo-Elements & Pseudo-Classes", id: "css-pseudo-elements" }
-        ]
-    }
-];
-
-
-// ✅ Select Elements
-const mainContainer = document.getElementById("gridContainer");
-const masteryTopicButtons = document.querySelectorAll(".topic-button-mastery");
-const quizContainer = document.getElementById("quiz-container-mastery");
-const questionText = document.getElementById("question-text");
-const answerOptions = document.getElementById("answer-options-mastery");
-const nextButton = document.getElementById("next-button");
-const returnToMenuButton = document.getElementById("return-to-menu");
-
-// ✅ Create Back to Menu Button
-const backToMenuButton = document.createElement("button");
-backToMenuButton.innerText = "Back to Menu";
-backToMenuButton.id = "back-to-menu";
-backToMenuButton.style.display = "none";
-
-// ✅ Wrap Buttons in a Div
-const buttonWrapper = document.createElement("div");
-buttonWrapper.id = "quiz-buttons";
-buttonWrapper.style.display = "flex";
-buttonWrapper.style.justifyContent = "space-between";
-buttonWrapper.style.marginTop = "10px";
-buttonWrapper.appendChild(backToMenuButton);
-buttonWrapper.appendChild(nextButton);
-buttonWrapper.appendChild(returnToMenuButton);
-quizContainer.appendChild(buttonWrapper);
-
-// ✅ Progress Bar & Tracker
-const progressBar = document.createElement("progress");
-progressBar.id = "progress-bar";
-progressBar.value = 0;
-progressBar.max = 100;
-quizContainer.insertBefore(progressBar, questionText);
-
-const progressTracker = document.createElement("p");
-progressTracker.id = "progress-tracker";
-quizContainer.insertBefore(progressTracker, questionText);
-
-// ✅ Quiz Logic Variables
-let shuffledQuestions = [];
-let currentQuestionIndex = 0;
-let correctAnswers = 0;
-let previouslyIncorrect = new Set();
-let totalAnsweredQuestions = 0;
-
-// ✅ Function to Shuffle Questions
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// ✅ Function to Decode HTML Entities
-function decodeHtmlEntities(str) {
-    let txt = document.createElement("textarea");
-    txt.innerHTML = str;
-    return txt.value;
-}
-
-// ✅ Start Quiz When Clicking a Topic
-masteryTopicButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const selectedTopic = button.getAttribute("data-topic");
-        currentTopicId = selectedTopic; // ✅ Ensure the topic is tracked
-
-        shuffledQuestions = selectedTopic === "all"
-            ? [...cssBasicsQuestions]
-            : cssBasicsQuestions.filter(q => q.topic === selectedTopic);
-
-        totalQuestions = shuffledQuestions.length; 
-        totalAnsweredQuestions = 0;
-        progressBar.value = 0;  
-        previouslyIncorrect.clear();  
-        correctAnswers = 0;  
-        updateProgress();  
-
-        shuffleArray(shuffledQuestions);
-        currentQuestionIndex = 0;
-
-        console.log("📦 backToMenuButton =", backToMenuButton);
-        if (mainContainer) {
-          mainContainer.style.display = "none";
-        } else {
-          console.warn("mainContainer not found in the DOM.");
-        }
-        quizContainer.style.display = "block";
-        returnToMenuButton.style.display = "none";
-        if (backToMenuButton) {
-          backToMenuButton.style.display = "block";
-        } else {
-          console.warn("backToMenuButton not found in the DOM.");
-        }
-
-        updateProgress();
-        displayQuestion();
-    });
-});
-
-// ✅ Back to Menu Button
-backToMenuButton.addEventListener("click", () => {
-    console.log("🔄 Returning to main grid... Resetting quiz.");
-
-    // ✅ **Fully reset the quiz state**
-    shuffledQuestions = [];
-    currentQuestionIndex = 0;
-    correctAnswers = 0;
-    previouslyIncorrect.clear();
-    totalAnsweredQuestions = 0;
-    
-    // ✅ **Ensure topic ID resets** (Fixes second quiz issue)
-    currentTopicId = null; 
-
-    // ✅ **Clear quiz UI to prevent leftover elements**
-    questionText.innerHTML = "Loading question...";
-    answerOptions.innerHTML = ""; // ✅ Remove old answer buttons
-    nextButton.style.display = "none"; 
-
-    // ✅ **Ensure UI visibility is properly updated**
-    quizContainer.style.display = "none";
-    mainContainer.style.display = "grid";
-
-    console.log("✅ Quiz fully reset, main menu restored.");
-});
-
-// ✅ Function to Update Progress Bar
-function updateProgress() {
-    console.log(`🔍 DEBUG: totalQuestions = ${totalQuestions}, totalAnsweredQuestions = ${totalAnsweredQuestions}`);
-
-    if (totalQuestions === 0) {
-        progressBar.value = 0;
-        return;
-    }
-
-    const progressPercentage = (totalAnsweredQuestions / totalQuestions) * 100;
-    progressBar.value = Math.min(progressPercentage, 100);
-    console.log(`📊 Progress Updated: ${progressBar.value}%`);
-}
-
-// ✅ Function to Display a Question
-function displayQuestion() {
-    console.log("📌 DISPLAYING QUESTION:", currentQuestionIndex + 1, "of", shuffledQuestions.length);
-
-    // ✅ **Check if `shuffledQuestions` has questions**
-    if (shuffledQuestions.length === 0) {
-        console.error("❌ ERROR: No questions available to display!");
-        questionText.innerHTML = "Error: No questions available.";
-        return;
-    }
-
-    if (currentQuestionIndex >= shuffledQuestions.length) {
-        console.log("🚨 No more questions left, calling endQuiz()");
-        endQuiz();
-        return;
-    }
-
-    nextButton.style.display = "none";
-    const currentQuestion = shuffledQuestions[currentQuestionIndex];
-
-    console.log("📝 Setting Question:", currentQuestion.question);
-
-    // ✅ **Reset wasAnswered before showing a new question**
-    shuffledQuestions[currentQuestionIndex].wasAnswered = false;
-
-    // ✅ **Update Question Text**
-    questionText.innerHTML = currentQuestion.question;
-    
-    // ✅ **Clear previous buttons to prevent event listener issues**
-    answerOptions.innerHTML = ""; 
-
-    // ✅ **Create new answer buttons**
-    currentQuestion.options.forEach(option => {
-        const button = document.createElement("button");
-        button.innerHTML = option;
-        button.classList.add("answer-button-mastery");
-
-        // ✅ **Ensure event listeners work properly (Fix for unclickable answers)**
-        button.addEventListener("click", () => {
-            console.log(`🖱 Clicked on: ${option}`);
-            selectAnswer(button, currentQuestion.answer);
-        });
-
-        answerOptions.appendChild(button);
-    });
-
-    console.log("✅ New question displayed, answer buttons reset.");
-}
-
-// ✅ Handle Answer Selection
-function selectAnswer(button, correctAnswer) {
-    const selectedOption = decodeHtmlEntities(button.innerText.trim());
-    const decodedCorrectAnswer = decodeHtmlEntities(correctAnswer.trim());
-
-    console.log(`🖱 Answer Selected: ${selectedOption}`);
-    console.log(`✅ Correct Answer: ${decodedCorrectAnswer}`);
-
-    if (shuffledQuestions[currentQuestionIndex].wasAnswered) {
-        console.log("⚠️ Question was already answered. Ignoring click.");
-        return;
-    }
-
-    shuffledQuestions[currentQuestionIndex].wasAnswered = true; // ✅ Mark as answered
-
-    let wasCorrect = false;
-
-    if (selectedOption === decodedCorrectAnswer) {
-        console.log("🎉 CORRECT ANSWER!");
-        button.style.backgroundColor = "lightgreen";
-        wasCorrect = true;
-        correctAnswers++; // ✅ This was missing! Fixes progress bar issue
-    } else {
-        console.log("❌ WRONG ANSWER!");
-        button.style.backgroundColor = "lightcoral";
-
-        if (!previouslyIncorrect.has(shuffledQuestions[currentQuestionIndex].question)) {
-            previouslyIncorrect.add(shuffledQuestions[currentQuestionIndex].question);
-            totalQuestions++; // ✅ Increase total questions for repeats
-        }
-    }
-
-    // ✅ Highlight Correct Answer
-    Array.from(answerOptions.children).forEach(btn => {
-        if (decodeHtmlEntities(btn.innerText.trim()) === decodedCorrectAnswer) {
-            btn.style.backgroundColor = "lightgreen";
-        }
-    });
-
-    totalAnsweredQuestions++; // ✅ Increment answered question count
-
-    updateProgress(); // ✅ Progress bar now updates properly
-
-    console.log("➡ Showing Next Button...");
-    nextButton.style.display = "block";
-}
-
-nextButton.addEventListener("click", () => {
-    console.log("➡ NEXT QUESTION CLICKED! Current index:", currentQuestionIndex);
-
-    if (!shuffledQuestions[currentQuestionIndex].wasAnswered) {
-        console.log("❌ ERROR: User didn't answer yet.");
-        return;
-    }
-
-    currentQuestionIndex++;
-
-    if (currentQuestionIndex < shuffledQuestions.length) {
-        console.log("🔄 Displaying next question:", currentQuestionIndex + 1);
-        displayQuestion();
-    } else {
-        console.log("🏁 All questions answered, calling endQuiz()");
-        endQuiz();
-    }
-});
-
-// Motivational Messages Array
-const reviewMessages = [
-    "Time to refine your skills! Let’s tackle those tricky questions again.",
-    "You’re almost there! A few more correct answers and you’ll hit 100%.",
-    "One last push! Let’s clear up any mistakes and finish strong.",
-    "Review round! Answer these correctly to complete your progress.",
-    "Almost perfect! Let’s master these last few questions."
-];
-
-function startReviewRound() {
-    if (previouslyIncorrect.size > 0) {
-        shuffledQuestions = cssBasicsQuestions.filter(q => previouslyIncorrect.has(q.question));
-        previouslyIncorrect.clear();
-        currentQuestionIndex = 0;
-
-        shuffledQuestions.forEach(q => q.wasAnswered = false); // ✅ Allow answering again
-        
-        nextButton.style.display = "block"; // ✅ Ensure Next button is visible
-        displayQuestion(); // ✅ Start the review round
-    }
-}
-
-// Elements
-const popup = document.getElementById("review-popup");
-const popupMessage = document.getElementById("popup-message");
-const closePopupButton = document.getElementById("close-popup");
-
-// Show Review Popup
-function showReviewPopup() {
-    // Select a Random Message
-    popupMessage.textContent = reviewMessages[Math.floor(Math.random() * reviewMessages.length)];
-
-    // Blur Background and Show Popup
-    quizContainer.classList.add("blurred-background");
-    popup.classList.add("active");
-}
-
-// Close Popup and Remove Blur
-closePopupButton.addEventListener("click", () => {
-    quizContainer.classList.remove("blurred-background");
-    popup.classList.remove("active");
-
-    // Move to Review Questions
-    startReviewRound();
-});
-
-
-function resetQuizState() {
-    console.log("🔄 Resetting quiz state...");
-    shuffledQuestions = [];
-    currentQuestionIndex = 0;
-    correctAnswers = 0;
-    previouslyIncorrect.clear();
-}
-
-// Get Completion Popup Elements
-const completionPopup = document.getElementById("completion-popup");
-const returnToMenuPopupButton = document.getElementById("return-to-menu-popup");
-
-// Show Completion Popup
-function showCompletionPopup() {
-    quizContainer.classList.add("blurred-background");
-    completionPopup.classList.add("active");
-}
-
-// Handle Return to Menu Button Click (Inside Popup)
-returnToMenuPopupButton.addEventListener("click", () => {
-    
-    quizContainer.classList.remove("blurred-background");
-    completionPopup.classList.remove("active");
-
-    // ✅ Ensure the whole grid layout is visible again
-    document.querySelector(".mastery-main-page-grid-container").style.display = "grid";
-    
-    returnToMenuButton.style.display = "none";
-    gridContainer.style.display = "grid";
-    quizContainer.style.display = "none";
-});
-
-// Modify End Quiz Function
-function endQuiz() {
-    console.log("🚨🚨🚨 DEBUG: END QUIZ FUNCTION IS RUNNING 🚨🚨🚨");
-
-    if (previouslyIncorrect.size > 0) {
-        showReviewPopup(); // Show review popup for incorrect questions
-        console.log("🔁 REVIEW ROUND STARTED: Incorrect answers exist.");
-        shuffledQuestions = cssBasicsQuestions.filter(q => previouslyIncorrect.has(q.question));
-        previouslyIncorrect.clear();
-        currentQuestionIndex = 0;
-        shuffledQuestions.forEach(q => q.wasAnswered = false);
-        displayQuestion();
-    } else {
-        showCompletionPopup();
-        console.log("✅ QUIZ COMPLETED! Checking topic completion...");
-        console.log("🎯 Current Topic ID at end:", currentTopicId);
-
-        if (currentTopicId) {
-            console.log("🏁 Saving topic completion for:", currentTopicId);
-            saveCompletedTopic(currentTopicId);
-        } else if (shuffledQuestions.length > 0) {
-            console.log("🛠 Trying to determine last completed topic...");
-            let lastQuestionTopic = shuffledQuestions[0].topic;
-            saveCompletedTopic(lastQuestionTopic);
-        } else {
-            console.log("❌ ERROR: No topic ID found!");
-        }
-
-        returnToMenuButton.style.display = "block";
-        backToMenuButton.style.display = "none";
-        nextButton.style.display = "none";
-
-        markCompletedTopics();
-        updateNextSectionLink();
-    }
-}
-
-// ✅ Load Completed Topics from Local Storage
-function getCompletedTopics() {
-    return JSON.parse(localStorage.getItem("completedTopics")) || [];
-}
-
-// ✅ Save Completed Topics to Local Storage (Only when exercise is completed)
-function saveCompletedTopic(topicId) {
-    if (!topicId) {
-        console.log("❌ ERROR: No topic ID provided to saveCompletedTopic!");
-        return;
-    }
-
-    let completedTopics = getCompletedTopics();
-    console.log("📂 LOCAL STORAGE BEFORE SAVE:", completedTopics);
-
-    if (!completedTopics.includes(topicId)) {
-        completedTopics.push(topicId);
-        localStorage.setItem("completedTopics", JSON.stringify(completedTopics));
-markCompletedTopics(); // ✅ Update the UI after saving
-updateNextSectionLink();
-
-        console.log(`✅ Topic '${topicId}' marked as complete!`);
-    } else {
-        console.log(`⚠️ Topic '${topicId}' was already marked complete.`);
-    }
-
-    console.log("📂 LOCAL STORAGE AFTER SAVE:", getCompletedTopics());
-
-    markCompletedTopics();
-    updateNextSectionLink();
-}
-
-// ✅ Mark Completed Topics on Page Load
-function markCompletedTopics() {
-    let completedTopics = getCompletedTopics();
-    let masteryTopicButtons = document.querySelectorAll(".topic-button-mastery");
-
-    if (masteryTopicButtons.length === 0) {
-        console.log("⚠️ No topic buttons found. Skipping marking.");
-        return;
-    }
-
-    masteryTopicButtons.forEach(button => {
-        if (completedTopics.includes(button.dataset.topic)) {
-            button.style.backgroundColor = "green"; // Mark completed topics
-            console.log(`✅ Marked '${button.dataset.topic}' as completed.`);
-        }
-    });
-}
-
-// ✅ Find the First Incomplete Topic
-function getNextTopic() {
-    let completedTopics = getCompletedTopics();
-
-    console.log("🔎 Checking for next topic...");
-    console.log("✅ Completed topics:", completedTopics);
-
-    for (let chapter of cssChapters) {
-        for (let topic of chapter.topics) {
-            if (!completedTopics.includes(topic.id)) {
-                console.log(`🚀 Next topic to complete: ${topic.topic}`);
-                return topic; // ✅ First incomplete topic
-            }
-        }
-    }
-
-    console.log("🎉 All topics completed!");
-    return null; // ✅ No incomplete topics left
-}
-
-// ✅ Update Next Section Link
-function updateNextSectionLink() {
-    let nextTopic = getNextTopic();
-    let nextSectionDiv = document.querySelector(".grid-right-section");
-
-    if (!nextSectionDiv) {
-        console.log("⚠️ No '.grid-right-section' found. Skipping update.");
-        return;
-    }
-
-    if (!nextTopic) {
-        console.log("✅ No more topics left to complete.");
-        nextSectionDiv.innerHTML = "<p>All topics completed!</p>";
-        return;
-    }
-
-    console.log(`🟢 Next section set to: ${nextTopic.topic}`);
-    nextSectionDiv.innerHTML = `
-        <p>Next Section:</p>
-        <a href="#" class="next-topic-link" data-topic-id="${nextTopic.id}">${nextTopic.topic}</a>
-    `;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        markCompletedTopics();
-        updateNextSectionLink();
-    }, 100); // Wait briefly to ensure elements are loaded
-});
-
-document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("next-topic-link")) {
-        event.preventDefault();
-
-        let topicId = event.target.getAttribute("data-topic-id");
-
-        if (!topicId) {
-            console.error("❌ ERROR: No topic ID found! Fixing...");
-            return;
-        }
-
-        console.log(`🔥 Starting quiz for next section: ${topicId}`);
-
-        // ✅ Call startQuiz with correct topic ID
-        startQuiz(topicId);
-    }
-});
-
-let currentTopicId = null;
-
-function startQuiz(topicId) {
-    console.log(`🚀 startQuiz() CALLED with topicId = '${topicId}'`);
-
-    if (!topicId) {
-        console.error("❌ ERROR: startQuiz() was called WITHOUT a valid topicId!");
-        return;
-    }
-
-    console.log(`🎯 STARTING quiz for topic: '${topicId}'`);
-
-    // ✅ Ensure we correctly set `currentTopicId`
-    currentTopicId = topicId;
-
-    // ✅ Reset the entire quiz state
-    shuffledQuestions = [];  // Clear old questions
-    currentQuestionIndex = 0;
-    correctAnswers = 0;
-    previouslyIncorrect.clear();
-    
-    // ✅ Filter questions properly
-    shuffledQuestions = cssBasicsQuestions.filter(q => q.topic === topicId);
-
-    if (shuffledQuestions.length === 0) {
-        console.error(`❌ ERROR: No questions found for topic '${topicId}'!`);
-        return;
-    }
-
-    console.log("📌 Filtered Questions:", shuffledQuestions);
-
-    // ✅ Shuffle the questions
-    shuffleArray(shuffledQuestions);
-    
-    // ✅ Reset tracking variables
-    totalQuestions = shuffledQuestions.length; 
-    totalAnsweredQuestions = 0;  // Ensure answered count resets
-    progressBar.value = 0;  // Reset progress bar immediately
-    updateProgress();  // Ensure progress updates instantly
-
-    console.log(`📌 totalQuestions set to: ${totalQuestions}`);
-
-    // ✅ Reset UI Elements
-    answerOptions.innerHTML = ""; // Remove old answer buttons
-    nextButton.style.display = "none"; 
-    returnToMenuButton.style.display = "none"; 
-
-    // ✅ Ensure quiz is displayed properly
-    document.getElementById("gridContainer").style.display = "none";
-    document.getElementById("quiz-container-mastery").style.display = "block";
-
-    console.log("✅ UI Updated: Grid Hidden, Quiz Shown");
-
-    backToMenuButton.style.display = "block";
-
-    console.log("📌 Resetting progress before starting new topic...");
-    progressBar.value = 0; 
-    totalAnsweredQuestions = 0;
-    correctAnswers = 0; 
-    updateProgress(); 
-
-    console.log("📌 Displaying First Question...");
-    displayQuestion();
-}
-
-
-
-
-
-
-
-
-
-
-// shuffle stuff code stuff 
-
-
-let shuffleQuestions = [];
-
-document.addEventListener("DOMContentLoaded", () => {
-    let shuffleButton = document.getElementById("shuffle-quiz-button");
-    let shuffleCurrentIndex = 0;
-
-    const shuffleContainer = document.getElementById("shuffle-container");
-    const shuffleQuestionText = document.getElementById("shuffle-question-text");
-    const shuffleAnswerOptions = document.getElementById("shuffle-answer-options-mastery");
-    const shuffleBackToMenuButton = document.getElementById("shuffle-back-to-menu");
-    const shuffleNextButton = document.getElementById("shuffle-next-button");
-
-    shuffleButton.addEventListener("click", () => {
-        console.log("🎲 Shuffle button clicked! Switching to shuffle mode...");
-
-        if (!shuffleQuestions || shuffleQuestions.length === 0) {
-            console.error("❌ ERROR: No questions available for shuffle!");
-            shuffleContainer.innerHTML = "<h2>Error: No questions found!</h2>";
-            return;
-        }
-
-        document.getElementById("gridContainer").style.display = "none";
-        document.getElementById("quiz-container-mastery").style.display = "none";
-        shuffleContainer.style.display = "block";
-        shuffleCurrentIndex = 0;
-
-        shuffleBackToMenuButton.style.display = "block";
-
-        displayShuffleQuestion();
-    });
-
-    function displayShuffleQuestion() {
-        if (shuffleCurrentIndex >= shuffleQuestions.length) {
-            document.getElementById("shuffle-question-text").innerText = `Shuffled Question ${shuffleCurrentIndex + 1} / ${shuffleQuestions.length}`;
-            document.getElementById("shuffle-answer-options-mastery").innerHTML = "";
-        
-            question.options.forEach(option => {
-                let button = document.createElement("button");
-                button.innerText = option;
-                button.classList.add("shuffle-answer-button-mastery");
-                button.addEventListener("click", () => handleShuffleAnswer(button, question.answer));
-                document.getElementById("shuffle-answer-options-mastery").appendChild(button);
-            });
-            
-            document.getElementById("shuffle-next-button").style.display = "none";
-            console.log("✅ End of shuffle questions.");
-            document.getElementById("back-to-menu").addEventListener("click", () => {
-                shuffleContainer.style.display = "none";
-                document.getElementById("gridContainer").style.display = "grid";
-                console.log("🔄 Back to Menu button clicked - Returning to main menu.");
-            });
-            return;
-        }
-        let question = shuffleQuestions[shuffleCurrentIndex];
-    
-        console.log(`🔍 DEBUG: Displaying Question ${shuffleCurrentIndex + 1}/${shuffleQuestions.length}`);
-        console.log(`❓ Question: ${question.question}`);
-        console.log(`✅ Correct Answer: ${question.answer}`);
-    
-        shuffleContainer.innerHTML = `
-        <h2>Shuffled Question ${shuffleCurrentIndex + 1} / ${shuffleQuestions.length}</h2>
-        <p>${question.question}</p>
-        <div id="shuffle-answer-options-mastery"></div>
-        <button id="shuffle-next-button" style="display: none;">Next</button>
-        <button id="shuffle-back-to-menu">Back to Menu</button>
-    `;
-    
-    document.getElementById("shuffle-back-to-menu").addEventListener("click", () => {
-        console.log("🔄 Returning to Main Menu from Shuffle Quiz...");
-        shuffleContainer.style.display = "none";
-        document.getElementById("gridContainer").style.display = "grid";
-        console.log("✅ Shuffle Quiz Reset & Menu Restored.");
-    });
-    
-        let answerOptionsDiv = document.getElementById("shuffle-answer-options-mastery");
-
-        question.options.forEach(option => {
-            let button = document.createElement("button");
-            button.innerHTML = option;
-            button.classList.add("shuffle-answer-button-mastery");
-            button.addEventListener("click", () => handleShuffleAnswer(button, question.answer));
-            answerOptionsDiv.appendChild(button);
-        });
-
-        document.getElementById("shuffle-next-button").addEventListener("click", () => {
-            shuffleCurrentIndex++;
-            displayShuffleQuestion();
-        });
-    }
-
-    shuffleBackToMenuButton.addEventListener("click", () => {
-        shuffleContainer.style.display = "none";
-        document.getElementById("gridContainer").style.display = "grid";
-
-    });
-    
-    function handleShuffleAnswer(button, correctAnswer) {
-        const selectedOption = decodeHtmlEntities(button.innerText.trim());
-        const decodedCorrectAnswer = decodeHtmlEntities(correctAnswer.trim());
-    
-        console.log(`Selected Answer: ${selectedOption}`);
-        console.log(`Expected Correct Answer: ${decodedCorrectAnswer}`);
-    
-        if (selectedOption === decodedCorrectAnswer) {
-            console.log("🎉 CORRECT ANSWER!");
-            button.style.backgroundColor = "lightgreen";
-        } else {
-            console.log("❌ WRONG ANSWER!");
-            button.style.backgroundColor = "lightcoral";
-        }
-    
-        let foundCorrect = false;
-        Array.from(document.getElementById("shuffle-answer-options-mastery").children).forEach(btn => {
-            if (decodeHtmlEntities(btn.innerText.trim()) === decodedCorrectAnswer) {
-                btn.style.backgroundColor = "lightgreen";
-                foundCorrect = true;
-            }
-        });
-    
-        document.getElementById("shuffle-next-button").style.display = "block";
-    }
-    
-    function decodeHtmlEntities(str) {
-        let txt = document.createElement("textarea");
-        txt.innerHTML = str;
-        return txt.value;
-    }
-
-const gridContainer = document.getElementById("gridContainer");
-
-shuffleBackToMenuButton.innerText = "Back to Menu";
-shuffleBackToMenuButton.id = "shuffle-back-to-menu";
-
-shuffleContainer.appendChild(shuffleBackToMenuButton);
-
-shuffleButton.addEventListener("click", () => {
-
-    if (!shuffleQuestions || shuffleQuestions.length === 0) {
-        shuffleContainer.innerHTML = "<h2>Error: No questions found!</h2>";
-        return;
-    }
-
-    gridContainer.style.display = "none";
-    shuffleContainer.style.display = "block";
-
-    shuffleBackToMenuButton.style.display = "block";
-
-    shuffleCurrentIndex = 0;
-    displayShuffleQuestion();
-});
-
-shuffleBackToMenuButton.addEventListener("click", () => {
-    shuffleContainer.style.display = "none"; // Hide shuffle quiz
-    document.getElementById("gridContainer").style.display = "grid"; // Show main menu
-});
+    })
+    .catch(err => console.error("Failed to load sub-header:", err));
 });

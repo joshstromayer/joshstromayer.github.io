@@ -741,11 +741,6 @@ background-color: var(--header-text-color);
   color: var(--header-bg-colorr);
 }
 
-.html-page-klm123 #footer-container {
-width: calc(100% - 250px); /* Adjust based on your course layout */
-margin-left: 250px; /* To align with sidebar or other elements */
-}
-
 
 /* MEDIA QUERIES */
 
