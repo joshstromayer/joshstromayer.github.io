@@ -555,7 +555,7 @@ document.addEventListener("click", function (event) {
     const url = window.location.pathname;
     const parts = url.split("/");
     const topic = parts.pop().replace(".html", "").replace("-quiz", "");
-    const type = url.includes("/mastery/") ? "mastery" : "tutorial";
+    const type = url.includes("/study/") ? "mastery" : "tutorial";
     const key = `completed-${topic}-${type}`;
 
     localStorage.setItem(key, "true");
@@ -719,7 +719,7 @@ function setupDynamicSubHeader() {
     const current = Math.min(currentQuestionIndex + 1, quizQuestions.length);
     progressEl.textContent = `${current} / ${quizQuestions.length}`;
   } else {
-    // Fallback for tutorial/mastery topic-based progress
+    // Fallback for tutorial/study topic-based progress
     progressEl.textContent = `${completed.length} / ${topicList.length}`;
   }
 }
